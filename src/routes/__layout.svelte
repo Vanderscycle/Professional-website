@@ -1,12 +1,20 @@
 <script lang="ts">
   // Tailwind.css general config
   import "../app.css";
-  import NavBar from "$components/NavBar"
-  import Footer from "$components/Footer"
+  import NavBar from "$components/NavBar.svelte"
+  import Footer from "$components/Footer.svelte"
 </script>
 
-<template>
+<header>
+  <title>SSR and SvelteKit</title>
+</header>
+<nav>
   <NavBar/>
+</nav>
+<main>
+  <slot></slot>
+</main>
+<footer>
   <Footer/>
-</template>
+</footer>
 
