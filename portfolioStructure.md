@@ -8,6 +8,8 @@
     - competences (porgramming, software, project management etc.)
   .reach me ()
 
+  website has to show a high level of dynamic
+
 The main think I want to convey is that I broke free of my chains and as my own master I am able to choose the pain of my decision instead of letting that pain being inflicted on me.
 
 dot to github
