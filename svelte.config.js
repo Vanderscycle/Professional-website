@@ -11,6 +11,9 @@ const config = {
   kit: {
     adapter: adapter(),
     vite: {
+      optimizeDeps: {
+        include: ["highlight.js/lib/core"],
+      },
       resolve: {
         alias: {
           $components: path.resolve('./src/components'),
