@@ -12,7 +12,7 @@ export let terminalName: string;
 export let terminalCommand: string;
 import { Highlight } from "svelte-highlight";
 import typescript from "svelte-highlight/src/languages/typescript";
-import tokyoNightDark from "./tokyo-night-dark.css";
+import { tokyoNightDark }from "../themes/tokyo-night-dark.css";
 $: code = `let bro:string = 'test'
 const peace: Object = { test: 69, bro: "Broete" };`;
 const peace: Object = { test: 69, bro: "Broete" };
