@@ -6,6 +6,7 @@
 </script>
 
 <script lang="ts">
+  import Terminal from "$components/ui/Terminal.svelte"
 
 </script>
 
@@ -13,7 +14,12 @@
 
 <div class="bg-sky-500/75">
   <h1 class="text-3xl font-bold underline text-green-100">
-  Hello world!
+  Henri Vandersleyen
 </h1>
+      <Terminal 
+      terminalData="Hello World"
+      terminalName="Mining results"
+      terminalCommand="neofetch" 
+    />
 </div>
 </template>
