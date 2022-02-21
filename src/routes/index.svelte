@@ -11,16 +11,12 @@
       ]
 </script>
 
-<template
-
-<div class="bg-sky-500/75">
-  <h1 class="text-3xl font-bold underline text-green-100">
-  Henri Vandersleyen
-</h1>
-      <Terminal 
-      terminalData=terminalMsg 
+  <div class="bg-sky-500/75">
+    <h1 class="text-3xl font-bold underline text-green-100">
+    Henri Vandersleyen
+    </h1>
+    <Terminal 
+      terminalData={terminalMsg}
       terminalName="Mining results"
-      terminalCommand="neofetch" 
-    />
-</div>
-</template>
+      terminalCommand="neofetch" />
+  </div>
