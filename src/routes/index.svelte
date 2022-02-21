@@ -2,7 +2,6 @@
 //The fetch function exposed on the server to fetch data to prerender the template
   // export async function load({fetch}){
   // }
-
 </script>
 
 <script lang="ts">
@@ -10,7 +9,6 @@
   const terminalMsg :object[] = [
         { "msg":"Hello World"}
       ]
-
 </script>
 
 <template
