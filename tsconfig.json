@@ -31,20 +31,23 @@
     "allowJs": true,
     "checkJs": true,
     "paths": {
-      "$lib": [
-        "src/lib"
-      ],
       "$lib/*": [
         "src/lib/*"
       ],
       "$components/*": [
         "src/components/*"
       ],
+      "$routes/*": [
+        "src/routes/*"
+      ],
       "$stores/*": [
         "src/stores/*"
       ],
       "$icons/*": [
         "src/components/themes/icons/*"
+      ],
+      "$themes/*": [
+        "src/components/themes/*"
       ]
     }
   },

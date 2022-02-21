@@ -15,7 +15,6 @@ export { classStr as class };
 export let defaultPositionBgColor: string  = 'bg-terminalDarkYellow'
 export let toggledPositionBgColor: string =  'bg-terminalDarkBlack'
 export let toggleState: boolean = false
-
 </script>
 
 <template>
@@ -25,6 +24,7 @@ export let toggleState: boolean = false
     role="switch"
     aria-checked="false"
     on:click="{() => (toggleState = !toggleState)}">
+
     <span class="sr-only">Use setting</span>
     <!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
     <span

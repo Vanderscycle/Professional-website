@@ -3,7 +3,8 @@
 </script>
 
 <template>
-  <div class="text-center text-terminalDarkBlack bg-terminalDarkGui fixed inset-x-0 bottom-0">
+  <div class="dark:text-terminalDarkBlack dark:bg-terminalDarkGui text-terminalLightBg bg-terminalLightGui
+    fixed inset-x-0 bottom-0 text-center ">
     Copyright {new Date().getFullYear()}
   </div>
 </template>
