@@ -3,16 +3,21 @@
 
 import Toggle from "./ui/Toggle.svelte";
 import Heroicon from "$icons/Heroicon.svelte"
-import {heart as outlineHeart} from "$icons/outline"
-
-  
+import {sun as outlineSun} from "$icons/outline"
+import {moon as outlineMoon} from "$icons/outline"
+let toggleState:boolean = false
+$: toggleState
 </script>
 
 <template class ="">
   <div class="inline-flex w-full">
-    <Heroicon icon={outlineHeart}/>
+    {#if toggleState}
+      <Heroicon icon={outlineSun}/>
+    {:else }
+      <Heroicon icon={outlineMoon}/>
+    {/if}
     <span class="m-2">
-      <Toggle class=""/>
+      <Toggle bind:value={toggleState} class=""/>
     </span>
     <div class="grow"/>
   </div>

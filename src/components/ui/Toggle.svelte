@@ -9,27 +9,29 @@
 </style>
 
 <script lang="ts">
+let classStr = "";
 
 export { classStr as class };
-export let defaultPositionBgColor: string  = 'bg-terminalDarkBlack'
-export let toggledPositionBgColor: string = 'bg-terminalDarkYellow' 
+export let defaultPositionBgColor: string  = 'bg-terminalDarkYellow'
+export let toggledPositionBgColor: string =  'bg-terminalDarkBlack'
+export let toggleState: boolean = false
 
-let classStr = "";
-let toggle: boolean = false;
 </script>
 
 <template>
+    {toggleState}
+
   <button
     type="button"
     class="{`${classStr} default focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-terminalDarkBlack`}"
     role="switch"
     aria-checked="false"
-    on:click="{() => (toggle = !toggle)}">
+    on:click="{() => (toggleState = !toggleState)}">
     <span class="sr-only">Use setting</span>
     <!-- Enabled: "translate-x-5", Not Enabled: "translate-x-0" -->
     <span
       aria-hidden="true"
-      class="{toggle
+      class="{toggleState
         ? `translate-x-5 slideBall ${defaultPositionBgColor}`
         : `translate-x-0 slideBall ${toggledPositionBgColor}`}"></span>
   </button>

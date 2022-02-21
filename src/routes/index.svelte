@@ -7,7 +7,7 @@
 <script lang="ts">
 
   import Terminal from "$components/ui/Terminal.svelte"
-  const terminalMsg :object[] = [
+  const terminalMsg :object[] =  [
     { "msg":"Hello World"}
       ]
 </script>
