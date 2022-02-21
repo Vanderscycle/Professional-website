@@ -8,13 +8,17 @@
 <header>
   <title>SSR and SvelteKit</title>
 </header>
-<nav>
-  <NavBar/>
-</nav>
-<main>
-  <slot></slot>
-</main>
-<footer>
-  <Footer/>
-</footer>
 
+<div class="h-full">
+
+  <nav class="bg-terminalDarkGui">
+    <NavBar/>
+  </nav>
+  <main>
+    <slot></slot>
+  </main>
+  <footer>
+    <Footer/>
+  </footer>
+
+  </div>

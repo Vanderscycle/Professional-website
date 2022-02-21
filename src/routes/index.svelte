@@ -5,14 +5,14 @@
 </script>
 
 <script lang="ts">
+
   import Terminal from "$components/ui/Terminal.svelte"
   const terminalMsg :object[] = [
         { "msg":"Hello World"}
       ]
 </script>
-
-  <div class="bg-sky-500/75 h-full">
-    <h1 class="text-3xl font-bold underline text-green-100">
+  <div class="bg-terminalDarkBg p-2 flex-grow h-screen">
+    <h1 class="text-3xl text-terminalDarkText">
     Henri Vandersleyen
     </h1>
     <div class="w-5/6 ">

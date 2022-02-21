@@ -6,12 +6,12 @@ import Toggle from "./ui/Toggle.svelte";
   
 </script>
 
-<template>
+<template class ="">
   <div class="inline-flex w-full">
-    <div class="grow">
-      </div>
-
-  <Toggle class="m-2"/>
+    <div class="grow"/>
+    <span class="m-2">
+      <Toggle class=""/>
+    </span>
   </div>
 </template>
 
