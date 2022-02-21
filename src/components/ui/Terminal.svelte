@@ -10,19 +10,12 @@ pre[data-language="css"] {
 export let terminalData: Object[] = []; //usually a listy of objects
 export let terminalName: string;
 export let terminalCommand: string;
-    import {uiState} from "$stores/ui"
-    let { darkMode } = uiState;
-
+import {uiState} from "$stores/ui"
+let { darkMode } = uiState;
 import { Highlight } from "svelte-highlight";
 import typescript from "svelte-highlight/src/languages/typescript";
-import "$themes/tokyo-night-dark.css";
-import "$themes/tokyo-night-light.css";
-// $: code = `let bro:string = 'test'
-// const peace: Object = { test: 69, bro: "Broete" };`;
-// const peace: Object = { test: 69, bro: "Broete" };
-// <pre>
-//   <Highlight language="{typescript}" code="{code}" />
-// </pre>;
+// :$ $darkMode
+$: $darkMode ? import("$themes/tokyo-night-dark.css") : import("$themes/tokyo-night-light.css");
 </script>
 
 <svelte:head>
