@@ -43,7 +43,7 @@ const peace: Object = { test: 69, bro: "Broete" };
       </div>
     </div>
     <div
-      class="text-terminalDarkText bg-terminalDarkStorm max-h-96 m-2 overflow-y-auto overflow-x-clip JetBrainsMono py-2 ">
+      class="text-terminalDarkText bg-terminalDarkBg max-h-96 m-2 overflow-y-auto overflow-x-clip JetBrainsMono py-2 ">
       {#if terminalData.length !== 0}
         {#each terminalData as msg, i}
           <li class="pl-2 ">

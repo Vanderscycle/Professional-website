@@ -7,17 +7,20 @@
 
 <script lang="ts">
   import Terminal from "$components/ui/Terminal.svelte"
+  const terminalMsg :object[] = [
+        { "msg":"Hello World"}
+      ]
 
 </script>
 
-<template >
+<template
 
 <div class="bg-sky-500/75">
   <h1 class="text-3xl font-bold underline text-green-100">
   Henri Vandersleyen
 </h1>
       <Terminal 
-      terminalData="Hello World"
+      terminalData=terminalMsg 
       terminalName="Mining results"
       terminalCommand="neofetch" 
     />
