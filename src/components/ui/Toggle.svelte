@@ -9,11 +9,12 @@
 </style>
 
 <script lang="ts">
-let classStr = "";
-export { classStr as class };
 
+export { classStr as class };
 export let defaultPositionBgColor: string  = 'bg-terminalDarkBlack'
 export let toggledPositionBgColor: string = 'bg-terminalDarkYellow' 
+
+let classStr = "";
 let toggle: boolean = false;
 </script>
 

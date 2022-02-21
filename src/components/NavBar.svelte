@@ -7,10 +7,12 @@ import Toggle from "./ui/Toggle.svelte";
 </script>
 
 <template>
-  <div class="">
-    Navbar goes here
+  <div class="inline-flex w-full">
+    <div class="grow">
+      </div>
+
+  <Toggle class="m-2"/>
   </div>
-  <Toggle/>
 </template>
 
 <style lang="postcss">

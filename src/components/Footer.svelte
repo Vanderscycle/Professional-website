@@ -3,8 +3,10 @@
 </script>
 
 <template>
-  <div class="">
-    Footer Date goes here
+  <div class="text-center">
+    Copyright {new Date().getFullYear()}
+
+
   </div>
 </template>
 
