@@ -6,18 +6,20 @@ import Heroicon from "$icons/Heroicon.svelte"
 import {sun as outlineSun} from "$icons/outline"
 import {moon as outlineMoon} from "$icons/outline"
 let toggleState:boolean = false
-$: toggleState
 </script>
 
-<template class ="">
+<template class ="">    {toggleState}
+
   <div class="inline-flex w-full">
+    <div class="m-2">
     {#if toggleState}
       <Heroicon icon={outlineSun}/>
     {:else }
       <Heroicon icon={outlineMoon}/>
     {/if}
+        </div>
     <span class="m-2">
-      <Toggle bind:value={toggleState} class=""/>
+      <Toggle bind:toggleState={toggleState} class=""/>
     </span>
     <div class="grow"/>
   </div>

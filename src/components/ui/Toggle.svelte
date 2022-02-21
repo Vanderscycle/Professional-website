@@ -19,8 +19,6 @@ export let toggleState: boolean = false
 </script>
 
 <template>
-    {toggleState}
-
   <button
     type="button"
     class="{`${classStr} default focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-terminalDarkBlack`}"
