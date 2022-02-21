@@ -8,7 +8,7 @@
 
   import Terminal from "$components/ui/Terminal.svelte"
   const terminalMsg :object[] = [
-        { "msg":"Hello World"}
+    { "msg":"Hello World"}
       ]
 </script>
   <div class="bg-terminalDarkBg p-2 flex-grow h-screen">

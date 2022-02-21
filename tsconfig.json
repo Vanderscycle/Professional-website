@@ -43,8 +43,8 @@
       "$stores/*": [
         "src/stores/*"
       ],
-      "$static/*": [
-        "../static/*"
+      "$icons/*": [
+        "src/components/themes/icons/*"
       ]
     }
   },
