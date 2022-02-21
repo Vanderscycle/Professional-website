@@ -42,6 +42,9 @@
       ],
       "$stores/*": [
         "src/stores/*"
+      ],
+      "$static/*": [
+        "../static/*"
       ]
     }
   },
