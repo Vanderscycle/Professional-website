@@ -7,13 +7,16 @@ pre[data-language="css"] {
 </style>
 
 <script lang="ts">
+	import { fade } from 'svelte/transition';
+import { Highlight } from "svelte-highlight";
+import {uiState} from "$stores/ui"
+import typescript from "svelte-highlight/src/languages/typescript";
+
 export let terminalData: Object[] = []; //usually a listy of objects
 export let terminalName: string;
 export let terminalCommand: string;
-import {uiState} from "$stores/ui"
+
 let { darkMode } = uiState;
-import { Highlight } from "svelte-highlight";
-import typescript from "svelte-highlight/src/languages/typescript";
 // :$ $darkMode
 $: $darkMode ? import("$themes/tokyo-night-dark.css") : import("$themes/tokyo-night-light.css");
 </script>
@@ -42,15 +45,15 @@ $: $darkMode ? import("$themes/tokyo-night-dark.css") : import("$themes/tokyo-ni
     </div>
     <div
       class="dark:text-terminalDarkText dark:bg-terminalDarkBg text-terminalLightText bg-terminalLightBg 
-      max-h-96 m-2 overflow-y-auto overflow-x-clip JetBrainsMono py-2 ">
+      max-h-96 m-2 overflow-y-auto overflow-x-clip JetBrainsMono py-2">
       {#if terminalData.length !== 0}
         {#each terminalData as msg, i}
           <li class="pl-2 ">
-            [Aviary@User ~/{terminalName.replace(/ +/g, "")}]$
+            [HomePage@Henri ]$
             <span class="dark:text-terminalDarkGreen text-terminalLightGreen">{terminalCommand}
             </span>
             <span
-              class="text-terminalLightBlack dark:text-terminalDarkBlack ">
+              class="text-terminalLightBlack dark:text-terminalDarkBlack transition:fade">
               {`\t -o ${i}`}
               <pre><code
                   ><Highlight

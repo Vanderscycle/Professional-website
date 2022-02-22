@@ -6,19 +6,32 @@
 
 <script lang="ts">
 
+  
   import Terminal from "$components/ui/Terminal.svelte"
   const terminalMsg :object[] =  [
-    { "msg":"Hello World"}
+    { "msg":"Hello World"},
+    { "msg2":"Hello World2"}
       ]
 </script>
   <div class="dark:bg-terminalDarkBg bg-terminalLightBg p-2 flex-grow h-screen">
     <h1 class="text-3xl dark:text-terminalDarkText text-terminalLightText">
     Henri Vandersleyen
     </h1>
-    <div class="w-5/6 ">
-      <Terminal 
-        terminalData={terminalMsg}
-        terminalName="Mining results"
-        terminalCommand="neofetch" />
+    <div class="grid">
+      <div class="w-5/6 ">
+        <Terminal 
+          terminalData={terminalMsg}
+          terminalName="Welcome"
+          terminalCommand="greet" />
+      </div>
+      <div class="inline-flex">
+        <div class="w-1/6"/>
+        <div class="w-5/6">
+          <Terminal 
+            terminalData={terminalMsg}
+            terminalName="WhoAmI"
+            terminalCommand="whoami" />
+        </div>
+      </div>
     </div>
   </div>
