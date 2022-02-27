@@ -15,6 +15,8 @@ import typescript from "svelte-highlight/src/languages/typescript";
 export let terminalData: Object[] = []; //usually a listy of objects
 export let terminalName: string;
 export let terminalCommand: string;
+export let terminalFileLocation: string = "~";
+export let terminalRootName: string = "Linux";
 
 let { darkMode } = uiState;
 // :$ $darkMode
@@ -43,23 +45,19 @@ $: $darkMode ? import("$themes/tokyo-night-dark.css") : import("$themes/tokyo-ni
         class="rounded-full h-4 w-4 flex items-center justify-center bg-red-400 mt-2 mr-2">
       </div>
     </div>
+    <!--TODO: add maximum height -->
     <div
       class="dark:text-terminalDarkText dark:bg-terminalDarkBg text-terminalLightText bg-terminalLightBg 
       max-h-96 m-2 overflow-y-auto overflow-x-clip JetBrainsMono py-2">
       {#if terminalData.length !== 0}
         {#each terminalData as msg, i}
           <li class="pl-2 ">
-            [HomePage@Henri ]$
-            <span class="dark:text-terminalDarkGreen text-terminalLightGreen">{terminalCommand}
-            </span>
-            <span
-              class="text-terminalLightBlack dark:text-terminalDarkBlack transition:fade">
-              {`\t -o ${i}`}
+            [{terminalRootName}@Henri {terminalFileLocation}]$
               <pre><code
                   ><Highlight
                     language="{typescript}"
                     code="{JSON.stringify(msg, null, 4)}" /></code></pre>
-            </span>
+            <!-- </span> -->
           </li>
         {/each}
       {:else}

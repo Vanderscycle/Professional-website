@@ -16,7 +16,7 @@ let toggleState:boolean = false
   <div class="inline-flex w-full">
     <div class="mt-1.5 mx-2">
     {#if toggleState}
-      <Heroicon icon={outlineSun}/>
+      <Heroicon icon={outlineSun}  class={"text-terminalLightYellow"}/>
     {:else }
       <Heroicon icon={outlineMoon}/>
     {/if}

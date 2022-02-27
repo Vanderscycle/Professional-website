@@ -1,6 +1,7 @@
  <script>
-   // taken from
+  // taken from
   //https://github.com/martinse/svelte-heroicons
+  // will add a pr should I run into issues or find improvements
     export let icon;
     export let size = '1em';
    export {_class as class};

@@ -13,7 +13,7 @@
   <title>SSR and SvelteKit</title>
 </header>
 
-<div class="{$darkMode === true ? "dark h-full" : "h-full"}">
+<div class="{$darkMode === true ? 'dark h-full' : 'h-full'}">
 
   <nav class="dark:bg-terminalDarkGui bg-terminalLightGui">
     <NavBar/>
