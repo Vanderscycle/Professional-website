@@ -29,6 +29,16 @@
 			<Toggle bind:toggleState class="" />
 		</span>
 		<div class="grow" />
+		<span class="m-2"> Today Ukraine, tomorrow Europe, stop Russia </span>
+		<a href="https://www.icrc.org/en/where-we-work/europe-central-asia/ukraine">
+			<img
+				src="https://upload.wikimedia.org/wikipedia/commons/9/95/Lesser_Coat_of_Arms_of_Ukraine.svg"
+				alt="glory to the heroes"
+				width="32"
+				height="32"
+				class="mr-2"
+			/>
+		</a>
 	</div>
 </template>
 
