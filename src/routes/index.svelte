@@ -14,8 +14,9 @@
 	<h1 class="relative text-3xl dark:text-terminalDarkText text-terminalLightText">
 		Henri Vandersleyen
 	</h1>
-
-	Linux Loving, Terminal centric, Motivated Software devloper
+	<span class="dark:text-terminalDarkText text-terminalLightText">
+		Linux Loving, Terminal centric, Motivated Software devloper</span
+	>
 	<div class="grid">
 		<div class="w-5/6 ">
 			<Terminal terminalData={terminalMsg} terminalName="Welcome" terminalCommand="greet" />
