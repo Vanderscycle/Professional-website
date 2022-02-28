@@ -1,5 +1,14 @@
 [
   {
-    "msg": "Hello World"
+    "Bash/Fish": "Expert",
+    "Linux": "Advanced",
+    "Git/CI": "Advanced",
+    "HTML/CSS": "Advanced",
+    "Svelte frontend-framework": "Advanced",
+    "NestJS": "Advanced",
+    "Python": "Advanced",
+    "Docker": "Intermediate",
+    "Rust": "Intermediate",
+    "Go/Lua/Xmonad": "Basic"
   }
 ]
