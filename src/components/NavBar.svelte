@@ -25,9 +25,9 @@
 </script>
 
 <template class="">
-	{#if variables.currentState === "dev" && window.location.pathname === "/"}
-		dark: {$darkMode} T:{timesToggled}
-	{:else if timesToggled >= 2}
+	{#if variables.currentState === "dev"}
+		dark: {$darkMode} T:{timesToggled} {window.location.pathname}
+	{:else if timesToggled >= 2 && window.location.pathname === "/"}
 		<small class=""> (I am aware of the issue with dark/light mode)</small>
 	{/if}
 	<div class="inline-flex w-full">
