@@ -44,13 +44,14 @@
 		<!--TODO: add maximum height -->
 		<div
 			class="dark:text-terminalDarkText dark:bg-terminalDarkBg text-terminalLightText bg-terminalLightBg 
-      max-h-96 m-2 overflow-y-auto overflow-x-clip JetBrainsMono py-2"
+      max-h-96 m-2 overflow-y-auto overflow-x-clip JetBrainsMono py-2 flex-wrap flex"
 		>
 			{#if terminalData.length !== 0}
 				{#each terminalData as msg, i}
 					<li class="pl-2 ">
 						[{terminalRootName}@Henri {terminalFileLocation}]$
-						<pre><code><Highlight language={typescript} code={JSON.stringify(msg, null, 4)} /></code
+						<pre class="flex flex-wrap"><code
+								><Highlight language={typescript} code={JSON.stringify(msg, null, 4)} /></code
 							></pre>
 						<!-- </span> -->
 					</li>

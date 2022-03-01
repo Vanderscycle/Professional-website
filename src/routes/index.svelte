@@ -8,7 +8,7 @@
 	// add neofetch style to show my competences
 	import Terminal from "$components/ui/Terminal.svelte";
 	import skills from "$lib/data/skillsCompetences.json";
-	const terminalMsg: object[] = [{ msg: "Hello World" }, { msg2: "Hello World2" }];
+	import whoami from "$lib/data/whoami.json";
 	// https://flowbite.com/docs/components/timeline/
 </script>
 
@@ -21,7 +21,7 @@
 	>
 	<div class="grid">
 		<div class="w-5/6 ">
-			<Terminal terminalData={terminalMsg} terminalName="Welcome" terminalCommand="greet" />
+			<Terminal terminalData={whoami} terminalName="Welcome" terminalCommand="greet" />
 		</div>
 		<div class="inline-flex">
 			<div class="w-1/6" />
