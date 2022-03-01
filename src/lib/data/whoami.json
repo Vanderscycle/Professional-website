@@ -3,6 +3,8 @@
     "payload": "Hello world!, welcome to my website"
   },
   {
-    "whoami": "Henri Vandersleyen: A terminal centric, Linux loving, curious and motivated developer. I am interrested in all things computer related from simple automation to machine learning and web development."
-  }
+    "whoami": "Henri Vandersleyen: A terminal centric, Linux loving, curious and motivated developer."
+  },
+  {
+    "whatILove": "All things computer related from simple automation to machine learning and web development."}
 ]

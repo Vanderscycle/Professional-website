@@ -9,3 +9,6 @@
 ## CI/CD jest/cypress
 - [ ] can I use docker to pull the image and run test?
 - [ ] add some cypress/jest/pupeteer to
+
+## size response 
+- [ ] add the md/lg style
