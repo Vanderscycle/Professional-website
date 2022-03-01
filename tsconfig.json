@@ -31,11 +31,14 @@
     "allowJs": true,
     "checkJs": true,
     "paths": {
+      "$components/*": [
+        "src/components/*"
+      ],
       "$lib/*": [
         "src/lib/*"
       ],
-      "$components/*": [
-        "src/components/*"
+      "$api/*": [
+        "src/api/*"
       ],
       "$routes/*": [
         "src/routes/*"
