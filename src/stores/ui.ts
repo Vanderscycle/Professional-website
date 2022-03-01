@@ -5,7 +5,7 @@ class UIState {
   darkMode:  Writable<boolean>
   timesThemeBtnToggled: Writable<number>
 
-  constructor(){this.darkMode = writable(false), this.timesThemeBtnToggled = 0}
+  constructor(){this.darkMode = writable(false)}
 } 
 
 export const uiState = new UIState()

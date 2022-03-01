@@ -9,8 +9,8 @@
 	import Terminal from "$components/ui/Terminal.svelte";
 	import skills from "$lib/data/skillsCompetences.json";
 	import whoami from "$lib/data/whoami.json";
-
 	let message: string = "Hello There";
+
 	// https://flowbite.com/docs/components/timeline/
 </script>
 
