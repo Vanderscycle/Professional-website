@@ -31,7 +31,5 @@
     "typescript": "~4.5.5"
   },
   "type": "module",
-  "dependencies": {
-    "cowsay": "^1.5.0"
-  }
+  "dependencies": {}
 }

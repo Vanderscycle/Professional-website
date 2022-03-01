@@ -6,7 +6,6 @@
 
 <script lang="ts">
 	// add neofetch style to show my competences
-	import Cowsay from "$components/Cowsay.svelte";
 	import Terminal from "$components/ui/Terminal.svelte";
 	import skills from "$lib/data/skillsCompetences.json";
 	import whoami from "$lib/data/whoami.json";
@@ -26,16 +25,13 @@
 		<div class="w-5/6 ">
 			<Terminal terminalData={whoami} terminalName="Welcome" terminalCommand="greet" />
 		</div>
+		<div />
 		<div class="inline-flex">
 			<div class="w-1/6" />
 			<div class="w-5/6">
-				<Terminal
-					terminalData={skills}
-					terminalName="Skills and compentences"
-					terminalCommand="whoami"
-				/>
+				<Terminal terminalData={skills} terminalName="Skills " terminalCommand="whoami" />
 			</div>
 		</div>
 	</div>
-	<Cowsay {message} />
+	<!-- <Cowsay {message} /> -->
 </div>
