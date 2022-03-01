@@ -14,7 +14,7 @@
 	// https://flowbite.com/docs/components/timeline/
 </script>
 
-<div class="dark:bg-terminalDarkBg bg-terminalLightBg p-2 flex-grow h-screen">
+<div class="p-2 flex-grow">
 	<div class="text-center">
 		<h1 class="relative text-3xl dark:text-terminalDarkText text-terminalLightText">
 			Henri Vandersleyen

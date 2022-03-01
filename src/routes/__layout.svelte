@@ -8,19 +8,19 @@
 	let { darkMode } = uiState;
 </script>
 
-<svelte:head>
-	<link href="https://fonts.googleapis.com/css?family=jetbrains" rel="stylesheet" />
-</svelte:head>
+<svelte:head />
 
 <header>
-	<title>SSR and SvelteKit</title>
+	<title>Hello world</title>
+	<meta name="robots" content="noindex nofollow" />
+	<html lang="en" />
 </header>
 
 <div class={$darkMode === true ? "dark h-full" : "h-full"}>
 	<nav class="dark:bg-terminalDarkGui bg-terminalLightGui">
 		<NavBar />
 	</nav>
-	<main>
+	<main class="dark:bg-terminalDarkBg bg-terminalLightBg  h-screen">
 		<slot />
 	</main>
 	<footer>

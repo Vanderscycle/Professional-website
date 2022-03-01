@@ -15,6 +15,7 @@
 	let { darkMode } = uiState;
 	let message: string = "Today Ukraine, tomorrow Europe, stop Russia";
 	let visible: boolean = false;
+	let timesToggled: number = 0;
 	$: uiState.darkMode.set(!toggleState);
 
 	onMount(async () => {
@@ -24,8 +25,10 @@
 </script>
 
 <template class="">
-	{#if variables.currentState === "dev"}
-		dark: {$darkMode}
+	{#if variables.currentState === "dev" && window.location.pathname === "/"}
+		dark: {$darkMode} T:{timesToggled}
+	{:else if timesToggled >= 2}
+		<small class=""> (I am aware of the issue with dark/light mode)</small>
 	{/if}
 	<div class="inline-flex w-full">
 		<div class="mt-3 mx-2">
@@ -36,7 +39,7 @@
 			{/if}
 		</div>
 		<span class="mt-4 mx-2">
-			<Toggle bind:toggleState class="" />
+			<Toggle bind:toggleState class="" bind:timesToggled />
 		</span>
 		<div class="grow" />
 		{#if visible}

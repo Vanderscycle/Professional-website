@@ -12,3 +12,8 @@
 
 ## size response 
 - [ ] add the md/lg style
+
+## additiions
+
+- [ ] add a project showcase similar to github (check for solution).
+
