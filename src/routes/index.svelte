@@ -15,12 +15,12 @@
 </script>
 
 <div class="dark:bg-terminalDarkBg bg-terminalLightBg p-2 flex-grow h-screen">
-	<h1 class="relative text-3xl dark:text-terminalDarkText text-terminalLightText">
-		Henri Vandersleyen
-	</h1>
-	<span class="dark:text-terminalDarkText text-terminalLightText">
-		Linux Loving, Terminal centric, Motivated Software devloper</span
-	>
+	<div class="text-center">
+		<h1 class="relative text-3xl dark:text-terminalDarkText text-terminalLightText">
+			Henri Vandersleyen
+		</h1>
+		<span class="dark:text-terminalDarkText text-terminalLightText"> Software developer</span>
+	</div>
 	<div class="grid">
 		<div class="w-5/6 ">
 			<Terminal terminalData={whoami} terminalName="Welcome" terminalCommand="greet" />
