@@ -13,7 +13,7 @@
 
 	let toggleState: boolean = false;
 	let { darkMode } = uiState;
-	let message: string = "Today Ukraine, tomorrow Europe, stop Russia";
+	let message: string = "Today Ukraine, tomorrow Europe. Stop Russia!";
 	let visible: boolean = false;
 	let timesToggled: number = 0;
 	$: uiState.darkMode.set(!toggleState);
