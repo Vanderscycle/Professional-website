@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { fade } from "svelte/transition";
 	import { Highlight } from "svelte-highlight";
 	import { uiState } from "$stores/ui";
 	import typescript from "svelte-highlight/src/languages/typescript";
@@ -16,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<!-- {@html tokyoNightDark} -->
+	{@html tokyoNightDark}
 </svelte:head>
 
 <template>

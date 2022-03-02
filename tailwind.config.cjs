@@ -33,7 +33,7 @@ const config = {
   },
 
   plugins: [],
-  content: ["./src/**/*.{html,js,svelte,ts}"],
+  content: ["./src/**/*.{html,js,svelte,ts,css}"],
 };
 
 module.exports = config;
