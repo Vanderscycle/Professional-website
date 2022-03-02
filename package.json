@@ -1,6 +1,8 @@
 {
-  "name": "professional website",
+  "name": "vandercycles-website",
   "version": "0.0.1",
+  "license": "MIT",
+  "applicationId": "professional-website",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
