@@ -10,10 +10,12 @@
 	import { fade } from "svelte/transition";
 	import { onMount } from "svelte";
 	import { sleep } from "$lib/helper";
+  import Button from "$components/ui/Button.svelte"
+  import { goto } from '$app/navigation';
 
 	let toggleState: boolean = false;
 	let { darkMode } = uiState;
-	let message: string = "Today Ukraine, tomorrow Europe. Stop Russia!";
+	let message: string = "Today Ukraine, tomorrow Europe. Stop Putin!";
 	let visible: boolean = false;
 	let timesToggled: number = 0;
 	$: uiState.darkMode.set(!toggleState);
@@ -41,6 +43,8 @@
 		<span class="mt-4 mx-2">
 			<Toggle bind:toggleState class="" bind:timesToggled />
 		</span>
+    <Button callbackFn={()=>goto("/projects")}>Projects</Button>
+    <Button callbackFn={()=>goto("/about")}>About</Button>
 		<div class="grow" />
 		{#if visible}
 			<span class="m-4 justify-items-center" in:fade={{ duration: 1000 }}> {message} </span>

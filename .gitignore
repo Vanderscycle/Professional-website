@@ -8,3 +8,4 @@ node_modules
 !.env.example
 target
 pnpm-lock.yaml
+*.lock
