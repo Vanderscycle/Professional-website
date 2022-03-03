@@ -10,11 +10,11 @@
 	import skills from "$lib/data/skillsCompetences.json";
 	import whoami from "$lib/data/whoami.json";
 	let message: string = "Hello There";
-
+  
 	// https://flowbite.com/docs/components/timeline/
 </script>
 
-<div class="p-2 flex-grow">
+<div class="p-2 flex-grow h-screen">
 	<div class="text-center">
 		<h1 class="relative text-3xl dark:text-terminalDarkText text-terminalLightText">
 			Henri Vandersleyen
