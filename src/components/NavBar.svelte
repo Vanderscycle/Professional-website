@@ -28,9 +28,10 @@
 
 <template class="">
 	{#if variables.currentState === "dev"}
-		dark: {$darkMode} T:{timesToggled} {window.location.pathname}
-	{:else if timesToggled >= 2 && window.location.pathname === "/"}
-		<small class=""> (I am aware of the issue with dark/light mode)</small>
+		dark: {$darkMode} T:{timesToggled}
+		{window.location.pathname}
+		<!-- {:else if timesToggled >= 2 && window.location.pathname === "/"} -->
+		<!-- 	<small class=""> (I am aware of the issue with dark/light mode)</small> -->
 	{/if}
 	<div class="inline-flex w-full">
 		<div class="mt-3 mx-2">

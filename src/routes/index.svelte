@@ -18,12 +18,11 @@
 	<title>Bienvenue</title>
 </svelte:head>
 
-<div class="p-2 flex-grow h-screen">
+<div class="p-2 flex-grow h-screen dark:text-terminalDarkText text-terminalLightText">
 	<div class="text-center">
-		<h1 class="relative text-3xl dark:text-terminalDarkText text-terminalLightText">
-			Henri Vandersleyen
-		</h1>
-		<span class="dark:text-terminalDarkText text-terminalLightText"> Software developer</span>
+		<h1 class="relative text-3xl">Henri Vandersleyen</h1>
+		<p class="underline decoration-terminalDarkYellow">Software developer</p>
+		<small class=""> (I am aware of the issue with dark/light mode)*</small>
 	</div>
 	<div class="grid">
 		<div class="w-5/6 ">

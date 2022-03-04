@@ -7,8 +7,8 @@
 </svelte:head>
 
 <template>
-	<div class="text-center flex flex-col justify-center items-center ">
-		<h1 class="relative text-3xl dark:text-terminalDarkText text-terminalLightText py-4 underline ">
+	<div class="text-center flex flex-col justify-center items-center">
+		<h1 class="relative text-3xl dark:text-terminalDarkText text-terminalLightText py-4 underline">
 			The mountain
 		</h1>
 		<a href="https://github.com/Vanderscycle" target="_blank">
