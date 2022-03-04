@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ProjectCard from "$components/ProjectCard.svelte";
+	import Badge from "$components/ui/Badge.svelte";
 </script>
 
 <svelte:head>
@@ -7,6 +8,7 @@
 </svelte:head>
 
 <template>
+	<Badge msg="UnderConstruction" badgeColor="dark:bg-terminalDarkYellow bg-terminalLightYellow" />
 	<div
 		class="text-center flex flex-col justify-center items-center dark:text-terminalDarkText text-terminalLightText"
 	>
