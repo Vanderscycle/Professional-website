@@ -12,19 +12,19 @@
 			<slot name="title">
 				<span
 					class="underline text-red-500 rounded-xl bg-yellow-400 p-2 m-2 border-2 border-blue-400"
-					>Missing Title
+					>Missing title
 				</span>
 			</slot>
-			<slot name="Description">
+			<slot name="description">
 				<span
 					class="underline text-red-500 rounded-xl bg-yellow-400 p-2 m-2 border-2 border-blue-400"
-					>Missing Description</span
+					>Missing description</span
 				>
 			</slot>
-			<slot name="Badges">
+			<slot name="badges">
 				<span
 					class="underline text-red-500 rounded-xl bg-yellow-400 p-2 m-2 border-2 border-blue-400"
-					>Missing Badges</span
+					>Missing badges</span
 				>
 			</slot>
 		</div>
