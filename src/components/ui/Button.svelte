@@ -1,9 +1,12 @@
 <script lang="ts">
-	export let callbackFn: () => void;
 	import { uiState } from "$stores/ui";
+	let extraClass: string;
 	let { darkMode } = uiState;
-
 	let hoverState: string = "";
+
+	export let callbackFn: () => void;
+	export { extraClass as class };
+
 	$: hoverState = $darkMode
 		? "hover:text-terminalLightWhite hover:bg-terminalLightBg hover:decoration-terminalLightRed"
 		: "hover:text-terminalDarkWhite hover:bg-terminalDarkBg hover:decoration-terminalDarkRed";

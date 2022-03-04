@@ -8,10 +8,7 @@
 	let { darkMode } = uiState;
 </script>
 
-<svelte:head />
-
 <header>
-	<title>Hello world</title>
 	<meta name="robots" content="noindex nofollow" />
 	<html lang="en" />
 </header>
