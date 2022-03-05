@@ -1,3 +1,4 @@
+//TODO: figureOut how you can have a dynamic import style e.g. the color codes are auto imported.
 const config = {
   mode: "jit",
   purge: ["./src/**/*.{js,svelte,ts}"],

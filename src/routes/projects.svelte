@@ -18,13 +18,46 @@
 			(Under construction)*</small
 		>
 		<div class="py-2">
-			<ProjectCard><span slot="title">Dotfiles</span></ProjectCard>
+			<ProjectCard url="https://github.com/Vanderscycle/dot-config">
+				<span slot="img">
+					<img
+						class="h-24 w-24 m-2 border-4 dark:border-terminalDarkWhite border-terminalLightWhite rounded-full"
+						src="https://avatars.dicebear.com/api/identicon/https%3A%2F%2Fgithub.com%2FVanderscycle%2Fdot-config.svg"
+						alt="doots"
+					/>
+				</span>
+				<span
+					slot="title"
+					class="text-xl underline  dark:decoration-terminalDarkMagenta decoration-terminalLightMagenta decoration-2"
+				>
+					Dotfiles</span
+				>
+				<span slot="description">My Linux configuration</span>
+				<span slot="badges">
+					<Badge
+						msg="Production"
+						badgeColor="dark:bg-terminalDarkGreen bg-terminalLightGreen"
+						badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
+					/>
+				</span></ProjectCard
+			>
 		</div>
 		<div class=" py-2">
-			<ProjectCard
-				><span slot="title">Profesional Website</span><span slot="description"
-					>Repo of the website you are currently navigating</span
-				><span slot="badges">
+			<ProjectCard url="https://github.com/Vanderscycle/Professional-website">
+				<span slot="img">
+					<img
+						class="h-24 w-24 m-2 border-4 dark:border-terminalDarkWhite border-terminalLightWhite rounded-full"
+						src="https://avatars.dicebear.com/api/identicon/https%3A%2F%2Fgithub.com%2FVanderscycle%2FProfessional-website.svg"
+						alt="doots"
+					/>
+				</span>
+				<span
+					slot="title"
+					class="text-xl underline  dark:decoration-terminalDarkMagenta decoration-terminalLightMagenta decoration-2"
+					>Profesional Website</span
+				>
+				<span slot="description">Repo of the website you are currently navigating</span>
+				<span slot="badges">
 					<Badge
 						msg="UnderConstruction"
 						badgeColor="dark:bg-terminalDarkYellow bg-terminalLightYellow"
