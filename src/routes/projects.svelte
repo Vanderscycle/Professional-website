@@ -8,16 +8,6 @@
 </svelte:head>
 
 <template>
-	<Badge
-		msg="UnderConstruction"
-		badgeColor="dark:bg-terminalDarkYellow bg-terminalLightYellow"
-		badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
-	/>
-	<Badge
-		msg="Bug"
-		badgeColor="dark:bg-terminalDarkRed bg-terminalLightRed"
-		badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
-	/>
 	<div
 		class="text-center flex flex-col justify-center items-center dark:text-terminalDarkText text-terminalLightText"
 	>
@@ -34,8 +24,19 @@
 			<ProjectCard
 				><span slot="title">Profesional Website</span><span slot="description"
 					>Repo of the website you are currently navigating</span
-				></ProjectCard
-			>
+				><span slot="badges">
+					<Badge
+						msg="UnderConstruction"
+						badgeColor="dark:bg-terminalDarkYellow bg-terminalLightYellow"
+						badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
+					/>
+					<Badge
+						msg="Bug"
+						badgeColor="dark:bg-terminalDarkRed bg-terminalLightRed"
+						badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
+					/></span
+				>
+			</ProjectCard>
 		</div>
 	</div>
 </template>
