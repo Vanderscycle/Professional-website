@@ -36,7 +36,7 @@
 			― Angela Duckworth, Grit: The Power of Passion and Perseverance
 		</p>
 		{#if !viewResume}
-			<Button callbackFn={() => (viewResume = !viewResume)}>
+			<Button class="border-0" hoverToggle={false} callbackFn={() => (viewResume = !viewResume)}>
 				<Badge
 					msg="View Resume"
 					badgeColor="dark:bg-terminalDarkGreen bg-terminalLightGreen"
@@ -44,7 +44,7 @@
 				/>
 			</Button>
 		{:else}
-			<Button callbackFn={() => (viewResume = !viewResume)}>
+			<Button class="border-0" hoverToggle={false} callbackFn={() => (viewResume = !viewResume)}>
 				<Badge
 					msg="Close"
 					badgeColor="dark:bg-terminalDarkRed bg-terminalLightRed"

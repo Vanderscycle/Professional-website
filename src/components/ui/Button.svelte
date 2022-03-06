@@ -5,11 +5,14 @@
 	let hoverState: string = "";
 
 	export let callbackFn: () => void;
+	export let hoverToggle: boolean = true;
 	export { extraClass as class };
 
-	$: hoverState = $darkMode
-		? "hover:text-terminalLightWhite hover:bg-terminalLightBg hover:decoration-terminalLightRed"
-		: "hover:text-terminalDarkWhite hover:bg-terminalDarkBg hover:decoration-terminalDarkRed";
+	$: if (hoverToggle) {
+		hoverState = $darkMode
+			? "hover:text-terminalLightWhite hover:bg-terminalLightBg hover:decoration-terminalLightRed"
+			: "hover:text-terminalDarkWhite hover:bg-terminalDarkBg hover:decoration-terminalDarkRed";
+	}
 </script>
 
 <template>
