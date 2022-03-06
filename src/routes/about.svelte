@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Badge from "$components/ui/Badge.svelte";
-
 	import Button from "$components/ui/Button.svelte";
 	import QrCode from "$components/ui/QrCode.svelte";
 

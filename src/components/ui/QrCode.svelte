@@ -8,12 +8,16 @@
 	//lib from https://github.com/soldair/node-qrcode
 	import { variables } from "$lib/variables";
 	import QRCode from "qrcode";
+	import CopyToClipboard from "svelte-copy-to-clipboard";
 	import { onMount } from "svelte";
 	import { getContext } from "svelte";
 	import Popup from "$components/ui/Popup.svelte";
+	import Button from "$components/ui/Button.svelte";
+	import Badge from "$components/ui/Badge.svelte";
 
 	let canvas: HTMLCanvasElement;
 	export let data: string = "";
+	export let hyperlink: boolean = false;
 	const { open } = getContext("simple-modal");
 	onMount(() => {
 		QRCode.toCanvas(canvas, data, { errorCorrectionLevel: "H" }, (error) => {
@@ -33,8 +37,27 @@
 		<canvas
 			class="rounded-xl cursor-pointer"
 			bind:this={canvas}
-			on:click={() => open(Popup, { message: "Copied to clipboard" }, { closeButton: false })}
+			on:click={() =>
+				open(
+					Popup,
+					{ message: "Follow link", url: data },
+					{ closeButton: false },
+					{
+						open: () => {
+							console.log("svelte allows you to do plenty of cool stuff, eh!");
+						}
+					}
+				)}
 		/>
+		<CopyToClipboard text={data} let:copy>
+			<Button class="border-0 no-underline" hoverToggle={false} callbackFn={() => copy}>
+				<Badge
+					msg="Copy to clipboard"
+					badgeColor="dark:bg-terminalDarkBlue bg-terminalLightBlue"
+					badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
+				/>
+			</Button>
+		</CopyToClipboard>
 		{#if variables.currentState === "dev"}
 			{data}
 		{/if}
