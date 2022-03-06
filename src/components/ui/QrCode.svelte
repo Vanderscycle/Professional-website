@@ -27,7 +27,7 @@
 	<div
 		class="text-center flex flex-col justify-center items-center dark:text-terminalDarkText text-terminalLightText"
 	>
-		<canvas bind:this={canvas} />
+		<canvas class="rounded-xl" bind:this={canvas} />
 		{#if variables.currentState === "dev"}
 			{data}
 		{/if}
