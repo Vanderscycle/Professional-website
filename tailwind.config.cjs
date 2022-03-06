@@ -1,13 +1,16 @@
 //TODO: figureOut how you can have a dynamic import style e.g. the color codes are auto imported.
-const config = {
+var dark = require("./tailwindcss/tokyo-night-dark.json")
+var light = require("./tailwindcss/tokyo-night-light.json")
+
+module.exports = {
   mode: "jit",
   purge: ["./src/**/*.{js,svelte,ts}"],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        //TOKYO_NIGHT_DARK 
-        terminalDarkBg: "#1a1b26",
+        //DARK_MODE 
+        terminalDarkBg: dark.bg,
         terminalDarkStorm: "#24283b",
         terminalDarkText: "#9aa5ce",
         terminalDarkBlack: "#414868",
@@ -18,8 +21,8 @@ const config = {
         terminalDarkMagenta: "#bb9af7",
         terminalDarkWhite: "#c0caf5",
         terminalDarkGui: "#a9b1d6",
-        //TOKYO_NIGHT_LIGHT 
-        terminalLightBg: "#d5d6db",
+        //LIGHT_MODE 
+        terminalLightBg: light.bg,
         terminalLightText: "#565a6e",
         terminalLightBlack: "#0f0f14",
         terminalLightGreen: "#33635c",
@@ -37,4 +40,4 @@ const config = {
   content: ["./src/**/*.{html,js,svelte,ts,css}"],
 };
 
-module.exports = config;
+// module.exports = config;
