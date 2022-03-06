@@ -1,10 +1,12 @@
 <script lang="ts">
+	//lib from https://github.com/soldair/node-qrcode
 	import QRCode from "qrcode";
 	import { onMount } from "svelte";
 	export let data: string = "";
-	let canvas;
+
+	let canvas: HTMLCanvasElement;
 	onMount(() => {
-		QRCode.toCanvas(canvas, "sample text", { errorCorrectionLevel: "H" }, (error) => {
+		QRCode.toCanvas(canvas, data, { errorCorrectionLevel: "H" }, (error) => {
 			if (error) {
 				console.error(error);
 			} else {

@@ -5,6 +5,12 @@
 	let viewResume: boolean = false;
 	const resumeUrl: string =
 		"https://github.com/Vanderscycle/dot-config/blob/main/resume/HenriVandersleyenResume.pdf";
+	let testdata = {
+		id: 1,
+		name: "User",
+		email: "user@gmail.com"
+	};
+	console.log(JSON.stringify(testdata));
 </script>
 
 <svelte:head>
@@ -32,7 +38,8 @@
 		<p class="dark:text-terminalDarkText text-terminalLightText">
 			― Angela Duckworth, Grit: The Power of Passion and Perseverance
 		</p>
-		<QrCode data="test" />
+		<!-- <QrCode data="tesdasdasdasdadsdast" /> -->
+		<QrCode data={JSON.stringify(testdata)} />
 	</div>
 </template>
 
