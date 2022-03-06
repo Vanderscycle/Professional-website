@@ -9,9 +9,12 @@
 	import { variables } from "$lib/variables";
 	import QRCode from "qrcode";
 	import { onMount } from "svelte";
-	export let data: string = "";
+	import { getContext } from "svelte";
+	import Popup from "$components/ui/Popup.svelte";
 
 	let canvas: HTMLCanvasElement;
+	export let data: string = "";
+	const { open } = getContext("simple-modal");
 	onMount(() => {
 		QRCode.toCanvas(canvas, data, { errorCorrectionLevel: "H" }, (error) => {
 			if (error) {
@@ -27,7 +30,11 @@
 	<div
 		class="text-center flex flex-col justify-center items-center dark:text-terminalDarkText text-terminalLightText"
 	>
-		<canvas class="rounded-xl" bind:this={canvas} />
+		<canvas
+			class="rounded-xl cursor-pointer"
+			bind:this={canvas}
+			on:click={() => open(Popup, { message: "Copied to clipboard" }, { closeButton: false })}
+		/>
 		{#if variables.currentState === "dev"}
 			{data}
 		{/if}

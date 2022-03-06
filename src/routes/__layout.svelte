@@ -4,8 +4,8 @@
 	import NavBar from "$components/NavBar.svelte";
 	import Footer from "$components/Footer.svelte";
 	import { uiState } from "$stores/ui";
-
 	let { darkMode } = uiState;
+	import Modal from "svelte-simple-modal";
 </script>
 
 <header>
@@ -18,7 +18,9 @@
 		<NavBar />
 	</nav>
 	<main class="dark:bg-terminalDarkBg bg-terminalLightBg  h-screen">
-		<slot />
+		<Modal>
+			<slot />
+		</Modal>
 	</main>
 	<footer>
 		<Footer />

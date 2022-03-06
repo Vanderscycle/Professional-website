@@ -15,10 +15,11 @@
 </svelte:head>
 
 <template>
-	<div class="text-center flex flex-col justify-center items-center">
-		<h1 class="relative text-3xl dark:text-terminalDarkText text-terminalLightText py-4 underline">
-			The mountain
-		</h1>
+	<div
+		class="text-center flex flex-col justify-center items-center  dark:text-terminalDarkText text-terminalLightText"
+	>
+		<h1 class="relative text-3xl py-4 underline">The mountain</h1>
+		<small class=""> (I am aware of the issue at build time)*</small>
 		<a href="https://github.com/Vanderscycle" target="_blank">
 			<img
 				{src}
@@ -36,7 +37,11 @@
 			― Angela Duckworth, Grit: The Power of Passion and Perseverance
 		</p>
 		{#if !viewResume}
-			<Button class="border-0" hoverToggle={false} callbackFn={() => (viewResume = !viewResume)}>
+			<Button
+				class="border-0 no-underline"
+				hoverToggle={false}
+				callbackFn={() => (viewResume = !viewResume)}
+			>
 				<Badge
 					msg="View Resume"
 					badgeColor="dark:bg-terminalDarkGreen bg-terminalLightGreen"
@@ -44,7 +49,11 @@
 				/>
 			</Button>
 		{:else}
-			<Button class="border-0" hoverToggle={false} callbackFn={() => (viewResume = !viewResume)}>
+			<Button
+				class="border-0 no-underline"
+				hoverToggle={false}
+				callbackFn={() => (viewResume = !viewResume)}
+			>
 				<Badge
 					msg="Close"
 					badgeColor="dark:bg-terminalDarkRed bg-terminalLightRed"
