@@ -1,5 +1,15 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	const src: string = "static/theMountain.jpg";
+	let PdfViewer;
+
+	onMount(async () => {
+		const module = await import("svelte-pdf");
+		PdfViewer = module.default;
+	});
+	let viewResume: boolean = false;
+	const resumeUrl: string =
+		"https://github.com/Vanderscycle/dot-config/blob/main/resume/HenriVandersleyenResume.pdf";
 </script>
 
 <svelte:head>
@@ -28,6 +38,7 @@
 			― Angela Duckworth, Grit: The Power of Passion and Perseverance
 		</p>
 	</div>
+	<svelte:component this={PdfViewer} url={resumeUrl} />
 </template>
 
 <style lang="postcss"></style>
