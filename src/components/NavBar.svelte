@@ -21,7 +21,7 @@
 	$: uiState.darkMode.set(!toggleState);
 
 	onMount(async () => {
-		await sleep(1000);
+		await sleep(1500);
 		visible = true;
 	});
 </script>

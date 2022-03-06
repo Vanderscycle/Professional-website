@@ -1,5 +1,12 @@
 <script lang="ts">
+	// let testdata = {
+	// 	id: 1,
+	// 	name: "User",
+	// 	email: "user@gmail.com"
+	// };
+	// console.log(JSON.stringify(testdata));
 	//lib from https://github.com/soldair/node-qrcode
+	import { variables } from "$lib/variables";
 	import QRCode from "qrcode";
 	import { onMount } from "svelte";
 	export let data: string = "";
@@ -17,9 +24,13 @@
 </script>
 
 <template>
-	<div class="text-center flex flex-col justify-center items-center">
+	<div
+		class="text-center flex flex-col justify-center items-center dark:text-terminalDarkText text-terminalLightText"
+	>
 		<canvas bind:this={canvas} />
-		{data}
+		{#if variables.currentState === "dev"}
+			{data}
+		{/if}
 	</div>
 </template>
 

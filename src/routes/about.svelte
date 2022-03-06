@@ -1,16 +1,13 @@
 <script lang="ts">
+	import Badge from "$components/ui/Badge.svelte";
+
+	import Button from "$components/ui/Button.svelte";
 	import QrCode from "$components/ui/QrCode.svelte";
 
 	const src: string = "static/theMountain.jpg";
 	let viewResume: boolean = false;
 	const resumeUrl: string =
 		"https://github.com/Vanderscycle/dot-config/blob/main/resume/HenriVandersleyenResume.pdf";
-	let testdata = {
-		id: 1,
-		name: "User",
-		email: "user@gmail.com"
-	};
-	console.log(JSON.stringify(testdata));
 </script>
 
 <svelte:head>
@@ -38,8 +35,24 @@
 		<p class="dark:text-terminalDarkText text-terminalLightText">
 			― Angela Duckworth, Grit: The Power of Passion and Perseverance
 		</p>
-		<!-- <QrCode data="tesdasdasdasdadsdast" /> -->
-		<QrCode data={JSON.stringify(testdata)} />
+		{#if !viewResume}
+			<Button callbackFn={() => (viewResume = !viewResume)}>
+				<Badge
+					msg="View Resume"
+					badgeColor="dark:bg-terminalDarkGreen bg-terminalLightGreen"
+					badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
+				/>
+			</Button>
+		{:else}
+			<Button callbackFn={() => (viewResume = !viewResume)}>
+				<Badge
+					msg="Close"
+					badgeColor="dark:bg-terminalDarkRed bg-terminalLightRed"
+					badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
+				/>
+			</Button>
+			<QrCode data={resumeUrl} />
+		{/if}
 	</div>
 </template>
 
