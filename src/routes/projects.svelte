@@ -12,11 +12,7 @@
 		class="text-center flex flex-col justify-center items-center dark:text-terminalDarkText text-terminalLightText"
 	>
 		<h1 class="relative text-3xl  py-4 underline">Projects</h1>
-		<small
-			class="underline decoration-wavy dark:decoration-terminalDarkRed decoration-terminalLightRed"
-		>
-			(Under construction)*</small
-		>
+
 		<div class="py-2">
 			<ProjectCard url="https://github.com/Vanderscycle/dot-config">
 				<span slot="img">
@@ -37,6 +33,11 @@
 					<Badge
 						msg="Production"
 						badgeColor="dark:bg-terminalDarkGreen bg-terminalLightGreen"
+						badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
+					/>
+					<Badge
+						msg="Linux"
+						badgeColor="dark:bg-terminalDarkBlue bg-terminalLightBlue"
 						badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
 					/>
 				</span></ProjectCard
@@ -64,12 +65,17 @@
 						badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
 					/>
 					<Badge
-						msg="Bug"
+						msg="Bugs"
 						badgeColor="dark:bg-terminalDarkRed bg-terminalLightRed"
 						badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
-					/></span
-				>
+					/>
+				</span>
 			</ProjectCard>
+			<p
+				class="underline decoration-4 underline-offset-8 mt-4 dark:decoration-terminalDarkYellow decoration-terminalLightYellow"
+			>
+				This is only the beginning
+			</p>
 		</div>
 	</div>
 </template>
