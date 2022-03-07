@@ -10,3 +10,4 @@ target
 pnpm-lock.yaml
 *.lock
 .vercel
+.vercelignore
