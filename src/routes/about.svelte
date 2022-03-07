@@ -3,7 +3,7 @@
 	import Button from "$components/ui/Button.svelte";
 	import QrCode from "$components/ui/QrCode.svelte";
 
-	const src: string = "static/theMountain.jpg";
+	const src: string = "theMountain.jpg";
 	let viewResume: boolean = false;
 	const resumeUrl: string =
 		"https://github.com/Vanderscycle/dot-config/blob/main/resume/HenriVandersleyenResume.pdf";
