@@ -12,12 +12,15 @@
 	import { sleep } from "$lib/helper";
 	import Button from "$components/ui/Button.svelte";
 	import { goto } from "$app/navigation";
+	import { routes } from "$stores/routes";
 
 	let toggleState: boolean = false;
 	let { darkMode } = uiState;
 	let message: string = "Today Ukraine, tomorrow Europe. Stop Putin!";
 	let visible: boolean = false;
 	let timesToggled: number = 0;
+
+	let filteredNav = $routes.filter((i) => i.url !== "/philosophy");
 	$: uiState.darkMode.set(!toggleState);
 
 	onMount(async () => {
@@ -42,9 +45,8 @@
 		<span class="mt-4 mx-2">
 			<Toggle bind:toggleState class="" bind:timesToggled />
 		</span>
-		<Button callbackFn={() => goto("/")}>/Home</Button>
-		<Button callbackFn={() => goto("/projects")}>/Projects</Button>
-		<Button callbackFn={() => goto("/about")}>/About</Button>
+		{#each filteredNav as navBtn}
+			<Button callbackFn={() => goto(navBtn.url)}>{navBtn.name}</Button>{/each}
 		<div class="grow" />
 		{#if visible}
 			<span class="m-4 justify-items-center" in:fade={{ duration: 1000 }}> {message} </span>
