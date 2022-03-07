@@ -55,7 +55,7 @@
 				<span
 					slot="title"
 					class="text-xl underline  dark:decoration-terminalDarkMagenta decoration-terminalLightMagenta decoration-2"
-					>Profesional Website</span
+					>Professional Website</span
 				>
 				<span slot="description">Repo of the website you are currently navigating</span>
 				<span slot="badges">
