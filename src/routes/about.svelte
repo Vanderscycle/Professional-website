@@ -18,7 +18,6 @@
 		class="text-center flex flex-col justify-center items-center  dark:text-terminalDarkText text-terminalLightText"
 	>
 		<h1 class="relative text-3xl py-4 underline">The mountain</h1>
-		<small class=""> (I am aware of the issue at build time)*</small>
 		<a href="https://github.com/Vanderscycle" target="_blank">
 			<img
 				{src}
