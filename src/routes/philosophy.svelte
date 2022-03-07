@@ -15,7 +15,7 @@
 			offered by your website
 		</p>
 		<h2 class="relative text-xl py-4 underline">Design</h2>
-		<p>Simplicity over clutter</p>
+		<p>Simplicity over bloat; Simple but vibrant colors over disjointed palette</p>
 	</div>
 </template>
 
