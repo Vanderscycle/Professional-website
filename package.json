@@ -5,7 +5,7 @@
   "applicationId": "professional-website",
   "scripts": {
     "dev": "svelte-kit dev",
-    "build": "svelte-kit build && rsync -av ./static/ ./.svelte-kit/ ",
+    "build": "svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
