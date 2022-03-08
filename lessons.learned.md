@@ -1,3 +1,4 @@
+
 ## Rust backend
 
 Podman needs a bit more [configuration](https://github.com/containers/podman/issues/9390#issuecomment-970305169)
@@ -29,3 +30,4 @@ This is really cool because it will autogrenerate a schema.rs in the src folder 
 
 ## Svelte frontend
 
+Impressive [websites](https://www.freecodecamp.org/news/15-web-developer-portfolios-to-inspire-you-137fb1743cae/)

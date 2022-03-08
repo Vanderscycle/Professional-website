@@ -5,13 +5,7 @@
 </script>
 
 <script lang="ts">
-	// add neofetch style to show my competences
-	import Terminal from "$components/ui/Terminal.svelte";
-	import skills from "$lib/data/skillsCompetences.json";
-	import whoami from "$lib/data/whoami.json";
-	let message: string = "Hello There";
-
-	// https://flowbite.com/docs/components/timeline/
+	const fillValue: string = "click me";
 </script>
 
 <svelte:head>
@@ -22,18 +16,10 @@
 	<div class="text-center">
 		<h1 class="relative text-3xl">Henri Vandersleyen</h1>
 		<p class="underline decoration-terminalDarkYellow">Software developer</p>
-		<small class=""> (I am aware of the issue with dark/light mode)*</small>
-	</div>
-	<div class="grid">
-		<div class="w-5/6 ">
-			<Terminal terminalData={whoami} terminalName="Welcome" terminalCommand="greet" />
+		<!-- AS per the docs the reason why there is -->
+		<div on:mouseover={() => console.log("hovering")} on:mouseout={() => console.log("out")}>
+			Purpose
 		</div>
-		<div />
-		<div class="inline-flex">
-			<div class="w-1/6" />
-			<div class="w-5/6">
-				<Terminal terminalData={skills} terminalName="Skills " terminalCommand="whoami" />
-			</div>
-		</div>
+		<div>Skills</div>
 	</div>
 </div>
