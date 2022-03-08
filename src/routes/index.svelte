@@ -5,6 +5,7 @@
 </script>
 
 <script lang="ts">
+	import { fade } from "svelte/transition";
 	const fillValue: string = "click me";
 	const paraValues: string[] = ["Purpose", "Skills"];
 	let hoveringToggleArray: boolean[] = [false, false];
@@ -27,7 +28,7 @@
 				on:mouseout={() => (hoveringToggleArray[i] = !hoveringToggleArray[i])}
 				on:click={() => console.log("cick")}
 			>
-				<h1 class="text-2xl">
+				<h1 class="text-2xl" in:fade out:fade>
 					{#if !hoveringToggleArray[i]}
 						{i} -> {val}
 					{:else}
