@@ -6,5 +6,6 @@ export const routes: Writable<navigationButton[]> = writable([
 	{ url: "/", name: "/Home" },
 	{ url: "/projects", name: "/Projects" },
 	{ url: "/philosophy", name: "/Philosophy" },
+	{ url: "/testbench", name: "/TestBench" },
 	{ url: "/about", name: "/About" }
 ]);

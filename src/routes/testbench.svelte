@@ -1,9 +1,3 @@
-<script context="module" lang="ts">
-	//The fetch function exposed on the server to fetch data to prerender the template
-	// export async function load({fetch}){
-	// }
-</script>
-
 <script lang="ts">
 	// add neofetch style to show my competences
 	import Terminal from "$components/ui/Terminal.svelte";
@@ -15,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Bienvenue</title>
+	<title>Welcome</title>
 </svelte:head>
 
 <div class="p-2 flex-grow h-screen dark:text-terminalDarkText text-terminalLightText">

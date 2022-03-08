@@ -13,14 +13,14 @@
 	import Button from "$components/ui/Button.svelte";
 	import { goto } from "$app/navigation";
 	import { routes } from "$stores/routes";
-
+	const unwantedRoutes: string[] = ["/philosophy", "/testbench"];
 	let toggleState: boolean = false;
 	let { darkMode } = uiState;
 	let message: string = "Today Ukraine, tomorrow Europe. Stop Putin!";
 	let visible: boolean = false;
 	let timesToggled: number = 0;
 
-	let filteredNav = $routes.filter((i) => i.url !== "/philosophy");
+	let filteredNav = $routes.filter((i) => !unwantedRoutes.includes(i.url));
 	$: uiState.darkMode.set(!toggleState);
 
 	onMount(async () => {
