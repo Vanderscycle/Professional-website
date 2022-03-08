@@ -50,7 +50,7 @@
 				)}
 		/>
 		<CopyToClipboard text={data} let:copy>
-			<Button class="border-0 no-underline" hoverToggle={false} callbackFn={() => copy}>
+			<Button class=" hidden border-0 no-underline" hoverToggle={false} callbackFn={() => copy}>
 				<Badge
 					msg="Copy to clipboard"
 					badgeColor="dark:bg-terminalDarkBlue bg-terminalLightBlue"
