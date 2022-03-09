@@ -29,8 +29,8 @@
 
 <div class="p-2 flex-grow h-screen dark:text-terminalDarkText text-terminalLightText">
 	<div class="text-center flex flex-col justify-center items-center ">
-		<h1 class="relative text-3xl">Henri Vandersleyen</h1>
-		<p class="underline decoration-terminalDarkYellow">Software developer</p>
+		<h1 class="relative text-4xl">Henri Vandersleyen</h1>
+		<p class="underline decoration-terminalDarkYellow text-xl">Software developer</p>
 		<!-- AS per the docs the reason why Svetle want an on:blur and on:focus is to accomodate for keebs -->
 		{#if variables.currentState === "dev"}
 			Toggle status: {hoveringToggleArray}
@@ -44,7 +44,7 @@
 				on:click={() => console.log("cick")}
 			>
 				<h1
-					class={`text-2xl cursor-pointer underline decoration-1`}
+					class={`text-3xl cursor-pointer underline decoration-1`}
 					in:fade
 					out:fade
 					on:click={() => (expandInfoArray[i] = !expandInfoArray[i])}
@@ -61,10 +61,9 @@
 						<Terminal
 							terminalData={textAboutMe[i]}
 							terminalName="Skills"
-							terminalCommand="whoami"
+							terminalCommand={false}
 						/>{:else}
-						{textAboutMe[i]}
-					{/if}
+						<p class="text-xl">{textAboutMe[i]}</p>{/if}
 				</div>{/if}
 		{/each}
 	</div>
