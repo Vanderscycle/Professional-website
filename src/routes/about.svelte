@@ -58,7 +58,7 @@
 					badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
 				/>
 			</Button>
-			<QrCode data={resumeUrl} />
+			<QrCode data={resumeUrl} simpleModalMsg="View resume online" />
 		{/if}
 	</div>
 </template>

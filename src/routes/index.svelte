@@ -8,7 +8,7 @@
 	import { variables } from "$lib/variables";
 	import { slide } from "svelte/transition";
 	import { fade } from "svelte/transition";
-	const fillValue: string[] = ["why I do what I do", "how I apply my skills"];
+	const fillValue: string[] = ["Why I do what I do", "How I enact my vision"];
 	const paraValues: string[] = ["Purpose", "Skills"];
 	let hoveringToggleArray: boolean[] = [false, false];
 	let expandInfoArray: boolean[] = [false, false];

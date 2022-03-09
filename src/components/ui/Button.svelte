@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { uiState } from "$stores/ui";
-	let extraClass: string;
 	let { darkMode } = uiState;
+	let extraClass: string;
 	let hoverState: string = "";
 
 	export let callbackFn: () => void;

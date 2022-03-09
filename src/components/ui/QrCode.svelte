@@ -17,6 +17,7 @@
 
 	let canvas: HTMLCanvasElement;
 	export let data: string = "";
+	export let simpleModalMsg: string = "Follow link";
 	export let hyperlink: boolean = false;
 	const { open } = getContext("simple-modal");
 	onMount(() => {
@@ -40,7 +41,7 @@
 			on:click={() =>
 				open(
 					Popup,
-					{ message: "Follow link", url: data },
+					{ message: simpleModalMsg, url: data },
 					{ closeButton: false },
 					{
 						open: () => {
