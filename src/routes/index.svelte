@@ -8,8 +8,16 @@
 	import { variables } from "$lib/variables";
 	import { slide } from "svelte/transition";
 	import { fade } from "svelte/transition";
-	const fillValue: string[] = ["Why I do what I do", "How I enact my vision"];
-	const paraValues: string[] = ["Purpose", "Skills"];
+	import skills from "$lib/data/skillsCompetences.json";
+	import whoami from "$lib/data/whoami.json";
+
+	const fillValue: string[] = [
+		"Why, I do what I do",
+		"How, I enact my vision",
+		"What, I am capable of"
+	];
+	const paraValues: string[] = ["Why?", "How?", "What?"];
+	const textAboutMe: string[] = [whoami.why, whoami.how, JSON.stringify(skills, null, 4)];
 	let hoveringToggleArray: boolean[] = [false, false];
 	let expandInfoArray: boolean[] = [false, false];
 </script>
@@ -47,7 +55,7 @@
 					{/if}
 				</h1>
 			</div>
-			{#if expandInfoArray[i]}<div class="" transition:slide>Opened</div>{/if}
+			{#if expandInfoArray[i]}<div class="" transition:slide>{textAboutMe[i]}</div>{/if}
 		{/each}
 	</div>
 </div>
