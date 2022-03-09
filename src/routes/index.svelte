@@ -10,6 +10,7 @@
 	import { fade } from "svelte/transition";
 	import skills from "$lib/data/skillsCompetences.json";
 	import whoami from "$lib/data/whoami.json";
+	import Terminal from "$components/ui/Terminal.svelte";
 
 	const fillValue: string[] = [
 		"Why, I do what I do",
@@ -17,7 +18,7 @@
 		"What, I am capable of"
 	];
 	const paraValues: string[] = ["Why?", "How?", "What?"];
-	const textAboutMe: string[] = [whoami.why, whoami.how, JSON.stringify(skills, null, 4)];
+	const textAboutMe: string[] = [whoami.why, whoami.how, skills];
 	let hoveringToggleArray: boolean[] = [false, false];
 	let expandInfoArray: boolean[] = [false, false];
 </script>
@@ -56,7 +57,14 @@
 				</h1>
 			</div>
 			{#if expandInfoArray[i]}<div class="w-6/12" transition:slide>
-					{textAboutMe[i]}
+					{#if i === 2}
+						<Terminal
+							terminalData={textAboutMe[i]}
+							terminalName="Skills"
+							terminalCommand="whoami"
+						/>{:else}
+						{textAboutMe[i]}
+					{/if}
 				</div>{/if}
 		{/each}
 	</div>

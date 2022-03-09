@@ -10,6 +10,8 @@
 	export let terminalCommand: string;
 	export let terminalFileLocation: string = "~";
 	export let terminalRootName: string = "Linux";
+	let extraClass: string = "";
+	export { extraClass as class };
 
 	let { darkMode } = uiState;
 	// :$ $darkMode
@@ -45,16 +47,16 @@
 		<!--TODO: add maximum height -->
 		<div
 			class="dark:text-terminalDarkText dark:bg-terminalDarkBg text-terminalLightText bg-terminalLightBg 
-      max-h-96 m-2 overflow-y-auto break-normal py-2"
+      max-h-96 m-2 overflow-y-auto break-normal py-2 text-left"
 		>
 			{#if terminalData.length !== 0}
 				{#each terminalData as msg}
-					<li class="pl-2 ">
+					<li class="pl-2 list-none">
 						[{terminalRootName}@Henri {terminalFileLocation}]$
 						<pre><code
 								><Highlight
 									language={typescript}
-									class="break-normal"
+									class=""
 									code={JSON.stringify(msg, null, 4)}
 								/></code
 							></pre>
