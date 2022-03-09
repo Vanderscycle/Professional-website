@@ -32,7 +32,7 @@
 <template class="">
 	{#if variables.currentState === "dev"}
 		dark: {$darkMode} T:{timesToggled}
-		{window.location.pathname}
+		<!-- {window.location.pathname} -->
 	{/if}
 	<div class="inline-flex w-full">
 		<div class="mt-3 mx-2">

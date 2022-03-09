@@ -17,7 +17,7 @@
 	<nav class="dark:bg-terminalDarkGui bg-terminalLightGui">
 		<NavBar />
 	</nav>
-	<main class="dark:bg-terminalDarkBg bg-terminalLightBg  h-screen">
+	<main class="dark:bg-terminalDarkBg bg-terminalLightBg h-screen">
 		<Modal>
 			<slot />
 		</Modal>

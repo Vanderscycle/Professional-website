@@ -16,7 +16,6 @@
 	<div class="text-center">
 		<h1 class="relative text-3xl">Henri Vandersleyen</h1>
 		<p class="underline decoration-terminalDarkYellow">Software developer</p>
-		<small class=""> (I am aware of the issue with dark/light mode)*</small>
 	</div>
 	<div class="grid">
 		<div class="w-5/6 ">

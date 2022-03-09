@@ -7,13 +7,15 @@
 
 	export let terminalData: Object[] = []; //usually a listy of objects
 	export let terminalName: string;
-	export let terminalCommand: string;
+	export let terminalCommand: boolean = false;
 	export let terminalFileLocation: string = "~";
 	export let terminalRootName: string = "Linux";
+	let extraClass: string = "";
+	export { extraClass as class };
 
 	let { darkMode } = uiState;
 	// :$ $darkMode
-	$: $darkMode ? tokyoNightLight : tokyoNightDark;
+	$: $darkMode ? tokyoNightDark : tokyoNightLight;
 </script>
 
 <svelte:head>
@@ -21,6 +23,7 @@
 </svelte:head>
 
 <template>
+	<small class=""> (I am aware of the issue with dark/light mode)*</small>
 	<div
 		class="dark:bg-terminalDarkGui bg-terminalLightGui
     rounded-xl top-0 border-2 border-gui m-6 "
@@ -30,7 +33,7 @@
 			<img src="favicon.png" alt="x" class="ml-2 mt-1 h-8" />
 			<div class="grow invisible" />
 			<h2
-				class="mt-1 p-1 dark:text-terminalDarkText text-terminalLightText 
+				class="mt-1 p-1 ml-6 dark:text-terminalDarkText text-terminalLightText 
         dark:bg-terminalDarkBg bg-terminalLightBg rounded-xl
         "
 			>
@@ -45,16 +48,18 @@
 		<!--TODO: add maximum height -->
 		<div
 			class="dark:text-terminalDarkText dark:bg-terminalDarkBg text-terminalLightText bg-terminalLightBg 
-      max-h-96 m-2 overflow-y-auto break-normal py-2"
+      max-h-96 m-2 overflow-y-auto break-normal py-2 text-left"
 		>
 			{#if terminalData.length !== 0}
 				{#each terminalData as msg}
-					<li class="pl-2 ">
-						[{terminalRootName}@Henri {terminalFileLocation}]$
+					<li class="pl-2 list-none">
+						{#if terminalCommand}
+							[{terminalRootName}@Henri {terminalFileLocation}]$
+						{/if}
 						<pre><code
 								><Highlight
 									language={typescript}
-									class="break-normal"
+									class=""
 									code={JSON.stringify(msg, null, 4)}
 								/></code
 							></pre>
