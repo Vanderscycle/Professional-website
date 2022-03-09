@@ -2,6 +2,7 @@
 	import Badge from "$components/ui/Badge.svelte";
 	import Button from "$components/ui/Button.svelte";
 	import QrCode from "$components/ui/QrCode.svelte";
+	import { fade } from "svelte/transition";
 
 	const src: string = "theMountain.jpg";
 	let viewResume: boolean = false;
@@ -15,10 +16,10 @@
 
 <template>
 	<div
-		class="text-center flex flex-col justify-center items-center  dark:text-terminalDarkText text-terminalLightText"
+		class="text-center flex flex-col justify-center items-center dark:text-terminalDarkText text-terminalLightText"
 	>
 		<h1 class="relative text-3xl py-4 underline">The mountain</h1>
-		<a href="https://github.com/Vanderscycle" target="_blank">
+		<a href="https://github.com/Vanderscycle" target="_blank" in:fade>
 			<img
 				{src}
 				alt="The mountain"
