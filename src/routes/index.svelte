@@ -49,7 +49,7 @@
 					out:fade
 					on:click={() => (expandInfoArray[i] = !expandInfoArray[i])}
 				>
-					{#if !hoveringToggleArray[i]}
+					{#if !hoveringToggleArray[i] && !expandInfoArray[i]}
 						{val}
 					{:else}
 						{fillValue[i]}
