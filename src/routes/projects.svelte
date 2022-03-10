@@ -1,9 +1,29 @@
 <script lang="ts">
 	import ProjectCard from "$components/ProjectCard.svelte";
 	import Badge from "$components/ui/Badge.svelte";
+	import { ClientRest } from "$lib/api/simpleApi";
+	import { onMount } from "svelte";
 	const hidden: boolean = true;
 	//TODO: convert to an each loop
 	//TODO: make an async request on mount
+	let imgSrc: string[] = [];
+	let imgSrcCall: string[] = [
+		"dot-config.svg",
+		"Professional-website.svg",
+		"BallOfNoodsWebsite.svg"
+	];
+	let api = new ClientRest("https://avatars.dicebear.com/api/identicon");
+	onMount(async () => {
+		for (const address of imgSrcCall) {
+			const res = await api.get(address);
+			if (res.status === 200) {
+				imgSrc = [...imgSrc, res.data];
+			} else {
+				console.warn("error");
+			}
+			console.log(imgSrc);
+		}
+	});
 </script>
 
 <svelte:head>
