@@ -3,6 +3,8 @@
 	import Badge from "$components/ui/Badge.svelte";
 	import { ClientRest } from "$lib/api/simpleApi";
 	import { onMount } from "svelte";
+	import { variables } from "$lib/variables";
+
 	const hidden: boolean = true;
 	//TODO: convert to an each loop
 	//TODO: make an async request on mount
@@ -13,15 +15,19 @@
 		"BallOfNoodsWebsite.svg"
 	];
 	let api = new ClientRest("https://avatars.dicebear.com/api/identicon");
+
+	$: imgSrc;
 	onMount(async () => {
-		for (const address of imgSrcCall) {
-			const res = await api.get(address);
-			if (res.status === 200) {
-				imgSrc = [...imgSrc, res.data];
-			} else {
-				console.warn("error");
+		if (variables.currentState === "dev") {
+			for (const address of imgSrcCall) {
+				const res = await api.get(address);
+				if (res.status === 200) {
+					imgSrc = [...imgSrc, res.data];
+					console.log(res.data);
+				} else {
+					console.warn("error");
+				}
 			}
-			console.log(imgSrc);
 		}
 	});
 </script>
@@ -36,6 +42,12 @@
 	>
 		<h1 class="relative text-3xl  py-4 underline">Projects</h1>
 
+		{#if imgSrc[0]}<svg
+				class="h-24 w-24 m-2 border-4 dark:border-terminalDarkWhite border-terminalLightWhite rounded-full bg-clip-border"
+			>
+				{@html imgSrc[0]}</svg
+			>
+		{/if}
 		<div class="py-2">
 			<ProjectCard url="https://github.com/Vanderscycle/dot-config">
 				<span slot="img">
