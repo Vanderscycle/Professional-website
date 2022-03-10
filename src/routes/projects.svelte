@@ -7,7 +7,6 @@
 
 	const hidden: boolean = true;
 	//TODO: convert to an each loop
-	//TODO: make an async request on mount
 	let imgSrc: string[] = [];
 	let imgSrcCall: string[] = [
 		"dot-config.svg",
