@@ -1,6 +1,9 @@
 <script lang="ts">
 	import ProjectCard from "$components/ProjectCard.svelte";
 	import Badge from "$components/ui/Badge.svelte";
+	const hidden: boolean = true;
+	//TODO: convert to an each loop
+	//TODO: make an async request on mount
 </script>
 
 <svelte:head>
@@ -71,6 +74,33 @@
 					/>
 				</span>
 			</ProjectCard>
+			<div />
+			{#if !hidden}
+				<div class=" py-2">
+					<ProjectCard url="https://github.com/Vanderscycle/BallOfNoodsWebsite">
+						<span slot="img">
+							<img
+								class="h-24 w-24 m-2 border-4 dark:border-terminalDarkWhite border-terminalLightWhite rounded-full"
+								src="https://avatars.dicebear.com/api/identicon/your-chttps%3A%2F%2Fgithub.com%2FVanderscycle%2FBallOfNoodsWebsiteustom-seed.svg"
+								alt="doots"
+							/>
+						</span>
+						<span
+							slot="title"
+							class="text-xl underline  dark:decoration-terminalDarkMagenta decoration-terminalLightMagenta decoration-2"
+							>Yarn Blog</span
+						>
+						<span slot="description">Blog made for a yarn enthusiast</span>
+						<span slot="badges">
+							<Badge
+								msg="UnderConstruction"
+								badgeColor="dark:bg-terminalDarkYellow bg-terminalLightYellow"
+								badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
+							/>
+						</span>
+					</ProjectCard>
+				</div>
+			{/if}
 			<p
 				class="underline decoration-4 underline-offset-8 mt-4 dark:decoration-terminalDarkYellow decoration-terminalLightYellow"
 			>
