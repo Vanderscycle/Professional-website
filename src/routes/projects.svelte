@@ -18,15 +18,13 @@
 
 	$: imgSrc;
 	onMount(async () => {
-		if (variables.currentState === "dev") {
-			for (const address of imgSrcCall) {
-				const res = await api.get(address);
-				if (res.status === 200) {
-					imgSrc = [...imgSrc, res.data];
-					console.log(res.data);
-				} else {
-					console.warn("error");
-				}
+		for (const address of imgSrcCall) {
+			const res = await api.get(address);
+			if (res.status === 200) {
+				imgSrc = [...imgSrc, res.data];
+				// console.log(res.data);
+			} else {
+				console.warn("error");
 			}
 		}
 	});
@@ -42,20 +40,15 @@
 	>
 		<h1 class="relative text-3xl  py-4 underline">Projects</h1>
 
-		{#if imgSrc[0]}<svg
-				class="h-24 w-24 m-2 border-4 dark:border-terminalDarkWhite border-terminalLightWhite rounded-full bg-clip-border"
-			>
-				{@html imgSrc[0]}</svg
-			>
-		{/if}
 		<div class="py-2">
 			<ProjectCard url="https://github.com/Vanderscycle/dot-config">
 				<span slot="img">
-					<img
-						class="h-24 w-24 m-2 border-4 dark:border-terminalDarkWhite border-terminalLightWhite rounded-full"
-						src="https://avatars.dicebear.com/api/identicon/https%3A%2F%2Fgithub.com%2FVanderscycle%2Fdot-config.svg"
-						alt="doots"
-					/>
+					{#if imgSrc[0]}
+						<svg
+							class="h-24 w-24 m-2 border-4 dark:border-terminalDarkWhite border-terminalLightWhite rounded-full"
+							alt="doots">{@html imgSrc[0]}</svg
+						>
+					{/if}
 				</span>
 				<span
 					slot="title"
@@ -81,11 +74,12 @@
 		<div class=" py-2">
 			<ProjectCard url="https://github.com/Vanderscycle/Professional-website">
 				<span slot="img">
-					<img
-						class="h-24 w-24 m-2 border-4 dark:border-terminalDarkWhite border-terminalLightWhite rounded-full"
-						src="https://avatars.dicebear.com/api/identicon/https%3A%2F%2Fgithub.com%2FVanderscycle%2FProfessional-website.svg"
-						alt="doots"
-					/>
+					{#if imgSrc[1]}
+						<svg
+							class="h-24 w-24 m-2 border-4 dark:border-terminalDarkWhite border-terminalLightWhite rounded-full"
+							alt="doots">{@html imgSrc[1]}</svg
+						>
+					{/if}
 				</span>
 				<span
 					slot="title"
@@ -111,11 +105,12 @@
 				<div class=" py-2">
 					<ProjectCard url="https://github.com/Vanderscycle/BallOfNoodsWebsite">
 						<span slot="img">
-							<img
-								class="h-24 w-24 m-2 border-4 dark:border-terminalDarkWhite border-terminalLightWhite rounded-full"
-								src="https://avatars.dicebear.com/api/identicon/your-chttps%3A%2F%2Fgithub.com%2FVanderscycle%2FBallOfNoodsWebsiteustom-seed.svg"
-								alt="doots"
-							/>
+							{#if imgSrc[2]}
+								<svg
+									class="h-24 w-24 m-2 border-4 dark:border-terminalDarkWhite border-terminalLightWhite rounded-full"
+									alt="doots">{@html imgSrc[2]}</svg
+								>
+							{/if}
 						</span>
 						<span
 							slot="title"
