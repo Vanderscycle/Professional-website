@@ -13,9 +13,9 @@
 	import Terminal from "$components/ui/Terminal.svelte";
 
 	const fillValue: string[] = [
-		"Why, I do what I do",
-		"How, I enact my vision",
-		"What, I am capable of"
+		"Why I do what I do",
+		"How I enact my vision",
+		"What I am capable of"
 	];
 	const paraValues: string[] = ["Why?", "How?", "What?"];
 	const textAboutMe: string[] = [whoami.why, whoami.how, skills];
