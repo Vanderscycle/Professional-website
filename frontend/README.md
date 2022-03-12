@@ -1,5 +1,6 @@
 # Frontend
 
+Sveltekit
 ## env format required
 
 ```
