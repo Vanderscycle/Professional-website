@@ -10,7 +10,6 @@
 	export let localState: boolean = false;
 	let api: GoRestClient = new GoRestClient(endpoint);
 	let apiDB: GoRestClient = new GoRestClient("api/db");
-	console.log(testData);
 	onMount(async () => {
 		if (variables.currentState === "dev") {
 			//drop db
