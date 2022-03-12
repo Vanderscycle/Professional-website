@@ -49,9 +49,13 @@ export class GoRestClient {
 		}
 	}
 
-	async delete(id: number): Promise<string> {
+	async delete(id?: number): Promise<string> {
 		try {
-			return await axios.delete(`${this.baseUrl}/${id}`);
+			if (id) {
+				return await axios.delete(`${this.baseUrl}/${id}`);
+			} else {
+				return await axios.delete(`${this.baseUrl}`);
+			}
 		} catch (e) {
 			console.warn(e);
 		}
