@@ -8,7 +8,7 @@
     "NestJS": "Advanced",
     "Python": "Advanced",
     "Docker": "Intermediate",
-    "Rust": "Basic-Intermediate",
-    "Go/Lua/Xmonad": "Basic"
+    "Go": "Basic-Intermediate",
+    "Rust/Lua/Xmonad": "Basic"
   }
 ]
