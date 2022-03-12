@@ -8,10 +8,11 @@ import (
 )
 
 type EncryptedData struct {
-	gorm.Model
 	Date string `json:"date"`
-	User string `json:"user`
+	User string `json:"user"`
+	Type string `json:"type"`
 	Data string `json:"data"`
+	gorm.Model
 }
 
 func GetAll(c *fiber.Ctx) error {

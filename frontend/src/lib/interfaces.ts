@@ -6,5 +6,6 @@ export interface NavigationButton {
 export interface Cipher {
 	date: Date;
 	user: string;
+	type: string;
 	data: string; //object later
 }
