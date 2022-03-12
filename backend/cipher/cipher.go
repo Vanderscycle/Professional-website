@@ -2,15 +2,16 @@ package cipher
 
 import (
 	"backend/database"
+
 	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm"
 )
 
 type EncryptedData struct {
 	gorm.Model
-	Title    string `json:"title"`
-	Author   string `json:"author`
-	MainText string `json:"mainText"`
+	date string `json:"date"`
+	User string `json:"user`
+	Data string `json:"data"`
 }
 
 func GetAll(c *fiber.Ctx) error {
@@ -43,7 +44,7 @@ func Delete(c *fiber.Ctx) error {
 	db := database.DBConn
 	var entry EncryptedData
 	db.First(&entry, id)
-	if entry.Title == "" {
+	if entry.User == "" {
 		errMsg := []byte("No record matches the id")
 		return c.Status(500).Send(errMsg)
 	}
