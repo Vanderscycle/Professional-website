@@ -8,9 +8,13 @@ variables;
 export class GoRestClient {
 	baseUrl: string;
 	groupEndpoint: string;
-	constructor(group: string) {
-		this.groupEndpoint = group;
-		this.baseUrl = `http://${variables.goBackendURL}:${variables.goBackendPort}/${group}`;
+	constructor(group: string, override?: boolean) {
+		if (!override) {
+			this.groupEndpoint = group;
+			this.baseUrl = `http://${variables.goBackendURL}:${variables.goBackendPort}/${group}`;
+		} else {
+			this.baseUrl = group;
+		}
 		console.log(this.baseUrl, group);
 	}
 
@@ -25,8 +29,9 @@ export class GoRestClient {
 		}
 	}
 
-	async getSingle(id: number): Promise<Cipher> {
+	async getSingle(id: number | string): Promise<Cipher> {
 		try {
+			console.log(`${this.baseUrl}/${id}`);
 			const res = await axios.get(`${this.baseUrl}/${id}`);
 			if (res.status === 200) {
 				return res.data;

@@ -1,27 +1,28 @@
 <script lang="ts">
 	import ProjectCard from "$components/ProjectCard.svelte";
 	import Badge from "$components/ui/Badge.svelte";
-	import { ClientRest } from "$lib/api/simpleApi";
+	import { GoRestClient } from "$lib/api/simpleApi";
 	import { onMount } from "svelte";
 	import { variables } from "$lib/variables";
+	import type { Cipher } from "$lib/interfaces";
 
 	const hidden: boolean = true;
 	//TODO: convert to an each loop
-	let imgSrc: string[] = [];
+	let imgSrc: Cipher[] = [];
 	let imgSrcCall: string[] = [
 		"dot-config.svg",
 		"Professional-website.svg",
 		"BallOfNoodsWebsite.svg"
 	];
-	let api = new ClientRest("https://avatars.dicebear.com/api/identicon");
+	let api = new GoRestClient("https://avatars.dicebear.com/api/identicon", true);
 
 	$: imgSrc;
 	onMount(async () => {
+		console.log(api);
 		for (const address of imgSrcCall) {
-			const res = await api.get(address);
-			if (res.status === 200) {
-				imgSrc = [...imgSrc, res.data];
-				// console.log(res.data);
+			const res = await api.getSingle(address);
+			if (res) {
+				imgSrc = [...imgSrc, res];
 			} else {
 				console.warn("error");
 			}
