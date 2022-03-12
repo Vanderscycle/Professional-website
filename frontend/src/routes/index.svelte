@@ -11,6 +11,8 @@
 	import skills from "$lib/data/skillsCompetences.json";
 	import whoami from "$lib/data/whoami.json";
 	import Terminal from "$components/ui/Terminal.svelte";
+	import ApiEndpoint from "$components/ApiEndpoint.svelte";
+	import type { Cipher } from "$lib/interfaces";
 
 	const fillValue: string[] = [
 		"Why I do what I do",
@@ -21,6 +23,8 @@
 	const textAboutMe: string[] = [whoami.why, whoami.how, skills];
 	let hoveringToggleArray: boolean[] = [false, false];
 	let expandInfoArray: boolean[] = [false, false];
+	let apiCipherData: Cipher[];
+	$: apiCipherData;
 </script>
 
 <svelte:head>
@@ -66,5 +70,10 @@
 						<p class="text-xl">{textAboutMe[i]}</p>{/if}
 				</div>{/if}
 		{/each}
+		<ApiEndpoint bind:apiData={apiCipherData} />
+		{#if variables.currentState === "dev"}
+			local
+			<pre><code>{JSON.stringify(apiCipherData, null, 4)}</code></pre>
+		{/if}
 	</div>
 </div>
