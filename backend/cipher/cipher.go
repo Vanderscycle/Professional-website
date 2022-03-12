@@ -9,7 +9,7 @@ import (
 
 type EncryptedData struct {
 	gorm.Model
-	date string `json:"date"`
+	Date string `json:"date"`
 	User string `json:"user`
 	Data string `json:"data"`
 }
