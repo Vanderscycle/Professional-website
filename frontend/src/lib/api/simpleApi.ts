@@ -1,4 +1,4 @@
-import type { BlogPost } from "$lib/interfaces";
+import type { Cipher } from "$lib/interfaces";
 import { variables } from "$lib/variables";
 import axios from "axios";
 variables;
@@ -14,7 +14,7 @@ export class GoRestClient {
 		console.log(this.baseUrl, group);
 	}
 
-	async get(): Promise<GoRestClient[]> {
+	async get(): Promise<Cipher[]> {
 		try {
 			const res = await axios.get(`${this.baseUrl}`);
 			if (res.status === 200) {
@@ -25,7 +25,7 @@ export class GoRestClient {
 		}
 	}
 
-	async getSingle(id: number): Promise<GoRestClient> {
+	async getSingle(id: number): Promise<Cipher> {
 		try {
 			const res = await axios.get(`${this.baseUrl}/${id}`);
 			if (res.status === 200) {
@@ -36,7 +36,7 @@ export class GoRestClient {
 		}
 	}
 
-	async post(payload: BlogPost): Promise<BlogPost> {
+	async post(payload: Cipher): Promise<Cipher> {
 		try {
 			return await axios.post(`${this.baseUrl}`, payload);
 		} catch (e) {
@@ -52,7 +52,7 @@ export class GoRestClient {
 		}
 	}
 
-	async patch(id: number, payload: BlogPost): Promise<BlogPost> {
+	async patch(id: number, payload: Cipher): Promise<Cipher> {
 		try {
 			return await axios.patch(`${this.baseUrl}/${id}`, payload);
 		} catch (e) {
