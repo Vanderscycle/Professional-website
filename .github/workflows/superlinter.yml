@@ -26,6 +26,7 @@ jobs:
           VALIDATE_YAML: true
           VALIDATE_JSON: true
           VALIDATE_BASH: true
+          VALIDATE_GO: true
           VALIDATE_TYPESCRIPT_STANDARD: true
           VALIDATE_DOCKER: true
           OUTPUT_FOLDER: super-linter.report
