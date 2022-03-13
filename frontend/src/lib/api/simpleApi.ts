@@ -35,18 +35,6 @@ export class GoRestClient {
 		}
 	}
 
-	async getSingle(id: number | string): Promise<Cipher> {
-		try {
-			console.log(`${this.baseUrl}/${id}`);
-			const res = await axios.get(`${this.baseUrl}/${id}`);
-			if (res.status === 200) {
-				return res.data;
-			}
-		} catch (e) {
-			console.warn(e);
-		}
-	}
-
 	async post(payload: Cipher): Promise<Cipher> {
 		try {
 			const res = await axios.post(`${this.baseUrl}`, payload);
