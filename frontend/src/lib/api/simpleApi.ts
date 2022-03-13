@@ -3,7 +3,7 @@ import { variables } from "$lib/variables";
 import axios from "axios";
 variables;
 
-// make it interractive by have a meme interface
+//TODO: how do I make it more general with return types?
 
 export class GoRestClient {
 	baseUrl: string;
@@ -18,9 +18,15 @@ export class GoRestClient {
 		console.log(this.baseUrl, group);
 	}
 
-	async get(): Promise<Cipher[]> {
+	async get(id: number): Promise<Cipher[]> {
 		try {
-			const res = await axios.get(`${this.baseUrl}`);
+			let res: any;
+			if (id !== 0) {
+				res = await axios.get(`${this.baseUrl}/${id}`);
+			} else {
+				res = await axios.get(`${this.baseUrl}`);
+			}
+
 			if (res.status === 200) {
 				return res.data;
 			}
@@ -43,15 +49,19 @@ export class GoRestClient {
 
 	async post(payload: Cipher): Promise<Cipher> {
 		try {
-			return await axios.post(`${this.baseUrl}`, payload);
+			const res = await axios.post(`${this.baseUrl}`, payload);
+			if (res.status === 200) {
+				return res.data;
+			}
 		} catch (e) {
 			console.warn(e);
 		}
 	}
 
-	async delete(id?: number): Promise<string> {
+	//TODO: make the change in the backend so that it return the obj
+	async delete(id: number): Promise<string> {
 		try {
-			if (id) {
+			if (id !== 0) {
 				return await axios.delete(`${this.baseUrl}/${id}`);
 			} else {
 				return await axios.delete(`${this.baseUrl}`);
@@ -63,7 +73,10 @@ export class GoRestClient {
 
 	async patch(id: number, payload: Cipher): Promise<Cipher> {
 		try {
-			return await axios.patch(`${this.baseUrl}/${id}`, payload);
+			const res = await axios.patch(`${this.baseUrl}/${id}`, payload);
+			if (res.status === 200) {
+				return res.data;
+			}
 		} catch (e) {
 			console.warn(e);
 		}
