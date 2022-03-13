@@ -70,7 +70,8 @@
 						<p class="text-xl">{textAboutMe[i]}</p>{/if}
 				</div>{/if}
 		{/each}
-		<ApiEndpoint bind:apiData={apiCipherData} endpoint="api/cipher" reqHttpMethod="POST" />
+		<!-- <ApiEndpoint bind:apiData={apiCipherData} endpoint="api/cipher" reqHttpMethod="POST" /> -->
+		<ApiEndpoint bind:apiData={apiCipherData} endpoint="api/cipher" reqHttpMethod="GET" />
 		{#if variables.currentState === "dev"}
 			local
 			<pre><code>{JSON.stringify(apiCipherData, null, 4)}</code></pre>

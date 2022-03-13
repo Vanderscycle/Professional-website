@@ -4,6 +4,7 @@
 	import { variables } from "$lib/variables";
 	import type { Cipher } from "$lib/interfaces";
 	import testData from "$lib/data/cipher.test.json";
+	import { httpMethodSwitch } from "$lib/helper";
 
 	export const endpoint: string = "api/cipher";
 	export let apiData: Cipher[] = [];
@@ -17,48 +18,17 @@
 	onMount(async () => {
 		if (variables.currentState === "dev") {
 			//drop db
-			await apiDB.delete(reqIndex);
-			const res = await httpMethodSwitch(apiData, reqHttpMethod, reqIndex, payload);
-			// const resNew: Cipher = await api.post(testData);
-			// if (resNew) {
-			// 	apiData = [...apiData, resNew];
-			// }
-			// const resAll: Cipher[] = await api.get();
-			// if (resAll) {
-			// 	apiData = [...resAll];
-			// console.log(res);
-			// } else {
-			// 	console.warn("error");
-			// }
+			// await httpMethodSwitch(apiDB, apiData, "DELETE");
+			apiData = await httpMethodSwitch(
+				api,
+				apiData,
+				reqHttpMethod,
+				reqIndex,
+				payload ? payload : testData
+			);
 		}
 	});
 	//make it unherit the type
-	async function httpMethodSwitch(apiData: any, method: string, index?: number, payload?: object) {
-		let res: any;
-		switch (method) {
-			case "GET":
-				res = await api.get(index);
-				apiData = [...res];
-				break;
-			case "POST":
-				res = await api.post(payload ? payload : testData);
-				apiData = [...apiData, res];
-				break;
-			case "DELETE":
-				res = await api.delete(reqIndex);
-				apiData = apiData.filter((v) => v.ID !== index);
-				break;
-			case "PATCH":
-				res = await api.patch(index, payload ? payload : testData);
-				apiData = [...apiData, res];
-				break;
-		}
-		if (!res) {
-			console.warn("error");
-		} else {
-			return apiData;
-		}
-	}
 </script>
 
 <template>
