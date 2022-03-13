@@ -47,12 +47,15 @@ func main() {
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
+	initPostgresDatabase()
 	const port string = ":5000"
+	app := setup()
+	app.Listen(port)
+}
+
+func setup() *fiber.App {
 	app := fiber.New()
 	app.Use(cors.New())
-	initPostgresDatabase()
-	// defer database.DBConn
 	setupRoutes(app)
-	// app.Get("/", helloWorld)
-	app.Listen(port)
+	return app
 }
