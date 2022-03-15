@@ -1,6 +1,5 @@
 <script lang="ts">
 	export let url: string = "";
-	import { fade } from "svelte/transition";
 </script>
 
 <template>

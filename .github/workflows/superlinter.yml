@@ -33,5 +33,3 @@ jobs:
           OUTPUT_DETAILS: detailed
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-

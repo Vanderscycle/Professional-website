@@ -5,6 +5,7 @@
 	import { onMount } from "svelte";
 	import { variables } from "$lib/variables";
 	import type { Cipher } from "$lib/interfaces";
+	import { httpMethodSwitch } from "$lib/helper";
 
 	const hidden: boolean = true;
 	//TODO: convert to an each loop
@@ -14,15 +15,18 @@
 		"Professional-website.svg",
 		"BallOfNoodsWebsite.svg"
 	];
+	export let apiData: Cipher[] = [];
+
 	let api = new GoRestClient("https://avatars.dicebear.com/api/identicon", true);
 
 	$: imgSrc;
 	onMount(async () => {
 		console.log(api);
 		for (const address of imgSrcCall) {
-			const res = await api.getSingle(address);
+			const res = await httpMethodSwitch(api, apiData, "GET", address);
 			if (res) {
 				imgSrc = [...imgSrc, res];
+				console.log(imgSrc);
 			} else {
 				console.warn("error");
 			}

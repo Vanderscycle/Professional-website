@@ -26,3 +26,7 @@
 		<Footer />
 	</footer>
 </div>
+
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+</style>
