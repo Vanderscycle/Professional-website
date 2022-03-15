@@ -1,0 +1,59 @@
+[
+  {
+    "imgSrcCall": "dot-config.svg",
+    "url": "https://github.com/Vanderscycle/dot-config",
+    "title": "Dotfiles",
+    "description": "My linux configuration",
+    "hidden": false,
+    "badges": [
+      {
+        "msg": "Production",
+        "color": "Green",
+        "text": "Black"
+      },
+      {
+        "msg": "Linux",
+        "color": "Blue",
+        "text": "Black"
+      }
+    ]
+  },
+  {
+    "imgSrcCall": "Professional-website.svg",
+    "url": "https://github.com/Vanderscycle/dot-config",
+    "title": "Professional Website",
+    "description": "Repo of the website you are currently navigating",
+    "hidden": false,
+    "badges": [
+      {
+        "msg": "WIP",
+        "color": "Yellow",
+        "text": "Black"
+      },
+      {
+        "msg": "Bugs",
+        "color": "Red",
+        "text": "Black"
+      }
+    ]
+  },
+  {
+    "imgSrcCall": "BallOfNoodsWebsite.svg",
+    "url": "https://github.com/Vanderscycle/BallOfNoodsWebsite",
+    "title": "Yarn Blog",
+    "description": "Blog made for a yarn enthusiast",
+    "hidden": true,
+    "badges": [
+      {
+        "msg": "WIP",
+        "color": "Yellow",
+        "text": "Black"
+      },
+      {
+        "msg": "Bugs",
+        "color": "Red",
+        "text": "Black"
+      }
+    ]
+  }
+]

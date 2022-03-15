@@ -1,5 +1,9 @@
 <script lang="ts">
+	import Badge from "$components/ui/Badge.svelte";
+
 	export let url: string = "";
+	export let badges: Badge[] = [];
+	console.log(badges);
 </script>
 
 <template>
@@ -26,10 +30,22 @@
 				>
 			</slot>
 			<slot name="badges">
-				<span
-					class="underline text-red-500 rounded-xl bg-yellow-400 p-2 m-2 border-2 border-blue-400"
-					>Missing badges</span
-				>
+				{#if badges.length !== 0}
+					<div class="flex inline-flex">
+						{#each badges as badge}
+							<Badge
+								msg={badge.msg}
+								badgeColor={`dark:bg-terminalDark${badge.color} bg-terminalLight${badge.color}`}
+								badgeTextColor={`dark:text-terminalDark${badge.text}  text-terminalLight${badge.text}`}
+							/>
+						{/each}
+					</div>
+				{:else}
+					<span
+						class="underline text-red-500 rounded-xl bg-yellow-400 p-2 m-2 border-2 border-blue-400"
+						>Missing badges</span
+					>
+				{/if}
 			</slot>
 		</div>
 	</div>
