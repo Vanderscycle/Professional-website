@@ -18,10 +18,10 @@ export class GoRestClient {
 		console.log(this.baseUrl, group);
 	}
 
-	async get(id: number | string): Promise<Cipher[]> {
+	async get(id: string): Promise<T> {
 		try {
 			let res: any;
-			if (id !== 0 || "") {
+			if (id !== "") {
 				res = await axios.get(`${this.baseUrl}/${id}`);
 				console.log(`${this.baseUrl}/${id}`);
 			} else {

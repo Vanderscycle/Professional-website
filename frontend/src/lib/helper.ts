@@ -29,14 +29,18 @@ export async function httpMethodSwitch(
 	api: GoRestClient,
 	apiData: any,
 	method: string,
-	index = 0,
+	index = "",
 	payload?: object
 ) {
 	let res: any;
 	switch (method) {
 		case "GET":
 			res = await api.get(index);
-			apiData = [...res];
+			if (index !== "") {
+				apiData = [...apiData, res];
+			} else {
+				apiData = [res];
+			}
 			break;
 		case "POST":
 			res = await api.post(payload);
