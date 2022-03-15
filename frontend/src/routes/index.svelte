@@ -11,8 +11,17 @@
 	import skills from "$lib/data/skillsCompetences.json";
 	import whoami from "$lib/data/whoami.json";
 	import Terminal from "$components/ui/Terminal.svelte";
-	import ApiEndpoint from "$components/ApiEndpoint.svelte";
-	import type { Cipher } from "$lib/interfaces";
+	import website from "$lib/config/website";
+	const { author, siteUrl } = website;
+
+	//SEO
+	const entityMeta: object = {
+		url: `${siteUrl}/`,
+		faviconWidth: 512,
+		faviconHeight: 512,
+		caption: author
+	};
+	const seoProps = { entityMeta };
 
 	const fillValue: string[] = [
 		"Why I do what I do",
@@ -23,8 +32,6 @@
 	const textAboutMe: string[] = [whoami.why, whoami.how, skills];
 	let hoveringToggleArray: boolean[] = [false, false];
 	let expandInfoArray: boolean[] = [false, false];
-	let apiCipherData: Cipher[];
-	$: apiCipherData;
 </script>
 
 <svelte:head>
@@ -70,7 +77,5 @@
 						<p class="text-xl">{textAboutMe[i]}</p>{/if}
 				</div>{/if}
 		{/each}
-		<!-- <ApiEndpoint bind:apiData={apiCipherData} endpoint="api/cipher" reqHttpMethod="POST" /> -->
-		<!-- <ApiEndpoint bind:apiData={apiCipherData} endpoint="api/cipher" reqHttpMethod="GET" /> -->
 	</div>
 </div>
