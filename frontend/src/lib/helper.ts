@@ -32,6 +32,7 @@ export async function httpMethodSwitch(
 	index = "",
 	payload?: object
 ) {
+	//TODO move to otherwebsite  once filtering is done
 	let res: any;
 	switch (method) {
 		case "GET":
