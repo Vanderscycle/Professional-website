@@ -20,6 +20,7 @@ module.exports = {
         terminalDarkMagenta: dark.magenta,
         terminalDarkWhite: dark.white,
         terminalDarkGui: dark.gui,
+        terminalDarkOrange: dark.orange,
         //LIGHT_MODE 
         terminalLightBg: light.bg,
         terminalLightText: light.text,
@@ -31,6 +32,7 @@ module.exports = {
         terminalLightMagenta: light.magenta,
         terminalLightWhite: light.white,
         terminalLightGui: light.gui,
+        terminalLightOrange: light.orange,
       },
     },
   },

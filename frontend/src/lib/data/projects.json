@@ -19,6 +19,25 @@
     ]
   },
   {
+    "imgSrcCall": "MaaS.svg",
+    "url": "https://maasdao.io/",
+    "title": "MaaS website",
+    "description": "website made for MaaS",
+    "hidden": true,
+    "badges": [
+      {
+        "msg": "Production",
+        "color": "Green",
+        "text": "Black"
+      },
+      {
+        "msg": "Svelte",
+        "color": "Orange",
+        "text": "Black"
+      }
+    ]
+  },
+  {
     "imgSrcCall": "Professional-website.svg",
     "url": "https://github.com/Vanderscycle/dot-config",
     "title": "Professional Website",
@@ -27,7 +46,12 @@
     "badges": [
       {
         "msg": "WIP",
-        "color": "Yellow",
+        "color": "Gui",
+        "text": "Black"
+      },
+      {
+        "msg": "Svelte",
+        "color": "Orange",
         "text": "Black"
       },
       {
