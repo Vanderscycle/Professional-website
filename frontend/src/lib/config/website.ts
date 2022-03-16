@@ -1,16 +1,18 @@
+import { variables } from "$lib/variables";
+
 const website = {
 	author: "Henri Vandersleyen",
-	ogLanguage: "en_GB",
-	siteLanguage: "en-GB",
-	siteTitle: "Portfolio Henri Vandersleyen",
-	siteShortTitle: "Portfolio",
-	siteUrl: import.meta.env ? import.meta.env.VITE_SITE_URL : "",
+	ogLanguage: "en_CA",
+	siteLanguage: "en_CA",
+	keywords: "Web Software Developer Github Vandersleyen typescript golang",
+	metadescription: "a website to show my portfolio and compencies",
+	siteTitle: "software developer: Henri Vandersleyen",
+	siteShortTitle: "Vandersleyen",
+	siteUrl: variables.siteUrl ? variables.siteUrl : "",
 	icon: "static/favicon.png",
 	backgroundColor: "#1a1b26",
-	contactEmail: import.meta.env ? import.meta.env.VITE_CONTACT_EMAIL : "hvandersleyen@gmail.com",
-	githubPage: import.meta.env
-		? import.meta.env.VITE_GITHUB_PAGE
-		: "https://github.com/Vanderscycle/Professional-website"
+	contactEmail: variables.contactEmail ? variables.contactEmail : "hvandersleyen@duck.com",
+	githubPage: variables.githubPage ? variables.githubPage : ""
 };
 
 export { website as default };
