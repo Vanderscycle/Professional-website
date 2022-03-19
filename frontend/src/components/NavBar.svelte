@@ -37,7 +37,7 @@
 	<div class="inline-flex w-full">
 		<div class="mt-3 mx-2">
 			{#if toggleState}
-				<Heroicon icon={outlineSun} class={"text-terminalLightYellow"} />
+				<Heroicon icon={outlineSun} class={"text-Yellow"} />
 			{:else}
 				<Heroicon icon={outlineMoon} />
 			{/if}

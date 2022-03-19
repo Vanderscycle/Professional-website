@@ -38,10 +38,10 @@
 	<title>Bienvenue</title>
 </svelte:head>
 
-<div class="p-2 flex-grow h-screen dark:text-terminalDarkText text-terminalLightText">
+<div class="p-2 flex-grow h-screen dark:text-darkText text-Text">
 	<div class="text-center flex flex-col justify-center items-center ">
 		<h1 class="relative text-4xl">Henri Vandersleyen</h1>
-		<p class="underline decoration-terminalDarkYellow text-xl">Software developer</p>
+		<p class="underline decoration-darkYellow text-xl">Software developer</p>
 		<!-- AS per the docs the reason why Svetle want an on:blur and on:focus is to accomodate for keebs -->
 		{#if variables.currentState === "dev"}
 			Toggle status: {hoveringToggleArray}

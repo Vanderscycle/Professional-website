@@ -16,7 +16,7 @@
 
 <template>
 	<div
-		class="text-center flex flex-col justify-center items-center dark:text-terminalDarkText text-terminalLightText"
+		class="text-center flex flex-col justify-center items-center dark:text-darkText text-Text"
 	>
 		<h1 class="relative text-3xl py-4 underline">The mountain</h1>
 		<a href="https://github.com/Vanderscycle" target="_blank" in:fade>
@@ -27,12 +27,12 @@
 			/>
 		</a>
 		<a href="https://angeladuckworth.com/grit-book/" target="_blank">
-			<p class="dark:text-terminalDarkText text-terminalLightText py-2 text-xl w-96">
+			<p class="dark:text-darkText text-Text py-2 text-xl w-96">
 				"Without effort, your talent is nothing more than unmet potential. Without effort, your
 				skill is nothing more than what you could have done but didn't."
 			</p>
 		</a>
-		<p class="dark:text-terminalDarkText text-terminalLightText">
+		<p class="dark:text-darkText text-Text">
 			― Angela Duckworth, Grit: The Power of Passion and Perseverance
 		</p>
 		{#if !viewResume}
@@ -43,8 +43,8 @@
 			>
 				<Badge
 					msg="View Resume"
-					badgeColor="dark:bg-terminalDarkGreen bg-terminalLightGreen"
-					badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
+					badgeColor="dark:bg-darkGreen bg-Green"
+					badgeTextColor=" dark:text-darkBlack text-Black"
 				/>
 			</Button>
 		{:else}
@@ -55,8 +55,8 @@
 			>
 				<Badge
 					msg="Close"
-					badgeColor="dark:bg-terminalDarkRed bg-terminalLightRed"
-					badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
+					badgeColor="dark:bg-darkRed bg-Red"
+					badgeTextColor=" dark:text-darkBlack text-Black"
 				/>
 			</Button>
 			<QrCode data={resumeUrl} simpleModalMsg="View resume online" />

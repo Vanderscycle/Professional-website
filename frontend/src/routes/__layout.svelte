@@ -14,10 +14,10 @@
 </header>
 
 <div class={$darkMode === true ? "dark h-full" : "h-full"}>
-	<nav class="dark:bg-terminalDarkGui bg-terminalLightGui">
+	<nav class="dark:bg-darkGui bg-Gui">
 		<NavBar />
 	</nav>
-	<main class="dark:bg-terminalDarkBg bg-terminalLightBg h-screen">
+	<main class="dark:bg-darkBg bg-Bg h-screen">
 		<Modal>
 			<slot />
 		</Modal>

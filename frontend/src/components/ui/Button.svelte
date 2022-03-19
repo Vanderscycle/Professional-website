@@ -10,8 +10,8 @@
 
 	$: if (hoverToggle) {
 		hoverState = $darkMode
-			? "hover:text-terminalLightWhite hover:bg-terminalLightBg hover:decoration-terminalLightRed"
-			: "hover:text-terminalDarkWhite hover:bg-terminalDarkBg hover:decoration-terminalDarkRed";
+			? "hover:text-White hover:bg-Bg hover:decoration-Red"
+			: "hover:text-darkWhite hover:bg-darkBg hover:decoration-darkRed";
 	}
 </script>
 

@@ -33,7 +33,7 @@
 
 <template>
 	<div
-		class="text-center flex flex-col justify-center items-center dark:text-terminalDarkText text-terminalLightText"
+		class="text-center flex flex-col justify-center items-center dark:text-darkText text-Text"
 	>
 		<canvas
 			class="rounded-xl cursor-pointer"
@@ -54,8 +54,8 @@
 			<Button class=" hidden border-0 no-underline" hoverToggle={false} callbackFn={() => copy}>
 				<Badge
 					msg="Copy to clipboard"
-					badgeColor="dark:bg-terminalDarkBlue bg-terminalLightBlue"
-					badgeTextColor=" dark:text-terminalDarkBlack text-terminalLightBlack"
+					badgeColor="dark:bg-darkBlue bg-Blue"
+					badgeTextColor=" dark:text-darkBlack text-Black"
 				/>
 			</Button>
 		</CopyToClipboard>

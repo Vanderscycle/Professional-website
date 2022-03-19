@@ -3,7 +3,7 @@
 
 <template>
 	<div
-		class="text-center flex flex-col justify-center items-center  dark:text-terminalDarkText text-terminalLightText"
+		class="text-center flex flex-col justify-center items-center  dark:text-darkText text-Text"
 	>
 		<h1 class="relative text-3xl py-4 underline">Work philosophy</h1>
 		<h2 class="relative text-xl py-4 underline">Automation</h2>

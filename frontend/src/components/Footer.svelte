@@ -4,7 +4,7 @@
 
 <template>
 	<div
-		class="dark:text-terminalDarkBlack dark:bg-terminalDarkGui text-terminalLightBg bg-terminalLightGui
+		class="dark:text-darkBlack dark:bg-darkGui text-Bg bg-Gui
     fixed inset-x-0 bottom-0 text-center inline-flex"
 	>
 		<div class="grow" />

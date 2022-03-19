@@ -25,7 +25,7 @@
 <template>
 	<small class=""> (I am aware of the issue with dark/light mode)*</small>
 	<div
-		class="dark:bg-terminalDarkGui bg-terminalLightGui
+		class="dark:bg-darkGui bg-Gui
     rounded-xl top-0 border-2 border-gui m-6 "
 	>
 		<!-- sticky? -->
@@ -33,11 +33,11 @@
 			<img src="favicon.png" alt="x" class="ml-2 mt-1 h-8" />
 			<div class="grow invisible" />
 			<h2
-				class="mt-1 p-1 ml-6 dark:text-terminalDarkText text-terminalLightText 
-        dark:bg-terminalDarkBg bg-terminalLightBg rounded-xl
+				class="mt-1 p-1 ml-6 dark:text-darkText text-Text 
+        dark:bg-darkBg bg-Bg rounded-xl
         "
 			>
-				<!-- outline-none ring-2 ring-offset-2 ring-terminalDarkBlack -->
+				<!-- outline-none ring-2 ring-offset-2 ring-darkBlack -->
 				{terminalName}
 			</h2>
 			<div class="grow invisible" />
@@ -47,7 +47,7 @@
 		</div>
 		<!--TODO: add maximum height -->
 		<div
-			class="dark:text-terminalDarkText dark:bg-terminalDarkBg text-terminalLightText bg-terminalLightBg 
+			class="dark:text-darkText dark:bg-darkBg text-Text bg-Bg 
       max-h-96 m-2 overflow-y-auto break-normal py-2 text-left"
 		>
 			{#if terminalData.length !== 0}

@@ -35,8 +35,8 @@
 						{#each badges as badge}
 							<Badge
 								msg={badge.msg}
-								badgeColor={`dark:bg-terminalDark${badge.color} bg-terminalLight${badge.color}`}
-								badgeTextColor={`dark:text-terminalDark${badge.text}  text-terminalLight${badge.text}`}
+								badgeColor={`dark:bg-dark${badge.color} bg-${badge.color}`}
+								badgeTextColor={`dark:text-dark${badge.text}  text-${badge.text}`}
 							/>
 						{/each}
 					</div>

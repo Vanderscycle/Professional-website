@@ -15,10 +15,10 @@
 	<title>Welcome</title>
 </svelte:head>
 
-<div class="p-2 flex-grow h-screen dark:text-terminalDarkText text-terminalLightText">
+<div class="p-2 flex-grow h-screen dark:text-darkText text-Text">
 	<div class="text-center">
 		<h1 class="relative text-3xl">Henri Vandersleyen</h1>
-		<p class="underline decoration-terminalDarkYellow">Software developer</p>
+		<p class="underline decoration-darkYellow">Software developer</p>
 	</div>
 	<div class="grid">
 		<div class="w-5/6 ">

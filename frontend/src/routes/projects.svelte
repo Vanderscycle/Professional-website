@@ -36,7 +36,7 @@
 
 <template>
 	<div
-		class="text-center flex flex-col justify-center items-center dark:text-terminalDarkText text-terminalLightText"
+		class="text-center flex flex-col justify-center items-center dark:text-darkText text-Text"
 	>
 		<h1 class="relative text-3xl  py-4 underline">Projects</h1>
 		{#each projects as project, i}
@@ -46,14 +46,14 @@
 						<span slot="img">
 							{#if imgSrc[i]}
 								<svg
-									class="h-24 w-24 m-2 border-4 dark:border-terminalDarkWhite border-terminalLightWhite rounded-full"
+									class="h-24 w-24 m-2 border-4 dark:border-darkWhite border-White rounded-full"
 									alt="doots">{@html imgSrc[i]}</svg
 								>
 							{/if}
 						</span>
 						<span
 							slot="title"
-							class="text-xl underline  dark:decoration-terminalDarkMagenta decoration-terminalLightMagenta decoration-2"
+							class="text-xl underline  dark:decoration-darkMagenta decoration-Magenta decoration-2"
 						>
 							{project.title}</span
 						>
@@ -64,7 +64,7 @@
 			{/if}
 		{/each}
 		<p
-			class="underline decoration-4 underline-offset-8 mt-4 dark:decoration-terminalDarkYellow decoration-terminalLightYellow"
+			class="underline decoration-4 underline-offset-8 mt-4 dark:decoration-darkYellow decoration-Yellow"
 		>
 			This is only the beginning
 		</p>
