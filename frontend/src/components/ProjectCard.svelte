@@ -3,7 +3,7 @@
 
 	export let url: string = "";
 	export let badges: Badge[] = [];
-	console.log(badges);
+	// console.log(badges);
 </script>
 
 <template>

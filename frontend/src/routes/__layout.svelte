@@ -6,11 +6,11 @@
 	import { uiState } from "$stores/ui";
 	let { darkMode } = uiState;
 	import Modal from "svelte-simple-modal";
+	import SEO from "$components/SEO/index.svelte";
 </script>
 
 <header>
-	<meta name="robots" content="noindex nofollow" />
-	<html lang="en" />
+	<SEO />
 </header>
 
 <div class={$darkMode === true ? "dark h-full" : "h-full"}>
