@@ -4,7 +4,11 @@
 Podman needs a bit more [configuration](https://github.com/containers/podman/issues/9390#issuecomment-970305169)
 - [ ] add this information to my install script
 Diesel, at the moment, only supports sql dbs
-may have to ```rustup install nightly```
+may have to 
+```
+rustup install nightly
+
+```
 ### diesel (or how I learned to love sql again)
 ```bash
 
@@ -17,7 +21,8 @@ diesel setup # (granted you cargo install diesel_cli) will create a migration fo
 diesel migration generate create_todo_table
 ```
 
-Inside the migration folder you can define the following to generate the following table at when calling``` diesel migration run ```
+Inside the migration folder you can define the following to generate the following table at when calling
+``` diesel migration run ```
 ```sql
 
 create table todo (
@@ -32,6 +37,19 @@ This is really cool because it will autogrenerate a schema.rs in the src folder 
 ## Svelte frontend
 
 Impressive [websites](https://www.freecodecamp.org/news/15-web-developer-portfolios-to-inspire-you-137fb1743cae/)
+
+A really cool way to export specific svelte components (naming)
+
+```
+//inside the folder create an index.ts and populate it with the folders components 
+export { default as SEOIndex } from "./index.svelte";
+
+```
+import as such in your file
+```ts
+	import { SEOIndex } from '$components/SEO';
+
+```
 
 ## CLI (rg)
 
