@@ -5,7 +5,7 @@ const website = {
 	ogLanguage: "en_CA",
 	siteLanguage: "en_CA",
 	keywords: "Web Software Developer Github Vandersleyen typescript golang",
-	metadescription: "a website to show my portfolio and compencies",
+	metadescription: "a website to show my portfolio, work completed and skills",
 	siteTitle: "software developer: Henri Vandersleyen",
 	siteShortTitle: "Vandersleyen",
 	siteUrl: variables.siteUrl ? variables.siteUrl : "",
