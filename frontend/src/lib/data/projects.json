@@ -23,7 +23,7 @@
     "url": "https://maasdao.io/",
     "title": "MaaS website",
     "description": "website made for MaaS",
-    "hidden": true,
+    "hidden": false,
     "badges": [
       {
         "msg": "Production",
