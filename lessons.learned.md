@@ -10,6 +10,7 @@ may have to ```rustup install nightly```
 
 # bash/zsh shells
 export DATABASE_URL=postgres://rocket:rocket@localhost/rocket
+
 # fish
 set -xg DATABASE_URL postgres://rocket:rocket@localhost/rocket 
 diesel setup # (granted you cargo install diesel_cli) will create a migration folder
@@ -31,3 +32,7 @@ This is really cool because it will autogrenerate a schema.rs in the src folder 
 ## Svelte frontend
 
 Impressive [websites](https://www.freecodecamp.org/news/15-web-developer-portfolios-to-inspire-you-137fb1743cae/)
+
+## CLI (rg)
+
+usefull comment on how to use rg to replace-in-[ place ](https://github.com/BurntSushi/ripgrep/issues/74#issuecomment-1004581477)
