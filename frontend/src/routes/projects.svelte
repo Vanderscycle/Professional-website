@@ -35,14 +35,12 @@
 </svelte:head>
 
 <template>
-	<div
-		class="text-center flex flex-col justify-center items-center dark:text-darkText text-Text"
-	>
+	<div class="text-center flex flex-col justify-center items-center dark:text-darkText text-Text">
 		<h1 class="relative text-3xl  py-4 underline">Projects</h1>
 		{#each projects as project, i}
 			{#if !project.hidden}
 				<div class="py-2">
-					<ProjectCard url={project[i]} badges={project.badges}>
+					<ProjectCard url={project.url} badges={project.badges}>
 						<span slot="img">
 							{#if imgSrc[i]}
 								<svg
