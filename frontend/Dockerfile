@@ -1,17 +1,15 @@
-FROM archlinux:latest
-ENV GOPATH=/root/buildah
-ENV VITE_WEBSITE_STATE production
+FROM node:16.13.1-alpine3.14 AS builder
+WORKDIR /app
+COPY package.json ./
+RUN npm i
+COPY . .
+RUN npm run build && npm prune --production
 
-WORKDIR /home/app
-COPY . /home/app
+FROM node:16.13.1-alpine3.14
+USER node:node
+WORKDIR /app
+COPY --from=builder --chown=node:node /app/build ./build
+COPY --from=builder --chown=node:node /app/node_modules ./node_modules
+COPY --chown=node:node package.json .
 EXPOSE 3000
-# arch for later
-# From archlinux:latest
-RUN pacman -Syu --noconfirm \
-  && pacman -S npm --noconfirm
-RUN (cd /home/node \ 
-  && npm ci --only=production \
-  && npm run build \
-  && node /home/app/build/index.js)
-
-
+CMD ["node","build"]
