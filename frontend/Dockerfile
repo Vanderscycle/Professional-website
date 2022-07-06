@@ -1,11 +1,15 @@
-FROM node:16.13.1-alpine3.14 AS builder
-WORKDIR /app
-COPY package.json ./
-RUN npm i
-COPY . .
-RUN npm run build && npm prune --production
+FROM node:lts-alpine AS builder
 
-FROM node:16.13.1-alpine3.14
+WORKDIR /app
+
+COPY ["package.json", "pnpm-lock.yaml", "./"]
+
+RUN npm install -g pnpm && \
+  pnpm i
+COPY . .
+RUN pnpm run build && pnpm prune --production
+
+FROM node:lts-alpine
 USER node:node
 WORKDIR /app
 COPY --from=builder --chown=node:node /app/build ./build
