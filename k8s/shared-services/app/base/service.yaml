@@ -14,7 +14,7 @@ spec:
     app: website
   type: ClusterIP
   ports:
-    - name: website
+    - name: http
       protocol: TCP
       port: 80
       targetPort: http

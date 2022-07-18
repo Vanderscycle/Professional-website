@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/name: svelte
     app.kubernetes.io/part-of: henri
   name: website
-
+  namespace: default
 spec:
   selector:
     matchLabels:
