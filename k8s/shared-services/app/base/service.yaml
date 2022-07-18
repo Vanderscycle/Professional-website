@@ -3,6 +3,10 @@
 apiVersion: v1
 kind: Service
 metadata:
+  labels:
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: svelte
+    app.kubernetes.io/name: svelte
   name: website
   namespace: default
 spec:
@@ -13,6 +17,4 @@ spec:
     - name: website
       protocol: TCP
       port: 80
-      targetPort: 5000
-      nodePort: 30001
----
+      targetPort: http
