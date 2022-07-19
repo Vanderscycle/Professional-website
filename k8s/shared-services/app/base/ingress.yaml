@@ -11,7 +11,7 @@ metadata:
   namespace: default
 spec:
   rules:
-    - host: localhost:3000
+    - host: example.com
       http:
         paths:
           - path: /
