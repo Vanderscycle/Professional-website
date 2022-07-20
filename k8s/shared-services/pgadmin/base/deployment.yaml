@@ -25,13 +25,10 @@ spec:
       containers:
         - name: pgadmin4
           image: dpage/pgadmin4
-          env:
-            - name: PGADMIN_DEFAULT_EMAIL
-              value: "user@domain.com"
-            - name: PGADMIN_DEFAULT_PASSWORD
-              value: "admin"
-            - name: PGADMIN_PORT
-              value: "80"
+          imagePullPolicy: "IfNotPresent"
+          envFrom:
+            - configMapRef:
+                name: pgadmin-config
           ports:
             - containerPort: 80
               name: pgadminport

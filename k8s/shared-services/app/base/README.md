@@ -42,3 +42,9 @@ to show all the labels (pods in this case)
 ```bash
 kubectl get pods --show-labels
 ```
+
+in this scenario we can login to the db
+to create a new db use the minikubeip:given port
+todo:
+* move env variables to a configmap
+
