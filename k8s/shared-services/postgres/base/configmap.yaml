@@ -4,7 +4,9 @@ kind: ConfigMap
 metadata:
   name: postgres-config
   labels:
-    app: postgres
+    app.kubernetes.io/component: database
+    app.kubernetes.io/instance: postgres
+    app.kubernetes.io/name: postgres
 data:
   POSTGRES_DB: postgresdb
   POSTGRES_USER: postgres

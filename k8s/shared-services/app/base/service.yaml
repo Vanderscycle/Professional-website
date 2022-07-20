@@ -11,7 +11,9 @@ metadata:
   namespace: default
 spec:
   selector:
-    app: website
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: svelte
+    app.kubernetes.io/name: svelte
   type: ClusterIP
   ports:
     - name: http

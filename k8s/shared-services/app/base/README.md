@@ -23,3 +23,9 @@ third verification
 ```
 kustomize build overlays/non-prod/ | kubectl diff -f -
 ```
+
+when changing labels you have to recreate the [deployment](https://github.com/kubernetes/client-go/issues/508#issuecomment-589296590)
+```
+kubectl get deploy
+kubectl delete deploy <deployment name>
+```

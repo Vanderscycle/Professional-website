@@ -3,15 +3,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres
+  labels:
+    app.kubernetes.io/component: database
+    app.kubernetes.io/instance: postgres
+    app.kubernetes.io/name: postgres
 spec:
   selector:
     matchLabels:
-      app: postgres
+      app.kubernetes.io/component: database
+      app.kubernetes.io/instance: postgres
+      app.kubernetes.io/name: postgres
   replicas: 1
+  strategy:
+    type: RollingUpdate
   template:
     metadata:
       labels:
-        app: postgres
+        app.kubernetes.io/component: database
+        app.kubernetes.io/instance: postgres
+        app.kubernetes.io/name: postgres
     spec:
       containers:
         - name: postgres
