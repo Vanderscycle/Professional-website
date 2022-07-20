@@ -1,3 +1,6 @@
+# cheatsheet
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
 # k8s lessons learned
 
 add a github repo using argocd cli (ssh)
@@ -28,4 +31,14 @@ when changing labels you have to recreate the [deployment](https://github.com/ku
 ```
 kubectl get deploy
 kubectl delete deploy <deployment name>
+```
+
+to get <all,pods...> by labels
+```
+kubectl get all --selector=app.kubernete
+s.io/name=pgadmin
+```
+to show all the labels (pods in this case)
+```bash
+kubectl get pods --show-labels
 ```
