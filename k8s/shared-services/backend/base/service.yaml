@@ -20,5 +20,5 @@ spec:
     - name: http
       protocol: TCP
       port: 5000
-      nodePort: 30300
+      nodePort: 30500
       # targetPort: http

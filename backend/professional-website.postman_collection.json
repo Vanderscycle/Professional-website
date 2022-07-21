@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "5cf0d893-23ff-4d7b-bb75-3c9ebc16dfa7",
+		"name": "professional-website",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12757319"
+	},
+	"item": [
+		{
+			"name": "post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2021-01-12\",\n    \"user\": \"henri\",\n    \"type\": \"new\",\n    \"data\": \"hello world 2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ip}}:{{port}}/api/cipher",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"cipher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}:{{port}}/api/cipher",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"cipher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSingle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}:{{port}}/api/cipher/1",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"cipher",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteSingle",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{ip}}:{{port}}/api/cipher/1",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"cipher",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
