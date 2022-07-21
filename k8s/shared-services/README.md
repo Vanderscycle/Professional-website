@@ -110,3 +110,25 @@ if entering manually
 192.168.59.100 my.app.io
 192.168.59.100 my.app.pgadmin.io
 ```
+
+## volumes
+
+Persistent Volume (PV) − It’s a piece of network storage that has been provisioned by the administrator. It’s a resource in the cluster which is independent of any individual pod that uses the PV.
+
+```
+kubectl get pv
+kubectl describe pv <name>
+```
+
+Persistent Volume Claim (PVC) − The storage requested by Kubernetes for its pods is known as PVC. The user does not need to know the underlying provisioning. The claims must be created in the same namespace where the pod is created.
+
+```
+kubectl get pvc
+kubectl describe pvc <name>
+```
+
+to view the space taken by a pod
+
+```
+kubectl -n <namespace> exec <pod-name> df
+```
