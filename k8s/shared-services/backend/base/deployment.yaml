@@ -35,10 +35,3 @@ spec:
           ports:
             - name: http
               containerPort: 5000
-          readinessProbe: # To check if the Pod is ready to serve traffic or not
-            httpGet:
-              path: /
-              port: 5000
-              scheme: HTTP
-            initialDelaySeconds: 5
-            timeoutSeconds: 1

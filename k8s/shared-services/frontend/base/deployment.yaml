@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/instance: svelte
     app.kubernetes.io/name: svelte
     app.kubernetes.io/part-of: henri
-  name: website
+  name: frontend
   namespace: default
 spec:
   selector:

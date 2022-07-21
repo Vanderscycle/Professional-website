@@ -7,16 +7,18 @@ metadata:
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: svelte
     app.kubernetes.io/name: svelte
-  name: website
+  name: frontend 
   namespace: default
 spec:
   selector:
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: svelte
     app.kubernetes.io/name: svelte
-  type: ClusterIP
+  # type: ClusterIP
+  type: NodePort
   ports:
     - name: http
       protocol: TCP
-      port: 80
+      port: 5000
       targetPort: http
+      nodePort: 30400

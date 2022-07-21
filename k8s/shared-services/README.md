@@ -48,6 +48,13 @@ to show all the labels (pods in this case)
 kubectl get pods --show-labels
 ```
 
+Sometimes the deploy doesn't go the way we wanted
+
+```
+kubectl get deploy
+kubectl delete deploy <namedeployment>
+```
+
 in this scenario we can login to the db
 to create a new db use the minikubeip:given port
 todo:
@@ -73,4 +80,16 @@ podman login docker.io
 
 ```
 podman push docker.io/vandercycle/professional-website-backend:latest
+```
+
+## access the stack
+
+```
+minikube ip
+```
+
+frontend
+
+```
+< minikube ip >:30400
 ```

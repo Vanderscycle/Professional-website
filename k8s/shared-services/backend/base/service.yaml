@@ -14,9 +14,11 @@ spec:
     app.kubernetes.io/component: backend
     app.kubernetes.io/instance: gofiber
     app.kubernetes.io/name: gofiber
-  type: ClusterIP
+  # type: ClusterIP
+  type: NodePort
   ports:
     - name: http
       protocol: TCP
-      port: 80
-      targetPort: http
+      port: 5000
+      nodePort: 30300
+      # targetPort: http

@@ -12,7 +12,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/joho/godotenv"
+	// "github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -39,14 +39,14 @@ func initPostgresDatabase() {
 	fmt.Println("Database connection successfully")
 	//automigrate
 	database.DBConn.AutoMigrate(&cipher.EncryptedData{})
-	fmt.Println("Database Migrated")
+	log.Println("Database Migrated")
 }
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
+	// err := godotenv.Load()
+	// if err != nil {
+	// 	log.Fatal("Error loading .env file")
+	// }
 	initPostgresDatabase()
 	const port string = ":5000"
 	app := setup()
