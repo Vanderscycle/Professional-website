@@ -95,3 +95,18 @@ frontend
 ```
 < minikube ip >:30400
 ```
+
+# using minikube locally
+
+add `minikube ip` to the list of hosts
+
+```
+sudoedit /etc/hosts
+```
+
+if entering manually
+
+```
+192.168.59.100 my.app.io
+192.168.59.100 my.app.pgadmin.io
+```

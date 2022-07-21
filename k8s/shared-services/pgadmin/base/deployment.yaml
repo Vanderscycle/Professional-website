@@ -30,5 +30,12 @@ spec:
             - configMapRef:
                 name: pgadmin-config
           ports:
-            - containerPort: 80
-              name: pgadminport
+            - name: http
+              containerPort: 80
+          readinessProbe: # To check if the Pod is ready to serve traffic or not
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 5
+            timeoutSeconds: 1

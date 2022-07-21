@@ -14,6 +14,8 @@ spec:
     app.kubernetes.io/name: pgadmin
   type: NodePort
   ports:
-    - port: 80
+    - name: http
+      port: 80
       protocol: TCP
-      nodePort: 30200
+      targetPort: http
+      # nodePort: 30200
