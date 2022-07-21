@@ -49,6 +49,7 @@ func Delete(c *fiber.Ctx) error {
 		errMsg := []byte("No record matches the id")
 		return c.Status(500).Send(errMsg)
 	}
+
 	db.Delete(&entry) // TODO: how to concat to byte
 	msg := []byte("post deleted successfully")
 	return c.Send(msg)
