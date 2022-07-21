@@ -4,6 +4,8 @@ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 # k8s lessons learned
 
+https://www.youtube.com/watch?v=6N7KUzIRO2k
+
 add a github repo using argocd cli (ssh)
 
 ```

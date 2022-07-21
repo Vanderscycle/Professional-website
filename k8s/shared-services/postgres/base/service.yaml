@@ -8,12 +8,12 @@ metadata:
     app.kubernetes.io/instance: postgres
     app.kubernetes.io/name: postgres
 spec:
-  ports:
-    - name: postgres
-      port: 5432
-      nodePort: 30432
-  type: NodePort
   selector:
     app.kubernetes.io/component: database
     app.kubernetes.io/instance: postgres
     app.kubernetes.io/name: postgres
+  type: NodePort
+  ports:
+  - name: postgres
+    port: 5432
+    nodePort: 30432

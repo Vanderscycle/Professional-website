@@ -11,13 +11,13 @@ metadata:
   namespace: default
 spec:
   rules:
-    - host: example.com
+    - host: my.app.io
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: service
+                name: frontend
                 port:
                   name: http

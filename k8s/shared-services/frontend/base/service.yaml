@@ -14,11 +14,11 @@ spec:
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: svelte
     app.kubernetes.io/name: svelte
-  # type: ClusterIP
-  type: NodePort
+  type: ClusterIP
+  # type: NodePort
   ports:
     - name: http
       protocol: TCP
       port: 3000
       targetPort: http
-      nodePort: 30300
+      # nodePort: 30300
