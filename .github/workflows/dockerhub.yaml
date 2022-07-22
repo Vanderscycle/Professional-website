@@ -1,0 +1,31 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: docker login
+        env:
+          DOCKER_USER: ${{secrets.DOCKER_HUB_USERNAME}}
+          DOCKER_PASSWORD: ${{secrets.DOCKER_HUB_PASSWORD}}
+        run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - name: Build the backend Docker image
+        run: docker build ./backend --file Dockerfile --tag vandercycle/professional-website-backend:latest
+
+      - name: Docker Push backend image
+        run: docker push vandercycle/professional-website-backend:latest
+
+      - name: Build the frontend Docker image
+        run: docker build ./frontend --file Dockerfile --tag vandercycle/professional-website:latest
+
+      - name: Docker Push frontend image
+        run: docker push vandercycle/professional-website:latest
