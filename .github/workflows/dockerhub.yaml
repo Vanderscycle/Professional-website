@@ -10,12 +10,10 @@ jobs:
   release:
     name: release images to dockerhub
     runs-on: ubuntu-latest
-    # environment: Production
 
     steps:
-      - name: test
-        shell: bash
-        run: echo "$PWD"
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Logout from Docker Hub
         if: always()
@@ -28,8 +26,6 @@ jobs:
         run: |
           docker login -u ${{ secrets.DOCKER_HUB_USERNAME }}
           -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-      - name: Checkout
-        uses: actions/checkout@v2
 
       - name: Build Docker image
         run: |
