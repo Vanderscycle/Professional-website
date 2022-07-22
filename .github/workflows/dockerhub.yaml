@@ -15,9 +15,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # - name: Logout from Docker Hub
-      #   if: always()
-      #   run: docker logout
+      - name: Logout from Docker Hub
+        if: always()
+        run: docker logout
+
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         env:
@@ -26,9 +27,6 @@ jobs:
         with:
           username: $DOCKER_USER
           password: $DOCKER_PASSWORD
-        # run: |
-        #   docker login -u ${{ secrets.DOCKER_HUB_USERNAME }}
-        #   -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Build Docker image
         run: |
