@@ -26,7 +26,7 @@ jobs:
         #   password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
         env:
           DOCKER_USER: ${{ secrets.DOCKER_HUB_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
         with:
           username: $DOCKER_USER
           password: $DOCKER_PASSWORD
