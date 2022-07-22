@@ -13,33 +13,30 @@ jobs:
     # environment: Production
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Login into Docker
         uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-        # env:
-        #   DOCKER_USER: ${{ secrets.DOCKER_HUB_USERNAME }}
-        #   DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
         # with:
-        #   username: $DOCKER_USER
-        #   password: $DOCKER_PASSWORD
+        #   username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        #   password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        env:
+          DOCKER_USER: ${{ secrets.DOCKER_HUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        with:
+          username: $DOCKER_USER
+          password: $DOCKER_PASSWORD
         # run: |
         #   echo $DOCKER_USER $DOCKER_PASSWORD
 
-      - name: Build the backend Docker image
+      - name: Build Docker image
+        # uses: docker/build-push-action@v2
         run: |
           docker build ./backend --file Dockerfile --tag vandercycle/professional-website-backend:latest
-
-      - name: Docker Push backend image
-        run: |
-          docker push vandercycle/professional-website-backend:latest
-
-      - name: Build the frontend Docker image
-        run: |
           docker build ./frontend --file Dockerfile --tag vandercycle/professional-website:latest
 
-      - name: Docker Push frontend image
+      - name: Docker Push image
         run: |
+          docker push vandercycle/professional-website-backend:latest
           docker push vandercycle/professional-website:latest
