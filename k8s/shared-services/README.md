@@ -100,13 +100,13 @@ frontend
 
 add `minikube ip` to the list of hosts
 
-```
+```bash
 sudoedit /etc/hosts
 ```
 
 if entering manually
 
-```
+```bash
 192.168.59.100 my.app.io
 192.168.59.100 my.app.pgadmin.io
 ```
@@ -115,20 +115,39 @@ if entering manually
 
 Persistent Volume (PV) − It’s a piece of network storage that has been provisioned by the administrator. It’s a resource in the cluster which is independent of any individual pod that uses the PV.
 
-```
+```bash
 kubectl get pv
 kubectl describe pv <name>
 ```
 
 Persistent Volume Claim (PVC) − The storage requested by Kubernetes for its pods is known as PVC. The user does not need to know the underlying provisioning. The claims must be created in the same namespace where the pod is created.
 
-```
+```bash
 kubectl get pvc
 kubectl describe pvc <name>
 ```
 
 to view the space taken by a pod
 
-```
+```bash
 kubectl -n <namespace> exec <pod-name> df
+```
+
+## pgadmin
+
+```sql
+SELECT datname FROM pg_database
+WHERE datistemplate = false;
+```
+
+list only table that we created
+
+```sql
+SELECT table_name FROM information_schema.tables WHERE table_schema='public'
+```
+
+in this case if the db is called encrypted_data
+
+```sql
+SELECT * FROM encrypted_data LIMIT 10
 ```
