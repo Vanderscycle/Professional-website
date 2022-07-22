@@ -19,14 +19,14 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-        env:
-          DOCKER_USER: ${{ secrets.DOCKER_HUB_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        # env:
+        #   DOCKER_USER: ${{ secrets.DOCKER_HUB_USERNAME }}
+        #   DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
         # with:
         #   username: $DOCKER_USER
         #   password: $DOCKER_PASSWORD
-        run: |
-          echo $DOCKER_USER $DOCKER_PASSWORD
+        # run: |
+        #   echo $DOCKER_USER $DOCKER_PASSWORD
 
       - name: Build the backend Docker image
         run: |
