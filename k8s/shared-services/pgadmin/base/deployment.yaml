@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -43,6 +44,6 @@ spec:
             initialDelaySeconds: 5
             timeoutSeconds: 1
       volumes:
-      - name: storage
-        persistentVolumeClaim:
-          claimName: pgadmin-pvc
+        - name: storage
+          persistentVolumeClaim:
+            claimName: pgadmin-pvc
