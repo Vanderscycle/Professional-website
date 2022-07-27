@@ -30,6 +30,12 @@ spec:
           envFrom:
             - configMapRef:
                 name: pgadmin-config
+          resources:
+            requests:
+              cpu: 300m
+              memory: 256Mi
+            limits:
+              memory: 256Mi
           ports:
             - name: http
               containerPort: 80

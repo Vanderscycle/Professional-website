@@ -29,6 +29,12 @@ spec:
       containers:
         - name: website
           image: vandercycle/professional-website:latest
+          resources:
+            requests:
+              cpu: 300m
+              memory: 256Mi
+            limits:
+              memory: 256Mi
           ports:
             - name: http
               containerPort: 3000

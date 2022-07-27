@@ -32,6 +32,12 @@ spec:
           envFrom:
             - configMapRef:
                 name: gofiber-config
+          resources:
+            requests:
+              cpu: 300m
+              memory: 256Mi
+            limits:
+              memory: 256Mi
           ports:
             - name: http
               containerPort: 5000

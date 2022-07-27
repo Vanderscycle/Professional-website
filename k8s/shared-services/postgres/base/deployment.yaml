@@ -30,6 +30,12 @@ spec:
           envFrom:
             - configMapRef:
                 name: postgres-config
+          resources:
+            requests:
+              cpu: 300m
+              memory: 256Mi
+            limits:
+              memory: 256Mi
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgredb
