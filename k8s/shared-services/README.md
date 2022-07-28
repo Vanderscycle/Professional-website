@@ -151,3 +151,7 @@ in this case if the db is called encrypted_data
 ```sql
 SELECT * FROM encrypted_data LIMIT 10
 ```
+
+## ingress ssl certificate
+
+run using this [reference](https://towardsdatascience.com/ssl-tls-for-your-kubernetes-cluster-with-cert-manager-3db24338f17)
