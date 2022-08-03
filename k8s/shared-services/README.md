@@ -84,6 +84,12 @@ podman login docker.io
 podman push docker.io/vandercycle/professional-website-backend:latest
 ```
 
+to run locally using a local .env file
+
+```bash
+podman run --env-file .env -dt --name slack-bot -p 3001:3000/tcp docker.io/vandercycle/slack-bot:latest-dev
+```
+
 ## access the stack
 
 ```
@@ -154,22 +160,56 @@ SELECT * FROM encrypted_data LIMIT 10
 
 ## secrets (kubeseal)
 
-install `kubeseal` using pacman/yay
+### references
 
-install the client controller check kubeseal repo for the latest release
+- [yt](https://www.youtube.com/watch?v=rnPqKOF05Mk)
+- [dev]()
+  install `kubeseal` using pacman/yay
+
+install the client controller check kubeseal [repo](https://github.com/bitnami-labs/sealed-secrets) for the latest release
 
 ```bash
 kubectl apply -f https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.1/controller.yaml
 ```
 
-dry-run
+using an env file
 
 ```bash
 kubectl --namespace=<namespace>create secret generic <name>-secret --from-env-file=<location> -o json --dry-run=client
 ```
 
+using literal
+
+```bash
+kubectl --namespace=<namespace>create secret generic <name>-secret --from-env-file=<location> -o json --dry-run=client
+```
+
+creating the sealed secret
+
 ```bash
 kubectl --namespace=<namespace>create secret generic <name>-secret --from-env-file=<location> -o json --dry-run=client | kubeseal -o yaml > sealedsecret.yaml
+```
+
+adding to the sealed secret
+
+```bash
+
+kubectl --namespace=<namespace>create secret generic <name>-secret --from-env-file=<location> -o json --dry-run=client | kubeseal -o yaml --merge-into sealedsecret.yaml
+```
+
+you will have to add something along those lines to the deployment file
+
+```bash
+# within the container
+          volumeMounts:
+            - name: secrets-vol
+              mountPath: /secrets
+              readOnly: true
+# within the spec
+      volumes:
+        - name: secrets-vol
+          secret:
+            secretName: historic-data-search-bot-secret
 ```
 
 ## ingress ssl certificate
