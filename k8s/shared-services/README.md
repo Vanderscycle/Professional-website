@@ -152,6 +152,26 @@ in this case if the db is called encrypted_data
 SELECT * FROM encrypted_data LIMIT 10
 ```
 
+## secrets (kubeseal)
+
+install `kubeseal` using pacman/yay
+
+install the client controller check kubeseal repo for the latest release
+
+```bash
+kubectl apply -f https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.18.1/controller.yaml
+```
+
+dry-run
+
+```bash
+kubectl --namespace=<namespace>create secret generic <name>-secret --from-env-file=<location> -o json --dry-run=client
+```
+
+```bash
+kubectl --namespace=<namespace>create secret generic <name>-secret --from-env-file=<location> -o json --dry-run=client | kubeseal -o yaml > sealedsecret.yaml
+```
+
 ## ingress ssl certificate
 
 run using this [reference](https://towardsdatascience.com/ssl-tls-for-your-kubernetes-cluster-with-cert-manager-3db24338f17)
