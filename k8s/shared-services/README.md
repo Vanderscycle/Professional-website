@@ -215,3 +215,7 @@ you will have to add something along those lines to the deployment file
 ## ingress ssl certificate
 
 run using this [reference](https://towardsdatascience.com/ssl-tls-for-your-kubernetes-cluster-with-cert-manager-3db24338f17)
+
+# argocd
+
+Learn and create an app of app for fun for this one service
