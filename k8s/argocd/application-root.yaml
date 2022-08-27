@@ -12,9 +12,9 @@ spec:
     server: https://kubernetes.default.svc
   project: applications
   source:
-    path: argocd/apps/website
+    path: argocd/
     repoURL: git@github.com:Vanderscycle/Professional-website.git
-    targetRevision: HEAD
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true
