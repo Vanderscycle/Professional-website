@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: git@github.com:Vanderscycle/Professional-website.git
     targetRevision: main
-    path: argocd/apps/website
+    path: k8s/argocd/apps/website
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
