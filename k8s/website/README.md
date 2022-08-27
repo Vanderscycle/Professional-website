@@ -219,3 +219,5 @@ run using this [reference](https://towardsdatascience.com/ssl-tls-for-your-kuber
 # argocd
 
 Learn and create an app of app for fun for this one service
+
+# Prometheus/Grafana/loki/Thanos
