@@ -2,20 +2,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application-website
-  namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  name: postgres
 spec:
   destination:
+    namespace: website
     server: https://kubernetes.default.svc
-    namespace: argocd
-  project: applications
+  project: website
   source:
+    path: k8s/website/postgres
     repoURL: git@github.com:Vanderscycle/Professional-website.git
     targetRevision: main
-    path: k8s/argocd/apps/website
   syncPolicy:
     automated:
-      selfHeal: true
-      prune: false
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+    retry:
+      limit: 1
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 1m
