@@ -1,1 +1,11 @@
 ---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: gofiber
+  labels:
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/instance: gofiber
+    app.kubernetes.io/name: gofiber
+    app.kubernetes.io/part-of: professional-website
+  namespace: website

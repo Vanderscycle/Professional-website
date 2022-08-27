@@ -7,8 +7,7 @@ metadata:
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: svelte
     app.kubernetes.io/name: svelte
-  name: frontend 
-  namespace: default
+  name: frontend
 spec:
   rules:
     - host: my.app.io

@@ -9,3 +9,4 @@ resources:
   # - ingress.yaml
   - persistentvolumeclaim.yaml
   - persistentvolume.yaml
+  - namespace.yaml

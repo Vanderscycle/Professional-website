@@ -1,18 +1,11 @@
 ---
-kind: PersistentVolume
+kind: Namespace
 apiVersion: v1
 metadata:
-  name: postgres-pv-volume
+  name: postgres
   labels:
     app.kubernetes.io/component: database
     app.kubernetes.io/instance: postgres
     app.kubernetes.io/name: postgres
     app.kubernetes.io/part-of: professional-website
-spec:
-  storageClassName: manual
-  capacity:
-    storage: 5Gi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/mnt/data"
+  namespace: website

@@ -7,9 +7,8 @@ metadata:
     app.kubernetes.io/component: backend
     app.kubernetes.io/instance: gofiber
     app.kubernetes.io/name: gofiber
-    app.kubernetes.io/part-of: henri
+    app.kubernetes.io/part-of: professional-website
   name: gofiber
-  namespace: default
 spec:
   selector:
     matchLabels:

@@ -7,6 +7,7 @@ metadata:
     app.kubernetes.io/component: database
     app.kubernetes.io/instance: pgadmin
     app.kubernetes.io/name: pgadmin
+    app.kubernetes.io/part-of: professional-website
 spec:
   selector:
     app.kubernetes.io/component: database

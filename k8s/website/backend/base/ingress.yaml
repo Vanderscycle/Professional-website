@@ -7,8 +7,8 @@ metadata:
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: svelte
     app.kubernetes.io/name: svelte
-  name: website
-  namespace: default
+    app.kubernetes.io/part-of: professional-website
+  name: gofiber
 spec:
   rules:
     - host: example.com

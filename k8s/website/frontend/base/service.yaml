@@ -7,8 +7,8 @@ metadata:
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: svelte
     app.kubernetes.io/name: svelte
-  name: frontend 
-  namespace: default
+    app.kubernetes.io/part-of: professional-website
+  name: frontend
 spec:
   selector:
     app.kubernetes.io/component: frontend

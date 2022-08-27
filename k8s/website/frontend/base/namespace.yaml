@@ -1,1 +1,11 @@
 ---
+kind: Namespace
+apiVersion: v1
+metadata:
+  labels:
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/instance: svelte
+    app.kubernetes.io/name: svelte
+    app.kubernetes.io/part-of: professional-website
+  name: frontend
+  namespace: website

@@ -7,8 +7,8 @@ metadata:
     app.kubernetes.io/component: database
     app.kubernetes.io/instance: pgadmin
     app.kubernetes.io/name: pgadmin
+    app.kubernetes.io/part-of: professional-website
   name: pgadmin
-  namespace: default
 spec:
   rules:
     - host: my.app.pgadmin.io

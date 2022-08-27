@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: uptime-kuma
+  name: website
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
@@ -11,9 +11,9 @@ spec:
     server: https://kubernetes.default.svc
   project: website
   source:
-    path: monitoring
+    path: k8s/website
     repoURL: git@github.com:Vanderscycle/Professional-website.git
-    targetRevision: HEAD
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true
