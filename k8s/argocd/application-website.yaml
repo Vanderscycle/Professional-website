@@ -12,8 +12,8 @@ spec:
     namespace: argocd
   project: applications
   source:
-    # repoURL: git@github.com:Vanderscycle/Professional-website.git
-    repoURL: https://github.com/Vanderscycle/Professional-website.git
+    repoURL: git@github.com:Vanderscycle/Professional-website.git
+    # repoURL: https://github.com/Vanderscycle/Professional-website.git
 
     targetRevision: main
     path: k8s/argocd/apps/website

@@ -13,8 +13,8 @@ spec:
   project: applications
   source:
     path: k8s/argocd/
-    # repoURL: git@github.com:Vanderscycle/Professional-website.git
-    repoURL: https://github.com/Vanderscycle/Professional-website.git
+    repoURL: git@github.com:Vanderscycle/Professional-website.git
+    # repoURL: https://github.com/Vanderscycle/Professional-website.git
     targetRevision: main
   syncPolicy:
     automated:
