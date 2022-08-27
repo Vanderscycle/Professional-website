@@ -4,4 +4,4 @@ kind: Kustomization
 
 resources:
   - website.yaml
-  - postgres.yaml
+  # - postgres.yaml

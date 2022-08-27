@@ -18,7 +18,7 @@ spec:
   description: Project for parent applicatons used when employing app of apps pattern
   sourceRepos:
     - git@github.com:Vanderscycle/Professional-website.git
-    - https://github.com/Vanderscycle/Professional-website.git
+    # - https://github.com/Vanderscycle/Professional-website.git
   # Allow this project to deploy only to 'argocd' namespace
   destinations:
     - namespace: argocd
