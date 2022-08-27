@@ -20,8 +20,8 @@ jobs:
           docker login -u "$DOCKER_USER" --password "$DOCKER_PASSWORD"
 
       - name: Build Docker image
-        uses: actions/checkout@v3
         run: |
+          cd Professional-website
           docker build ./backend --file Dockerfile --tag vandercycle/professional-website-backend:latest
           docker build ./frontend --file Dockerfile --tag vandercycle/professional-website:latest
 
