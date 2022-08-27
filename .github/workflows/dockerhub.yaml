@@ -19,10 +19,12 @@ jobs:
         run: |
           docker login -u "$DOCKER_USER" --password "$DOCKER_PASSWORD"
 
+      - name: Check out code
+        uses: actions/checkout@v2
+
       - name: Build Docker image
         run: |
           ls -al
-          cd Professional-website
           docker build ./backend --file Dockerfile --tag vandercycle/professional-website-backend:latest
           docker build ./frontend --file Dockerfile --tag vandercycle/professional-website:latest
 
