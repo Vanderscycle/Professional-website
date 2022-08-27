@@ -4,8 +4,9 @@ name: Docker Image CI
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+    paths:
+      - frontend/**
+      - backend/**
 
 jobs:
   push_to_registry:
