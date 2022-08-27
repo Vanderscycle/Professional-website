@@ -4,18 +4,20 @@ kind: Application
 metadata:
   name: application-website
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  # finalizers:
+  #   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
   project: applications
   source:
-    repoURL: git@github.com:Vanderscycle/Professional-website.git
+    # repoURL: git@github.com:Vanderscycle/Professional-website.git
+    repoURL: https://github.com/Vanderscycle/Professional-website.git
+
     targetRevision: main
     path: k8s/argocd/apps/website
   syncPolicy:
     automated:
+      prune: true
       selfHeal: true
-      prune: false

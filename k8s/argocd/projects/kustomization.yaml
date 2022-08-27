@@ -4,3 +4,4 @@ kind: Kustomization
 
 resources:
   - project-website.yaml
+  - project-applications.yaml
