@@ -24,8 +24,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build "$PWD"/backend --file Dockerfile --tag vandercycle/professional-website-backend:latest
-          docker build "$PWD"/frontend --file Dockerfile --tag vandercycle/professional-website:latest
+          docker build ./backend --file Dockerfile --tag vandercycle/professional-website-backend:latest
+          docker build ./frontend --file Dockerfile --tag vandercycle/professional-website:latest
 
       - name: Docker Push image
         run: |
