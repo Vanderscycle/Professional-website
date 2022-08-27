@@ -12,9 +12,6 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v3
-
       - name: Login docker hub
         env:
           DOCKER_USER: ${{ secrets.DOCKER_HUB_USERNAME }}
@@ -23,6 +20,7 @@ jobs:
           docker login -u "$DOCKER_USER" --password "$DOCKER_PASSWORD"
 
       - name: Build Docker image
+        uses: actions/checkout@v3
         run: |
           docker build ./backend --file Dockerfile --tag vandercycle/professional-website-backend:latest
           docker build ./frontend --file Dockerfile --tag vandercycle/professional-website:latest
