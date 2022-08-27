@@ -7,3 +7,4 @@ resources:
   - ./pgadmin/overlays/non-prod
   - ./postgres/overlays/non-prod
   - ./backend/overlays/non-prod
+  # - ./cert-manager/overlays/non-prod

@@ -9,7 +9,6 @@ metadata:
     app.kubernetes.io/name: svelte
     app.kubernetes.io/part-of: professional-website
   name: frontend
-  namespace: default
 spec:
   selector:
     matchLabels:
