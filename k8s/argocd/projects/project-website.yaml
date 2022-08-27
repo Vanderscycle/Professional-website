@@ -17,4 +17,5 @@ spec:
     - namespace: website
       server: https://kubernetes.default.svc
   sourceRepos:
-    - git@github.com:Vanderscycle/Professional-website.git
+    # - git@github.com:Vanderscycle/Professional-website.git
+    - https://github.com/Vanderscycle/Professional-website.git
