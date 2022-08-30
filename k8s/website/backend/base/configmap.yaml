@@ -14,4 +14,4 @@ data:
   DB_USER: "postgres"
   DB_PASSWORD: "root"
   DB_NAME: "postgresdb"
-  PORT: "30432"
+  PORT: "5432"
