@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/name: pgadmin
     app.kubernetes.io/part-of: professional-website
 spec:
-  # storageClassName: manual
+  storageClassName: manual
   accessModes:
     - ReadWriteMany
   resources:
