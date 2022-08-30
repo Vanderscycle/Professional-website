@@ -12,6 +12,10 @@ spec:
   storageClassName: manual
   accessModes:
     - ReadWriteOnce
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: pgadmin
+      app.kubernetes.io/name: pgadmin
   resources:
     requests:
       storage: 1Gi
