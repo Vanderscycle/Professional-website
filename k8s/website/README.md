@@ -57,6 +57,15 @@ kubectl get deploy
 kubectl delete deploy <namedeployment>
 ```
 
+### With Namepsaces
+
+when setting environment other than default
+
+```
+kubectl get deploy -A
+kubectl describe --namespace=<namespace> deploy
+```
+
 in this scenario we can login to the db
 to create a new db use the minikubeip:given port
 todo:
@@ -100,6 +109,14 @@ frontend
 
 ```
 < minikube ip >:30400
+```
+
+### using kind
+
+because kind uses a container for a kubernetes env there is no separate ip
+
+```
+kubectl port-forward svc/frontend -n website 3000:3000
 ```
 
 # using minikube locally
