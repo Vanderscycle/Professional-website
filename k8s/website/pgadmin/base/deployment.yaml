@@ -41,7 +41,7 @@ spec:
             - name: http
               containerPort: 80
           volumeMounts:
-            - mountPath: /app/data
+            - mountPath: /var/tmp/pgadmin
               name: storage
           readinessProbe: # To check if the Pod is ready to serve traffic or not
             httpGet:

@@ -1,0 +1,18 @@
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pgadmin-pv-volume
+  labels:
+    app.kubernetes.io/component: database
+    app.kubernetes.io/instance: postgres
+    app.kubernetes.io/name: postgres
+    app.kubernetes.io/part-of: professional-website
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/mnt/data"
