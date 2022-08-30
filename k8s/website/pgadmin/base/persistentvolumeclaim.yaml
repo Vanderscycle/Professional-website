@@ -10,8 +10,9 @@ metadata:
     app.kubernetes.io/part-of: professional-website
 spec:
   storageClassName: manual
+  volumeMode: Filesystem
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi

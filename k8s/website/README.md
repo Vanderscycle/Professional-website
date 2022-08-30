@@ -150,6 +150,8 @@ kubectl get pvc
 kubectl describe pvc <name>
 ```
 
+- pvc [readWriteMany](https://github.com/kubeflow/katib/issues/917)
+
 to view the space taken by a pod
 
 ```bash
