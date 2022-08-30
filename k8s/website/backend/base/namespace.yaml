@@ -8,4 +8,5 @@ metadata:
     app.kubernetes.io/instance: gofiber
     app.kubernetes.io/name: gofiber
     app.kubernetes.io/part-of: professional-website
-  namespace: website
+  # namespace: website
+  namespace: gofiber
