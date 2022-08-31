@@ -15,6 +15,6 @@ spec:
     app.kubernetes.io/name: postgres
   type: NodePort
   ports:
-    - name: postgres
+    - name: http
       port: 5432
       nodePort: 30432

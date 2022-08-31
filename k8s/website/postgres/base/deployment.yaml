@@ -31,6 +31,10 @@ spec:
           envFrom:
             - configMapRef:
                 name: postgres-config
+          ports:
+            - name: http
+              containerPort: 30432
+              protocol: TCP
           resources:
             requests:
               cpu: 300m

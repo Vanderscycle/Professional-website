@@ -1,5 +1,4 @@
 # cheatsheet
-
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 # k8s lessons learned
