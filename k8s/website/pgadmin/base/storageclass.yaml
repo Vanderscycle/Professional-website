@@ -1,6 +1,5 @@
----
-kind: PersistentVolume
-apiVersion: v1
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
 metadata:
   name: manual
   labels:
@@ -8,11 +7,7 @@ metadata:
     app.kubernetes.io/instance: pgadmin
     app.kubernetes.io/name: pgadmin
     app.kubernetes.io/part-of: professional-website
-spec:
-  storageClassName: manual
-  capacity:
-    storage: 5Gi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/mnt/data"
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: Immediate
+allowVolumeExpansion: true
+reclaimPolicy: Retain

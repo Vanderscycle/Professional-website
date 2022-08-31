@@ -40,17 +40,24 @@ spec:
           ports:
             - name: http
               containerPort: 80
-          volumeMounts:
-            - mountPath: /var/tmp/pgadmin
-              name: storage
-          readinessProbe: # To check if the Pod is ready to serve traffic or not
+          readinessProbe:
             httpGet:
               path: /
               port: 80
               scheme: HTTP
             initialDelaySeconds: 5
             timeoutSeconds: 1
+          volumeMounts:
+            - mountPath: /var/lib/pgadmin
+              name: storage
       volumes:
         - name: storage
           persistentVolumeClaim:
             claimName: pgadmin-pvc
+      initContainers:
+        - name: volume-mount-hack
+          image: busybox
+          command: ["sh", "-c", "chown -R 5050:5050 /var/lib/pgadmin"]
+          volumeMounts:
+            - name: storage
+              mountPath: /var/lib/pgadmin
