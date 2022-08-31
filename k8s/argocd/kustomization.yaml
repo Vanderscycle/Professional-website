@@ -8,4 +8,5 @@ resources:
   - application-root.yaml
   - application-website.yaml
   - application-projects.yaml
+  - application-monitoring.yaml
   # - ./projects

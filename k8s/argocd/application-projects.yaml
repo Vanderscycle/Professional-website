@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: projects
+  name: application-projects
   namespace: argocd
   labels:
     app.kubernetes.io/instance: application-of-applications
