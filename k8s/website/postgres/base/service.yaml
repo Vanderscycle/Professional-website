@@ -17,4 +17,6 @@ spec:
   ports:
     - name: http
       port: 5432
-      nodePort: 30432
+      protocol: TCP
+      targetPort: http
+      # nodePort: 30432
