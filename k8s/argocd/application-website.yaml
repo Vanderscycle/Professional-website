@@ -4,6 +4,8 @@ kind: Application
 metadata:
   name: application-website
   namespace: argocd
+  labels:
+    app.kubernetes.io/instance: application-of-applications
   # finalizers:
   #   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -13,8 +15,6 @@ spec:
   project: applications
   source:
     repoURL: git@github.com:Vanderscycle/Professional-website.git
-    # repoURL: https://github.com/Vanderscycle/Professional-website.git
-
     targetRevision: main
     path: k8s/argocd/apps/website
   syncPolicy:
