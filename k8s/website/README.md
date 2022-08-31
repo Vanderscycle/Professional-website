@@ -133,6 +133,7 @@ if entering manually
 192.168.59.100 my.app.pgadmin.io
 ```
 
+if using king its localhost
 ## volumes
 
 Persistent Volume (PV) − It’s a piece of network storage that has been provisioned by the administrator. It’s a resource in the cluster which is independent of any individual pod that uses the PV.
