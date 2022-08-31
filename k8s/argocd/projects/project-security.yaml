@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: security
+  namespace: argocd
+  # Finalizer that ensures that project is not deleted until it is not referenced by any application
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Atreides Monitoring Services
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+
+  destinations:
+    - namespace: security
+      server: https://kubernetes.default.svc
+    # Prometheus needs to be able to create metrics services for kubernetes internal components
+    - namespace: kube-system
+      server: https://kubernetes.default.svc
+
+  sourceRepos:
+    - git@github.com:Vanderscycle/Professional-website.git
+    - https://github.com/hashicorp/vault
+    - https://github.com/hashicorp/vault-helm
+    - https://github.com/hashicorp/vault-k8s
+    - https://github.com/hashicorp/vault-csi-provider

@@ -1,0 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: security
+  labels:
+    app.kubernetes.io/instance: application-of-applications
+spec:
+  destination:
+    namespace: security
+    server: https://kubernetes.default.svc
+  project: monitoring
+  source:
+    path: k8s/charts/hashicorp-vault
+    repoURL: git@github.com:Vanderscycle/Professional-website.git
+    targetRevision: main
+    helm:
+      releaseName: security
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

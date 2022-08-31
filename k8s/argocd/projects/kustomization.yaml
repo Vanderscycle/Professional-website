@@ -8,3 +8,4 @@ resources:
   - project-website.yaml
   - project-applications.yaml
   - project-monitoring.yaml
+  - project-security.yaml
