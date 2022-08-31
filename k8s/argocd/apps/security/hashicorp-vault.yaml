@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: security
     server: https://kubernetes.default.svc
-  project: monitoring
+  project: security
   source:
     path: k8s/charts/hashicorp-vault
     repoURL: git@github.com:Vanderscycle/Professional-website.git
