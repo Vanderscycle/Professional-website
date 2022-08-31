@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - hashicorp-vault.yaml
+  - hashicorp-consul.yaml

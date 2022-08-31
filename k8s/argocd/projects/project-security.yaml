@@ -13,15 +13,20 @@ spec:
       kind: "*"
 
   destinations:
-    - namespace: security
+    - namespace: vault
       server: https://kubernetes.default.svc
     - namespace: argocd
       server: https://kubernetes.default.svc
 
   sourceRepos:
     - git@github.com:Vanderscycle/Professional-website.git
+
     - https://helm.releases.hashicorp.com
+      # hashicorp vault
     - https://github.com/hashicorp/vault
     - https://github.com/hashicorp/vault-helm
     - https://github.com/hashicorp/vault-k8s
     - https://github.com/hashicorp/vault-csi-provider
+      # hashicorp consul
+    - https://github.com/hashicorp/consul
+    - https://github.com/hashicorp/consul-k8s
