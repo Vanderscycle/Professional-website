@@ -1,21 +1,30 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: AppProject
 metadata:
-  name: application-monitoring
+  name: monitoring
   namespace: argocd
-  labels:
-    app.kubernetes.io/instance: application-of-applications
+  # Finalizer that ensures that project is not deleted until it is not referenced by any application
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    namespace: argocd
-    server: https://kubernetes.default.svc
-  project: applications
-  source:
-    path: k8s/argocd/apps/monitoring
-    repoURL: git@github.com:Vanderscycle/Professional-website.git
-    targetRevision: main
-  syncPolicy:
-    automated:
-      prune: true
+  description: Atreides Monitoring Services
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+
+  destinations:
+    - namespace: uptime-kuma
+      server: https://kubernetes.default.svc
+    - namespace: monitoring
+      server: https://kubernetes.default.svc
+
+    # Prometheus needs to be able to create metrics services for kubernetes internal components
+    - namespace: kube-system
+      server: https://kubernetes.default.svc
+
+  sourceRepos:
+    - ssh://git@gitlab.atreidesaccount.io:2222/atreides-infrastructure/cluster-management.git
+    - https://prometheus-community.github.io/helm-charts
+    # This one is to be able to deploy CRDs separately
+    - https://github.com/prometheus-community/helm-charts.git
+    - https://grafana.github.io/helm-charts
