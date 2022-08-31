@@ -15,9 +15,6 @@ spec:
   destinations:
     - namespace: security
       server: https://kubernetes.default.svc
-    # Prometheus needs to be able to create metrics services for kubernetes internal components
-    - namespace: kube-system
-      server: https://kubernetes.default.svc
 
   sourceRepos:
     - git@github.com:Vanderscycle/Professional-website.git
