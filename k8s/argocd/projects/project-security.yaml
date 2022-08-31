@@ -18,6 +18,7 @@ spec:
 
   sourceRepos:
     - git@github.com:Vanderscycle/Professional-website.git
+    - https://helm.releases.hashicorp.com
     - https://github.com/hashicorp/vault
     - https://github.com/hashicorp/vault-helm
     - https://github.com/hashicorp/vault-k8s
