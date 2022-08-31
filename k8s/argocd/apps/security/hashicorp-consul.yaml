@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: security
   source:
-    path: k8s/charts/hashicorp-vault
+    path: k8s/charts/hashicorp-consul
     repoURL: git@github.com:Vanderscycle/Professional-website.git
     targetRevision: main
     helm:
