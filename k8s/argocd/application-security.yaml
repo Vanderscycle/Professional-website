@@ -20,4 +20,4 @@ spec:
     targetRevision: main
   syncPolicy:
     automated:
-      prune: t
+      prune: false
