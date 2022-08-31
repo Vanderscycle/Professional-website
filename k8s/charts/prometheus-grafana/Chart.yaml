@@ -2,7 +2,7 @@ apiVersion: v2
 description: A Helm chart for installing kube-prometheus-stack.
 icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
 type: application
-name: kube-prometheus-stack
+name: prometheus-grafana
 sources:
   - https://github.com/prometheus-community/helm-charts
   - https://github.com/prometheus-operator/kube-prometheus
