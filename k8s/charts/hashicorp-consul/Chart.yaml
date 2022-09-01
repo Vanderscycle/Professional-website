@@ -2,7 +2,6 @@ apiVersion: v2
 name: consul
 version: 0.47.1
 appVersion: 1.13.1
-kubeVersion: ">=1.21.0-0"
 description: Official HashiCorp Consul Chart
 home: https://www.consul.io
 icon: https://raw.githubusercontent.com/hashicorp/consul-k8s/main/assets/icon.png
@@ -29,6 +28,7 @@ annotations:
   artifacthub.io/signKey: |
     fingerprint: C874011F0AB405110D02105534365D9472D7468F
     url: https://keybase.io/hashicorp/pgp_keys.asc
+
 dependencies:
   - name: consul-helm
     repository: https://helm.releases.hashicorp.com
