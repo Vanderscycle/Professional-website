@@ -30,6 +30,6 @@ annotations:
     url: https://keybase.io/hashicorp/pgp_keys.asc
 
 dependencies:
-  - name: consul-helm
-    repository: https://helm.releases.hashicorp.com
-    # version: 0.47.1
+  - name: consul
+    repository: https://github.com/hashicorp/consul-k8s/tree/main/charts
+    version: 0.47.1
