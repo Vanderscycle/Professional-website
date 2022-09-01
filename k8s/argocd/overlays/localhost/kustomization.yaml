@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: argocd
+
+resources:
+  - ../../base
+  - ./patches
+# patches:
+#   - path: patches/secret.yaml
+#     target:
+#       kind: Secret
+#       name: argocd
+#   - path: patches/repository-cm.yaml
+#     target:
+#       kind: ConfigMap
+#       name: argocd
