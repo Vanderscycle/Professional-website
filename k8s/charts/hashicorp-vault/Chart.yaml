@@ -13,5 +13,5 @@ sources:
   - https://github.com/hashicorp/vault-csi-provider
 dependencies:
   - name: vault
-    repository: https://artifacthub.io/packages/helm/hashicorp/vault
-    # version: 0.21.0
+    repository: https://helm.releases.hashicorp.com
+    version: 0.21.0

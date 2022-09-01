@@ -31,5 +31,5 @@ annotations:
 
 dependencies:
   - name: consul
-    repository: https://github.com/hashicorp/consul-k8s
+    repository: https://helm.releases.hashicorp.com
     version: 0.47.1
