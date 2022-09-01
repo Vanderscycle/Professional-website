@@ -7,7 +7,7 @@ metadata:
     app.kubernetes.io/instance: application-of-applications
 spec:
   destination:
-    namespace: vault
+    namespace: consul
     server: https://kubernetes.default.svc
   project: security
   source:
