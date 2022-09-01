@@ -31,5 +31,5 @@ annotations:
 
 dependencies:
   - name: consul
-    repository: https://github.com/hashicorp/consul-k8s/tree/main/charts
+    repository: https://github.com/hashicorp/consul-k8s/
     version: 0.47.1
