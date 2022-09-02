@@ -19,7 +19,8 @@ spec:
       server: https://kubernetes.default.svc
     - namespace: argocd
       server: https://kubernetes.default.svc
-
+    - namespace: kube-seal
+      server: https://kubernetes.default.svc
   sourceRepos:
     - git@github.com:Vanderscycle/Professional-website.git
 
@@ -32,3 +33,5 @@ spec:
       # hashicorp consul
     - https://github.com/hashicorp/consul
     - https://github.com/hashicorp/consul-k8s
+      # kube-seal
+    - https://bitnami-labs.github.io/sealed-secrets

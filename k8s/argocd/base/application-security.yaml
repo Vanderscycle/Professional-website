@@ -16,8 +16,28 @@ spec:
   source:
     path: k8s/argocd/apps/security
     repoURL: git@github.com:Vanderscycle/Professional-website.git
-    # repoURL: https://github.com/Vanderscycle/Professional-website.git
     targetRevision: main
   syncPolicy:
     automated:
       prune: false
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-seal
+spec:
+  destination:
+    namespace: kube-seal
+    server: https://kubernetes.default.svc
+  project: security
+  source:
+    repoURL: https://bitnami-labs.github.io/sealed-secrets
+    targetRevision: HEAD
+    directory:
+      recurse: true
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - Replace=true
+      - CreateNamespace=true

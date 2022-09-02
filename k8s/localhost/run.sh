@@ -5,12 +5,14 @@ kind create cluster --config kind.yaml
 # point to your ssh key
 kind create cluster --config kind.yaml
 kubectl get nodes
+
 # argocd install
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 Disown allows you to detach a process to the shell
 kubectl port-forward svc/argocd-server -n argocd 8080:443 & disown
+# kubeseal install
 
 # adding the ssh repo
 
