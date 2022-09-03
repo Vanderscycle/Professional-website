@@ -6,12 +6,40 @@ namespace: argocd
 resources:
   - ../../base
   - ./patches
-# patches:
-#   - path: patches/secret.yaml
-#     target:
-#       kind: Secret
-#       name: argocd
-#   - path: patches/repository-cm.yaml
-#     target:
-#       kind: ConfigMap
-#       name: argocd
+
+patches:
+  - target:
+      kind: Application
+      name: application-monitoring
+    patch: |-
+      - op: replace
+        path: /spec/syncPolicy
+        value: {}
+  - target:
+      kind: Application
+      name: application-projects
+    patch: |-
+      - op: replace
+        path: /spec/syncPolicy
+        value: {}
+  - target:
+      kind: Application
+      name: application-root
+    patch: |-
+      - op: replace
+        path: /spec/syncPolicy
+        value: {}
+  - target:
+      kind: Application
+      name: application-security
+    patch: |-
+      - op: replace
+        path: /spec/syncPolicy
+        value: {}
+  - target:
+      kind: Application
+      name: application-website
+    patch: |-
+      - op: replace
+        path: /spec/syncPolicy
+        value: {}
