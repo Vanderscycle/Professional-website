@@ -46,8 +46,8 @@ warn('ℹ️ Open {tiltfile_path} in your favorite editor to get started.'.forma
 # )
 
 # WARN: not ready
-docker_build('kind-kind/vandercycle/professional-website', './frontend', dockerfile='./frontend/Dockerfile')
-docker_build('kind-kind/vandercycle/professional-website-backend', './backend',dockerfile='./backend/Dockerfile')
+docker_build('vandercycle/professional-website', './frontend', dockerfile='./frontend/Dockerfile')
+docker_build('vandercycle/professional-website-backend', './backend',dockerfile='./backend/Dockerfile')
 k8s_kind("kind-kind",image_json_path='{.spec.runtime.image}')
 
 # Apply Kubernetes manifests
@@ -61,13 +61,17 @@ k8s_kind("kind-kind",image_json_path='{.spec.runtime.image}')
 # kustomize_path="./k8s/argocd/overlays/localhost"
 # k8s_yaml([kustomize(kustomize_path)])
 
-k8s_fullstack="./k8s/website/"
+k8s_fullstack="./k8s/website/overlays/localhost"
 k8s_yaml([kustomize(k8s_fullstack)])
 # k8s_custom_deploy(
 #      'website',
 #      apply_cmd='kustomize build ./k8s/website | kubectl apply -f -',delete_cmd='kubectl delete all --all', deps=['']
 #  )
 k8s_resource('frontend',port_forwards=3000)
+k8s_resource('pgadmin',port_forwards=8000)
+k8s_resource('gofiber',port_forwards=5000)
+# k8s_resource('postgres',port_forwards=5433)
+# k8s_resource('postgres',port_forwards=5432:30432)
 
 #BUG: custom argocd (kinda working)
 # k8s_custom_deploy(
@@ -114,6 +118,8 @@ k8s_resource('frontend',port_forwards=3000)
 local_resource('frontend-pnpm', dir='./frontend',cmd='pnpm install', deps='./frontend/package-lock.yaml')
 # local_resource('frontend-dev', dir='./frontend',cmd='pnpm run dev', deps='./src')
 local_resource('backend-go', dir='./backend',cmd='go get -u ./...')
+local_resource('kind', dir='./k8s/localhost',cmd='kind create cluster --config kind.yaml')
+
 
 # local_resource('argocd', dir='.',)
 # ,''

@@ -1,7 +1,7 @@
 #!/bin/bash
 # needs: kind, kubectl, argocd
 kind create cluster --config kind.yaml
-
+kubectl cluster-info --context kind-infrastructure-professional-website
 kubectl get nodes
 # argocd install
 kubectl create namespace argocd
