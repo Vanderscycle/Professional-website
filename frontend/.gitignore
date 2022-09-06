@@ -10,3 +10,7 @@ target
 *.lock
 .vercel
 .vercelignore
+
+# cypress
+cypress/videos
+cypress/screenshots

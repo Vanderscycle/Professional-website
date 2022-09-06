@@ -123,6 +123,7 @@ k8s_resource('kube-prometheus',extra_pod_selectors=[{'app.kubernetes.io/componen
 #                ]
 # )
 local_resource('frontend-pnpm', dir='./frontend',cmd='pnpm install', deps='./frontend/package-lock.yaml',labels=['packages'])
+local_resource('frontend-cypress', dir='./frontend',cmd='npx cypress run -q', deps='./frontend/src',labels=['e2e'])
 local_resource('backend-go', dir='./backend',cmd='go get -u ./...',labels=['packages'])
 
 
