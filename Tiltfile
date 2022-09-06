@@ -44,11 +44,11 @@ warn('ℹ️ Open {tiltfile_path} in your favorite editor to get started.'.forma
 #                 run('/src/codegen.sh', trigger=['./app/api'])
 #              ]
 # )
-
-# WARN: not ready
-docker_build('vandercycle/professional-website', './frontend', dockerfile='./frontend/Dockerfile')
-docker_build('vandercycle/professional-website-backend', './backend',dockerfile='./backend/Dockerfile')
-k8s_kind("kind-kind",image_json_path='{.spec.runtime.image}')
+sync_src_frontend= sync('./frontend', '/src')
+sync_src_backend= sync('./backend', '/')
+docker_build('vandercycle/professional-website', './frontend', dockerfile='./frontend/Dockerfile', live_update=[sync_src_frontend] )
+docker_build('vandercycle/professional-website-backend', './backend',dockerfile='./backend/Dockerfile', live_update=[sync_src_backend])
+# k8s_kind("kind-kind",image_json_path='{.spec.runtime.image}')
 
 # Apply Kubernetes manifests
 #   Tilt will build & push any necessary images, re-deploying your
@@ -60,18 +60,26 @@ k8s_kind("kind-kind",image_json_path='{.spec.runtime.image}')
 #BUG: full argocd (not working)
 # kustomize_path="./k8s/argocd/overlays/localhost"
 # k8s_yaml([kustomize(kustomize_path)])
+#INFO: helm
+load('ext://helm_resource', 'helm_resource', 'helm_repo')
+helm_repo('kube-prometheus-stack', 'https://prometheus-community.github.io/helm-charts')
+helm_resource('kube-prometheus', 'prometheus-community/kube-prometheus-stack',release_name='monitoring', flags=['--create-namespace'], namespace='monitoring')
 
+#INFO: https://github.com/prometheus-operator/kube-prometheus/blob/main/docs/access-ui.md
+# local_resource('grafana-ui', dir='./k8s/charts/prometheus-grafana',cmd='kubectl port-forward --namespace=monitoring svc/monitoring-grafana 9092:3000',labels=['port-fwd'])
+# local_resource('alertmanager-ui', dir='./k8s/charts/prometheus-grafana',cmd='kubectl port-forward --namespace=monitoring svc/alertmanager-operated 9093:9093',labels=['port-fwd'])
 k8s_fullstack="./k8s/website/overlays/localhost"
+
 k8s_yaml([kustomize(k8s_fullstack)])
 # k8s_custom_deploy(
 #      'website',
 #      apply_cmd='kustomize build ./k8s/website | kubectl apply -f -',delete_cmd='kubectl delete all --all', deps=['']
 #  )
-k8s_resource('frontend',port_forwards=3000)
-k8s_resource('pgadmin',port_forwards=8000)
-k8s_resource('gofiber',port_forwards=5000)
-# k8s_resource('postgres',port_forwards=5433)
-# k8s_resource('postgres',port_forwards=5432:30432)
+k8s_resource('frontend',labels="frontend",port_forwards=port_forward(3000,name="sveltekit"))
+k8s_resource('pgadmin',labels="backend",port_forwards=8000)
+k8s_resource('gofiber',labels="backend",port_forwards=5000)
+k8s_resource('postgres',labels="backend",port_forwards=5433)
+k8s_resource('kube-prometheus',extra_pod_selectors=[{'app.kubernetes.io/component': 'app'}],port_forwards=['9090:9090','9092:3000','9093:9093'])
 
 #BUG: custom argocd (kinda working)
 # k8s_custom_deploy(
@@ -115,10 +123,8 @@ k8s_resource('gofiber',port_forwards=5000)
 #                    '& {if (!(Get-Command helm -ErrorAction SilentlyContinue)) {scoop install helm}}'
 #                ]
 # )
-local_resource('frontend-pnpm', dir='./frontend',cmd='pnpm install', deps='./frontend/package-lock.yaml')
-# local_resource('frontend-dev', dir='./frontend',cmd='pnpm run dev', deps='./src')
-local_resource('backend-go', dir='./backend',cmd='go get -u ./...')
-local_resource('kind', dir='./k8s/localhost',cmd='kind create cluster --config kind.yaml')
+local_resource('frontend-pnpm', dir='./frontend',cmd='pnpm install', deps='./frontend/package-lock.yaml',labels=['packages'])
+local_resource('backend-go', dir='./backend',cmd='go get -u ./...',labels=['packages'])
 
 
 # local_resource('argocd', dir='.',)
@@ -155,4 +161,4 @@ def tilt_demo():
 #
 #   To see it in action, try uncommenting the following line with
 #   Tilt running.
-# tilt_demo()
+tilt_demo()

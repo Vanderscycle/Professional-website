@@ -28,6 +28,7 @@ metadata:
   name: postgres-service
 subsets:
   - addresses:
-      - ip: 107.190.16.28
+      # https://stackoverflow.com/questions/68177379/how-to-connect-a-pod-in-kind-with-a-local-database
+      - ip: 10.244.1.2 # kubectl get po -o wide  (there has to be a better way)
     ports:
       - port: 5432
