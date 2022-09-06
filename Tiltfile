@@ -78,7 +78,6 @@ k8s_yaml([kustomize(k8s_fullstack)])
 k8s_resource('frontend',labels="frontend",port_forwards=port_forward(3000,name="sveltekit"))
 k8s_resource('pgadmin',labels="backend",port_forwards=8000)
 k8s_resource('gofiber',labels="backend",port_forwards=5000)
-k8s_resource('postgres',labels="backend",port_forwards=5433)
 k8s_resource('kube-prometheus',extra_pod_selectors=[{'app.kubernetes.io/component': 'app'}],port_forwards=['9090:9090','9092:3000','9093:9093'])
 
 #BUG: custom argocd (kinda working)
