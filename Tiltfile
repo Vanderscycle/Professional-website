@@ -44,11 +44,12 @@ warn('ℹ️ Open {tiltfile_path} in your favorite editor to get started.'.forma
 #                 run('/src/codegen.sh', trigger=['./app/api'])
 #              ]
 # )
+update_settings ( max_parallel_updates = 6 , k8s_upsert_timeout_secs = 60)
 sync_src_frontend= sync('./frontend', '/src')
 sync_src_backend= sync('./backend', '/')
 docker_build('vandercycle/professional-website', './frontend', dockerfile='./frontend/Dockerfile', live_update=[sync_src_frontend] )
 docker_build('vandercycle/professional-website-backend', './backend',dockerfile='./backend/Dockerfile', live_update=[sync_src_backend])
-# k8s_kind("kind-kind",image_json_path='{.spec.runtime.image}')
+k8s_kind("kind-kind",image_json_path='{.spec.runtime.image}')
 
 # Apply Kubernetes manifests
 #   Tilt will build & push any necessary images, re-deploying your
@@ -63,7 +64,7 @@ docker_build('vandercycle/professional-website-backend', './backend',dockerfile=
 #INFO: helm
 load('ext://helm_resource', 'helm_resource', 'helm_repo')
 helm_repo('kube-prometheus-stack', 'https://prometheus-community.github.io/helm-charts')
-helm_resource('kube-prometheus', 'prometheus-community/kube-prometheus-stack',release_name='monitoring', flags=['--create-namespace'], namespace='monitoring')
+helm_resource('kube-prometheus', 'prometheus-community/kube-prometheus-stack')
 
 #INFO: https://github.com/prometheus-operator/kube-prometheus/blob/main/docs/access-ui.md
 # local_resource('grafana-ui', dir='./k8s/charts/prometheus-grafana',cmd='kubectl port-forward --namespace=monitoring svc/monitoring-grafana 9092:3000',labels=['port-fwd'])
