@@ -8,6 +8,8 @@
 - Demonstration
 - Integration within Atreides
 
+Presentation powered by Slides
+
 ---
 
 # Tilt
@@ -70,13 +72,38 @@ def k8s_init(kustomize_charts):
  k8s_init(k8s_fullstack)
 ```
 
-Starlark allows us to dynamically configure the testing environment in a readable and dynamic way.
+## Starlark allows us to dynamically configure the testing environment in a readable and dynamic way.
+
+# kind
+
+The better alternative to minikube as we can replicate, withing a single docker container, a full cluster
+
+```YAML
+apiVersion: ctlptl.dev/v1alpha1
+kind: Cluster
+product: kind
+registry: ctlptl-registry
+kindV1Alpha4Cluster:
+  name: infrastructure-professional-website
+  nodes:
+    - role: control-plane
+    - role: worker
+    - role: worker
+    - role: worker
+```
 
 ---
 
 # Docker/k8s
 
 Using Kind instead of minikube allows us to configure a full cluster with a registry that the local k8s cluster will pull.
+Using [ctlptl](https://github.com/tilt-dev/ctlptl) we can create a local registry in conjunction with the kind cluster we previously created.
+
+```bash
+ctlptl create registry ctlptl-registry --port=5005
+ctlptl create cluster kind --registry=ctlptl-registry
+```
+
 Great for full integration testing (20s build time usually), but terrible for immediate changes like CSS.
 
 ---
@@ -90,6 +117,15 @@ Stack:
 - DB: postgres
 - DB helper: pgadmin
 - k8s monitoring: prometheus from helm
+- editor: neovim
+
+Workflow:
+
+- add an item in `frontend` /projects page and see the difference localhost/k8s
+  - show localhost and k8s diff
+  - show registry
+- using postman make a few api calls to the backend
+  - confirm using pgadmin4
 
 ---
 

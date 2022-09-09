@@ -7,8 +7,9 @@ metadata:
     app.kubernetes.io/component: frontend
     app.kubernetes.io/instance: svelte
     app.kubernetes.io/name: svelte
-    app.kubernetes.io/part-of: professional-website
+    app.kubernetes.io/part-of: henri
   name: frontend
+  namespace: default
 spec:
   selector:
     matchLabels:
@@ -37,10 +38,10 @@ spec:
           ports:
             - name: http
               containerPort: 3000
-          readinessProbe: # To check if the Pod is ready to serve traffic or not
-            httpGet:
-              path: /
-              port: 3000
-              scheme: HTTP
-            initialDelaySeconds: 5
-            timeoutSeconds: 1
+          # readinessProbe: # To check if the Pod is ready to serve traffic or not
+          #   httpGet:
+          #     path: /
+          #     port: 3000
+          #     scheme: HTTP
+          #   initialDelaySeconds: 5
+          #   timeoutSeconds: 1
