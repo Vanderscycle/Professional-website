@@ -28,12 +28,24 @@ Tilt allows you to locally develop your stack/app as closely as you would use it
 - Kind
 - Titl
 - Helm
+- Kustomize
+- Any other cli tools that helps you
 
 ## Common commands
 
 - local_ressource: run linters, tests, local cli programs, etc.
+
+```python
+local_resource('yarn', cmd='yarn install', deps=['package.json', 'yarn.lock'])
+```
+
 - k8s_ressource: expose ports, configure ressource, etc.
 - k8s_yaml: from simple to custom k8s deployment
+
+```python
+k8s_yaml(kustomize('kustomize_dir'))
+```
+
 - helm: from simple to custom helm chart deployment
 - extensions: allows you to extend tilt with plugins
 - and [more](https://docs.tilt.dev/api.html)
@@ -74,6 +86,22 @@ def k8s_init(kustomize_charts):
 
 ## Starlark allows us to dynamically configure the testing environment in a readable and dynamic way.
 
+---
+
+# Docker/k8s
+
+Using Kind instead of minikube allows us to configure a full cluster with a registry that the local k8s cluster will pull.
+Using [ctlptl](https://github.com/tilt-dev/ctlptl) we can create a local registry in conjunction with the kind cluster we previously created.
+
+```bash
+ctlptl create registry ctlptl-registry --port=5005
+ctlptl create cluster kind --registry=ctlptl-registry
+```
+
+Great for full integration testing (20s build time usually), but terrible for immediate changes like CSS.
+
+---
+
 # kind
 
 The better alternative to minikube as we can replicate, withing a single docker container, a full cluster
@@ -92,19 +120,11 @@ kindV1Alpha4Cluster:
     - role: worker
 ```
 
----
+## known problems
 
-# Docker/k8s
+There is however a steeper learning curve to `kind` compared to `minikube`. Kind can have its own docker registry and its integration with tools like `ctlptl` eludes me.
 
-Using Kind instead of minikube allows us to configure a full cluster with a registry that the local k8s cluster will pull.
-Using [ctlptl](https://github.com/tilt-dev/ctlptl) we can create a local registry in conjunction with the kind cluster we previously created.
-
-```bash
-ctlptl create registry ctlptl-registry --port=5005
-ctlptl create cluster kind --registry=ctlptl-registry
-```
-
-Great for full integration testing (20s build time usually), but terrible for immediate changes like CSS.
+Replicating a production ingress is more complicated than what can be done using minikube.
 
 ---
 

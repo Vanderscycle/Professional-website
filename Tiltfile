@@ -70,7 +70,7 @@ k8s_yaml([kustomize(k8s_fullstack)])
 #
 #   More info: https://docs.tilt.dev/api.html#api.k8s_resource
 k8s_resource('frontend',labels="frontend",port_forwards=port_forward(3000,name="sveltekit"))
-k8s_resource('pgadmin',labels="backend",port_forwards=8000)
+k8s_resource('pgadmin',labels="backend",port_forwards='8000:80')
 k8s_resource('gofiber',labels="backend",port_forwards=5000)
 k8s_resource('kube-prometheus',extra_pod_selectors=[{'app.kubernetes.io/component': 'app'}],port_forwards=['9090:9090','9092:3000','9093:9093'])
 
@@ -87,7 +87,7 @@ k8s_resource('kube-prometheus',extra_pod_selectors=[{'app.kubernetes.io/componen
 
 local_resource('frontend-pnpm', dir='./frontend',cmd='pnpm install', deps='./frontend/package-lock.yaml',labels=['packages'])
 local_resource('frontend-cypress', dir='./frontend',cmd='npx cypress run -q', deps='./frontend/src',labels=['e2e'])
-local_resource('frontend-dev', dir='./frontend',cmd='pnpm run dev &', deps='./frontend/src',labels=['localhost'])
+local_resource('frontend-dev', dir='./frontend',cmd='pnpm run dev ', deps='./frontend/src',labels=['localhost'], auto_init=False, trigger_mode=TRIGGER_MODE_MANUAL)
 local_resource('backend-go', dir='./backend',cmd='go get -u ./...',labels=['packages'])
 
 
