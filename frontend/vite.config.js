@@ -1,7 +1,8 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import path from "path";
-/** @type {import('vite').UserConfig} */
-const config = {
+import { defineConfig } from 'vite';
+import path from 'path';
+
+export default defineConfig({
 	plugins: [sveltekit()],
   			optimizeDeps: {
 				include: ["highlight.js/lib/core"]
@@ -17,6 +18,5 @@ const config = {
 					$themes: path.resolve("./src/components/themes")
 				}
 			}
-};
+});
 
-export default config;
