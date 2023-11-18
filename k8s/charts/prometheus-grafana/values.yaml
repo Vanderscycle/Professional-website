@@ -1,3 +1,0 @@
-prometheus-grafana:
-  grafana:
-    adminPassword: admin

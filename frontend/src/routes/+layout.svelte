@@ -7,6 +7,7 @@
 	let { darkMode } = uiState;
 	import Modal from "svelte-simple-modal";
 	import { SEOIndex } from "$components/SEO";
+
 </script>
 
 <header>
