@@ -2,8 +2,8 @@
 	import { Highlight } from "svelte-highlight";
 	import { uiState } from "$stores/ui";
 	import typescript from "svelte-highlight/src/languages/typescript";
-	import tokyoNightDark from "$themes/tokyo-night-dark.css";
-	import tokyoNightLight from "$themes/tokyo-night-light.css";
+	import tokyoNightDark from "$themes/tokyo-night-dark.css?inline";
+	import tokyoNightLight from "$themes/tokyo-night-light.css?inline";
 
 	export let terminalData: Object[] = []; //usually a listy of objects
 	export let terminalName: string;

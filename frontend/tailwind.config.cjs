@@ -3,7 +3,7 @@ var light = require("./tailwindcss/tokyo-night-light.json")
 
 module.exports = {
   mode: "jit",
-  purge: ["./src/**/*.{js,svelte,ts}"],
+  content: ["./src/**/*.{js,svelte,ts}"],
   darkMode: 'class',
   theme: {
     extend: {
