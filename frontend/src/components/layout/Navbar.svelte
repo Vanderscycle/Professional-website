@@ -5,10 +5,10 @@
 	// import Heroicon from "$icons/Heroicon.svelte";
 	// import { sun as outlineSun } from "$icons/outline";
 	// import { moon as outlineMoon } from "$icons/outline";
-	import { variables } from "$lib/variables";
+	// import { variables } from "$lib/variables";
 	import { fade } from "svelte/transition";
 	import { onMount } from "svelte";
-	import { sleep } from "$libs/internal/sleep";
+	import { sleep } from "$lib/internal/sleep";
 	// import { goto } from "$app/navigation";
 	// import { routes } from "$stores/routes";
 

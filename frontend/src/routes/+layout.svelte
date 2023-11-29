@@ -1,6 +1,6 @@
 <script lang="ts">
 	// import "../app.css";
-	import NavBar from "$components/layout/Navbar.svelte";
+	import Navbar from "$components/layout/Navbar.svelte";
 	// import Footer from "$components/Footer.svelte";
 	// import { uiState } from "$stores/ui";
 	// let { darkMode } = uiState;
@@ -12,7 +12,7 @@
 
 <div class="">
 	<nav class="">
-		<NavBar />
+		<Navbar />
 	</nav>
 	<main class="">
 		<Modal>
