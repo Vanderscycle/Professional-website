@@ -1,5 +1,0 @@
-.env
-node_modules
-.git*
-.svelte-kit
-*.log
