@@ -1,0 +1,11 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: professional-web-frontend
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: professional-web-frontend
+subjects:
+  - kind: ServiceAccount
+    name: professional-web--frontend-sa

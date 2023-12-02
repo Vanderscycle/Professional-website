@@ -3,28 +3,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app.kubernetes.io/component: frontend
-    app.kubernetes.io/instance: svelte
-    app.kubernetes.io/name: svelte
-    app.kubernetes.io/part-of: henri
-  name: frontend
+  name: professional-web-frontend
   namespace: default
 spec:
-  selector:
-    matchLabels:
-      app.kubernetes.io/component: frontend
-      app.kubernetes.io/instance: svelte
-      app.kubernetes.io/name: svelte
   replicas: 1
   strategy:
     type: Recreate
   template:
     metadata:
-      labels:
-        app.kubernetes.io/component: frontend
-        app.kubernetes.io/instance: svelte
-        app.kubernetes.io/name: svelte
     spec:
       containers:
         - name: website

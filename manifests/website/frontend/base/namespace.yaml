@@ -1,0 +1,6 @@
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: professional-web-frontend
+  namespace: professional-web-frontend

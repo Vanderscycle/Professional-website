@@ -3,21 +3,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  labels:
-    app.kubernetes.io/component: frontend
-    app.kubernetes.io/instance: svelte
-    app.kubernetes.io/name: svelte
-    app.kubernetes.io/part-of: professional-website
-  name: gofiber
+  name: professional-web-frontend
 spec:
   rules:
-    - host: example.com
+    - host: my.app.io
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: service
+                name: frontend
                 port:
                   name: http

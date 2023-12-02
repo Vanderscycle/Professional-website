@@ -1,0 +1,16 @@
+---
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: professional-web-frontend
+spec:
+  selector:
+  type: ClusterIP
+  # type: NodePort
+  ports:
+    - name: http
+      protocol: TCP
+      port: 3000
+      targetPort: http
+      # nodePort: 30300

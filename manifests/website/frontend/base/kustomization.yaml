@@ -1,0 +1,26 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  app.kubernetes.io/component: frontend
+  app.kubernetes.io/instance: svelte
+  app.kubernetes.io/name: svelte
+  app.kubernetes.io/part-of: professional-website
+
+labels:
+  - pairs:
+      app.kubernetes.io/component: frontend
+      app.kubernetes.io/instance: svelte
+      app.kubernetes.io/name: svelte
+    includeTemplates: true
+
+resources:
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+  # - configmap.yaml
+  - namespace.yaml
+  - role.yaml
+  - rolebinding.yaml
+  - serviceaccount.yaml
