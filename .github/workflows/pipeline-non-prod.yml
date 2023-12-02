@@ -1,0 +1,16 @@
+name: 'Pipeline: Development'
+on:
+  push:
+    branches:
+      - '*'
+  workflow_dispatch:
+    inputs:
+      deploy_image:
+        required: true
+        type: boolean
+
+jobs:
+  docker:
+    uses: ./.github/workflows/_pipeline.yml
+    with:
+      deploy_image: ${{ inputs.deploy_image || false }}
