@@ -2,16 +2,17 @@
 	// import "../app.css";
 	import Navbar from "$components/layout/Navbar.svelte";
 	// import Footer from "$components/Footer.svelte";
-	// import { uiState } from "$stores/ui";
-	// let { darkMode } = uiState;
-	import Modal from "svelte-simple-modal";
-	// import { SEOIndex } from "$components/SEO";
+	import { uiState } from "$stores/ui";
+  import Modal from "svelte-simple-modal";
+// import { SEOIndex } from "$components/SEO";
+
+  let { darkMode } = uiState;
 
 </script>
 
 
-<div class="">
-	<nav class="">
+<div class="class={$darkMode === true ? "dark h-full" : "h-full"}">
+	<nav class="dark:bg-darkGui bg-Gui">
 		<Navbar />
 	</nav>
 	<main class="">

@@ -28,23 +28,21 @@
 	});
 </script>
 
-<template class="">
-	<div class="inline-flex w-full">
-		<div class="grow" />
-		{#if visible}
-			<span class="m-4 justify-items-center" in:fade={{ duration: 1000 }}> {message} </span>
-		{/if}
-		<a href="https://www.icrc.org/en/where-we-work/europe-central-asia/ukraine" target="_blank">
-			<img
-				src="https://upload.wikimedia.org/wikipedia/commons/9/95/Lesser_Coat_of_Arms_of_Ukraine.svg"
-				alt="glory to the heroes"
-				width="32"
-				height="32"
-				class="m-2"
-			/>
-		</a>
-	</div>
-</template>
+<div class="inline-flex w-full">
+<div class="grow" />
+{#if visible}
+    <span class="m-4 justify-items-center" in:fade={{ duration: 1000 }}> {message} </span>
+{/if}
+<a href="https://www.icrc.org/en/where-we-work/europe-central-asia/ukraine" target="noreferrer">
+    <img
+    src="https://upload.wikimedia.org/wikipedia/commons/9/95/Lesser_Coat_of_Arms_of_Ukraine.svg"
+    alt="glory to the heroes"
+    width="32"
+    height="32"
+    class="m-2"
+    />
+</a>
+</div>
 
 <style lang="postcss">
 </style>
