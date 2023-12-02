@@ -15,6 +15,10 @@ const config = {
       envPrefix: '',
       polyfill: true
     }),
+    alias: {
+      $components: "src/components",
+      $libs: "src/libs",
+    },
 	}
 };
 

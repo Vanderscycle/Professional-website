@@ -20,7 +20,6 @@
 		</Modal>
 	</main>
 	<footer>
-		<Footer />
 	</footer>
 </div>
 

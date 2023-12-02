@@ -9,9 +9,9 @@ const config = {
 	},
 	alias: {
 		$libs: path.resolve('./src/libs'),
-		// $api: path.resolve("./src/api"),
 		$routes: path.resolve('./src/routes'),
-		$stores: path.resolve('./src/stores')
+		$stores: path.resolve('./src/stores'),
+		$components: path.resolve('./src/components')
 	}
 };
 
