@@ -8,7 +8,7 @@ const config = {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	},
 	alias: {
-		$lib: path.resolve('./src/lib'),
+		$libs: path.resolve('./src/libs'),
 		// $api: path.resolve("./src/api"),
 		$routes: path.resolve('./src/routes'),
 		$stores: path.resolve('./src/stores')

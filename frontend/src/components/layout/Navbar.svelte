@@ -8,7 +8,7 @@
 	// import { variables } from "$lib/variables";
 	import { fade } from "svelte/transition";
 	import { onMount } from "svelte";
-	import { sleep } from "$lib/internal/sleep";
+	import { sleep } from "$libs/internal/sleep";
 	// import { goto } from "$app/navigation";
 	// import { routes } from "$stores/routes";
 
