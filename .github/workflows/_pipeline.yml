@@ -23,11 +23,8 @@ jobs:
       - name: Build Docker image
         run: |
           ls -al
-
-          # (cd ./backend && docker build . --tag vandercycle/professional-website-backend:latest)
           (cd ./frontend && docker build . --tag vandercycle/professional-website:latest)
 
       - name: Docker Push image
         run: |
-          # docker push vandercycle/professional-website-backend:latest
-          docker push vandercycle/professional-website:latest
+          (cd ./frontend && docker push vandercycle/professional-website:latest)
