@@ -12,5 +12,6 @@ on:
 jobs:
   docker:
     uses: './.github/workflows/_pipeline.yml'
+    secrets: inherit
     with:
       deploy_image: ${{ inputs.deploy_image || true }}
