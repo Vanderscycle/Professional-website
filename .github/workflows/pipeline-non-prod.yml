@@ -1,4 +1,4 @@
-name: 'Pipeline: Development'
+name: 'Pipeline: Non-prod'
 on:
   push:
     branches:
