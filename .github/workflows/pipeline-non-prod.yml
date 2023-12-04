@@ -13,4 +13,4 @@ jobs:
   docker:
     uses: ./.github/workflows/_pipeline.yml
     with:
-      deploy_image: '${{ inputs.deploy_image || false }}'
+      deploy_image: ${{ inputs.deploy_image || 'false' }}
