@@ -2,7 +2,7 @@ name: 'Pipeline: Production'
 on:
   push:
     branches:
-      - '*'
+      - 'main'
   workflow_dispatch:
     inputs:
       deploy_image:

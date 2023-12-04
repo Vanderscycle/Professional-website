@@ -1,8 +1,8 @@
 name: 'Pipeline: Non-prod'
 on:
   push:
-    branches:
-      - '*'
+    # branches:
+    #   - '*'
   workflow_dispatch:
     inputs:
       deploy_image:
