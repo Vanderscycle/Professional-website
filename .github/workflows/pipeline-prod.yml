@@ -1,8 +1,8 @@
 name: 'Pipeline: Production'
 on:
-  push:
-    branches:
-      - 'main'
+  # push:
+  #   branches:
+  #     - 'main'
   workflow_dispatch:
     inputs:
       deploy_image:
@@ -12,5 +12,6 @@ on:
 jobs:
   docker:
     uses: './.github/workflows/_pipeline.yml'
+    secrets: inherit
     with:
       deploy_image: ${{ inputs.deploy_image || false }}
