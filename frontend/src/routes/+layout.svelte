@@ -1,7 +1,7 @@
 <script lang="ts">
 	import "../app.css";
 	import Navbar from "$components/layout/Navbar.svelte";
-	// import Footer from "$components/Footer.svelte";
+	import Footer from "$components/layout/Footer.svelte";
 	import { uiState } from "$stores/ui";
   import Modal from "svelte-simple-modal";
 // import { SEOIndex } from "$components/SEO";
@@ -20,8 +20,7 @@
 			<slot />
 		</Modal>
 	</main>
-	<footer>
-	</footer>
+	<Footer/>
 </div>
 
 <style lang="postcss">
