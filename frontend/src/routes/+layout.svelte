@@ -12,6 +12,7 @@
 
 
 <div class="class={$darkMode === true ? "dark h-full" : "h-full"}">
+
 	<nav class="dark:bg-darkGui bg-Gui">
 		<Navbar />
 	</nav>

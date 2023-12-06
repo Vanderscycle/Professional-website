@@ -1,7 +1,7 @@
 <script lang="ts">
 
 	// import Toggle from "./ui/Toggle.svelte";
-	// import { uiState } from "$stores/ui";
+	import { uiState } from "$stores/ui";
 	// import Heroicon from "$icons/Heroicon.svelte";
 	// import { sun as outlineSun } from "$icons/outline";
 	// import { moon as outlineMoon } from "$icons/outline";
@@ -15,7 +15,7 @@
 	// const unwantedRoutes: string[] = ["/philosophy", "/testbench"];
 
 	let toggleState: boolean = false;
-	// let { darkMode } = uiState;
+	let { darkMode } = uiState;
 	let message: string = "Today Ukraine, tomorrow Europe. Stop Putin!";
 	let visible: boolean = false;
 
@@ -30,6 +30,7 @@
 
 <div class="inline-flex w-full">
 <div class="grow" />
+   | DarkMode: {$darkMode} |
 {#if visible}
     <span class="m-4 justify-items-center" in:fade={{ duration: 1000 }}> {message} </span>
 {/if}
