@@ -2,9 +2,9 @@
 
 	// import Toggle from "./ui/Toggle.svelte";
 	import { uiState } from "$stores/ui";
-	// import Heroicon from "$icons/Heroicon.svelte";
-	// import { sun as outlineSun } from "$icons/outline";
-	// import { moon as outlineMoon } from "$icons/outline";
+	import Heroicon from "$icons/Heroicons.svelte";
+	import { sun as outlineSun } from "$icons/outline";
+	import { moon as outlineMoon } from "$icons/outline";
 	// import { variables } from "$lib/variables";
 	import { fade } from "svelte/transition";
 	import { onMount } from "svelte";
@@ -29,20 +29,26 @@
 </script>
 
 <div class="inline-flex w-full">
-<div class="grow" />
-   | DarkMode: {$darkMode} |
-{#if visible}
-    <span class="m-4 justify-items-center" in:fade={{ duration: 1000 }}> {message} </span>
-{/if}
-<a href="https://www.icrc.org/en/where-we-work/europe-central-asia/ukraine" target="noreferrer">
-    <img
-    src="https://upload.wikimedia.org/wikipedia/commons/9/95/Lesser_Coat_of_Arms_of_Ukraine.svg"
-    alt="glory to the heroes"
-    width="32"
-    height="32"
-    class="m-2"
-    />
-</a>
+		<div class="mt-3 mx-2">
+			{#if toggleState}
+				<Heroicon icon={outlineSun} class={"text-Yellow"} />
+			{:else}
+				<Heroicon icon={outlineMoon} />
+			{/if}
+		</div>	<div class="grow" />
+	   | DarkMode: {$darkMode} |
+	{#if visible}
+	    <span class="m-4 justify-items-center" in:fade={{ duration: 1000 }}> {message} </span>
+	{/if}
+	<a href="https://www.icrc.org/en/where-we-work/europe-central-asia/ukraine" target="noreferrer">
+	    <img
+	    src="https://upload.wikimedia.org/wikipedia/commons/9/95/Lesser_Coat_of_Arms_of_Ukraine.svg"
+	    alt="glory to the heroes"
+	    width="32"
+	    height="32"
+	    class="m-2"
+	    />
+	</a>
 </div>
 
 <style lang="postcss">

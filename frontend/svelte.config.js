@@ -19,6 +19,7 @@ const config = {
       $components: "src/components",
       $stores: "src/stores",
       $libs: "src/libs",
+      $icons: "src/libs/themes/icons",
     },
 	}
 };
