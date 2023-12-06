@@ -1,6 +1,6 @@
 <script lang="ts">
 
-	// import Toggle from "./ui/Toggle.svelte";
+	import Toggle from "$components/ui/Toggle.svelte";
 	import { uiState } from "$stores/ui";
 	import Heroicon from "$icons/Heroicons.svelte";
 	import { sun as outlineSun } from "$icons/outline";
@@ -14,6 +14,7 @@
 
 	// const unwantedRoutes: string[] = ["/philosophy", "/testbench"];
 
+	let timesToggled: number = 0;
 	let toggleState: boolean = false;
 	let { darkMode } = uiState;
 	let message: string = "Today Ukraine, tomorrow Europe. Stop Putin!";
@@ -35,8 +36,12 @@
 			{:else}
 				<Heroicon icon={outlineMoon} />
 			{/if}
-		</div>	<div class="grow" />
-	   | DarkMode: {$darkMode} |
+		</div>	
+		<span class="mt-4 mx-2">
+			<Toggle bind:toggleState class="" bind:timesToggled/>
+		</span>
+		<div class="grow" />
+	  <span class="underline decoration-sky-500">| DarkMode: {$darkMode} |</span>
 	{#if visible}
 	    <span class="m-4 justify-items-center" in:fade={{ duration: 1000 }}> {message} </span>
 	{/if}
