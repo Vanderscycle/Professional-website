@@ -1,5 +1,5 @@
 <script lang="ts">
-	// import "../app.css";
+	import "../app.css";
 	import Navbar from "$components/layout/Navbar.svelte";
 	// import Footer from "$components/Footer.svelte";
 	import { uiState } from "$stores/ui";
@@ -11,8 +11,7 @@
 </script>
 
 
-<div class="class={$darkMode === true ? "dark h-full" : "h-full"}">
-
+<div class='class={$darkMode === true ? "dark h-full" : "h-full"}'>
 	<nav class="dark:bg-darkGui bg-Gui">
 		<Navbar />
 	</nav>
@@ -25,6 +24,6 @@
 	</footer>
 </div>
 
-<style>
+<style lang="postcss">
 	@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
 </style>
