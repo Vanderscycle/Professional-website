@@ -1,18 +1,25 @@
----
-# https://kubernetes.io/docs/concepts/services-networking/ingress/
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: professional-web-frontend
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-passthrough: true
+    nginx.ingress.kubernetes.io/force-ssl-redirect: true
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: "letsencrypt-non-prod"
 spec:
   rules:
-    - host: my.app.io
+    - host: me.vandersleyen.dev
       http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
+          - backend:
               service:
-                name: frontend
+                name: professional-web-frontend
                 port:
-                  name: http
+                  number: 3000
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - me.vandersleyen.dev
+      secretName: professional-website-tls
