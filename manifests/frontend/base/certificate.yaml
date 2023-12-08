@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: professional-web-tls
+  name: professional-website-tls
 spec:
   dnsNames:
     - me.vandersleyen.dev
