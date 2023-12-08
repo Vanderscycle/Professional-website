@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-passthrough: true
     nginx.ingress.kubernetes.io/force-ssl-redirect: true
     kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: "letsencrypt-non-prod"
+    cert-manager.io/cluster-issuer: "letsencrypt-non-prod.cert-manager"
 spec:
   rules:
     - host: me.vandersleyen.dev
