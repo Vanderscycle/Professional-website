@@ -45,7 +45,7 @@
 			  <Button callbackFn={() => goto(navBtn.url)}>{navBtn.name}</Button>
     {/each}
 		<div class="grow" />
-	  <span class="underline decoration-sky-500">| DarkMode: {$darkMode} |</span>
+	  <!-- <span class="underline decoration-sky-500">| DarkMode: {$darkMode} |</span> -->
 	{#if visible}
 	    <span class="m-4 justify-items-center" in:fade={{ duration: 1000 }}> {message} </span>
 	{/if}
