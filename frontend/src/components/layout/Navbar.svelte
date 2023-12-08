@@ -1,6 +1,7 @@
 <script lang="ts">
 
 	import Toggle from "$components/ui/Toggle.svelte";
+	import Button from "$components/ui/Button.svelte";
 	import { uiState } from "$stores/ui";
 	import Heroicon from "$icons/Heroicons.svelte";
 	import { sun as outlineSun } from "$icons/outline";
@@ -9,10 +10,10 @@
 	import { fade } from "svelte/transition";
 	import { onMount } from "svelte";
 	import { sleep } from "$libs/internal/sleep";
-	// import { goto } from "$app/navigation";
-	// import { routes } from "$stores/routes";
+	import { goto } from "$app/navigation";
+	import { routes } from "$stores/routes";
 
-	// const unwantedRoutes: string[] = ["/philosophy", "/testbench"];
+	const unwantedRoutes: string[] = ["/projects"];
 
 	let timesToggled: number = 0;
 	let toggleState: boolean = false;
@@ -20,7 +21,7 @@
 	let message: string = "Today Ukraine, tomorrow Europe. Stop Putin!";
 	let visible: boolean = false;
 
-	// let filteredNav = $routes.filter((i) => !unwantedRoutes.includes(i.url));
+	let filteredNav = $routes.filter((i) => !unwantedRoutes.includes(i.url));
 	// $: uiState.darkMode.set(!toggleState);
 
 	onMount(async () => {
@@ -40,6 +41,9 @@
 		<span class="mt-4 mx-2">
 			<Toggle bind:toggleState class="" bind:timesToggled/>
 		</span>
+		{#each filteredNav as navBtn}
+			  <Button callbackFn={() => goto(navBtn.url)}>{navBtn.name}</Button>
+    {/each}
 		<div class="grow" />
 	  <span class="underline decoration-sky-500">| DarkMode: {$darkMode} |</span>
 	{#if visible}
