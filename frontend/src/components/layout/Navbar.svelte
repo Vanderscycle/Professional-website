@@ -45,7 +45,7 @@
 	{#if visible}
 	    <span class="m-4 justify-items-center" in:fade={{ duration: 1000 }}> {message} </span>
 	{/if}
-	<a href="https://www.icrc.org/en/where-we-work/europe-central-asia/ukraine" target="noreferrer">
+	<a href="https://u24.gov.ua/" target="noreferrer">
 	    <img
 	    src="https://upload.wikimedia.org/wikipedia/commons/9/95/Lesser_Coat_of_Arms_of_Ukraine.svg"
 	    alt="glory to the heroes"
