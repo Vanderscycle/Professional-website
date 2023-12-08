@@ -7,5 +7,5 @@ spec:
     - me.vandersleyen.dev
   secretName: professional-website-tls
   issuerRef:
-    name: letsencrypt-cluster-issuer-non-prod
+    name: letsencrypt-non-prod
     kind: ClusterIssuer
