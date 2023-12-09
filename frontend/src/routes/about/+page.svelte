@@ -15,7 +15,6 @@
 </svelte:head>
 
 <div class="text-center flex flex-col justify-center items-center dark:text-darkText text-Text">
-	<h1 class="relative text-3xl py-4 underline">The mountain</h1>
 	<a href="https://github.com/Vanderscycle" target="_blank" rel="noopener noreferrer" in:fade>
 		<img
 			{src}
@@ -23,8 +22,11 @@
 			class=" rounded-full h-96 w-96 border-4 ring-4 ring-offset-4 ring-terminalBlackYellow my-4"
 		/>
 	</a>
+
+	<h1 class="relative text-4xl">Grit</h1>
+	<h1 class="underline decoration-darkYellow text-xl">When quiting isn't an option</h1>
 	<a href="https://angeladuckworth.com/grit-book/" target="_blank" rel="noopener noreferrer">
-		<p class="dark:text-darkText text-Text py-2 text-xl w-[120]">
+		  <p class="dark:text-darkText text-Text py-2 text-xl w-[120]">
 			"Without effort, your talent is nothing more than unmet potential.<br/>Without effort, your
 			skill is nothing more than what you could have done but didn't."
 		</p>
@@ -32,6 +34,7 @@
 	<p class="dark:text-darkText text-Text">
 		― Angela Duckworth, Grit: The Power of Passion and Perseverance
 	</p>
+
 	{#if !viewResume}
 		<Button
 			class="border-0 no-underline"
