@@ -24,8 +24,8 @@
 		/>
 	</a>
 	<a href="https://angeladuckworth.com/grit-book/" target="_blank" rel="noopener noreferrer">
-		<p class="dark:text-darkText text-Text py-2 text-xl w-96">
-			"Without effort, your talent is nothing more than unmet potential. Without effort, your
+		<p class="dark:text-darkText text-Text py-2 text-xl w-[120]">
+			"Without effort, your talent is nothing more than unmet potential.<br/>Without effort, your
 			skill is nothing more than what you could have done but didn't."
 		</p>
 	</a>
