@@ -18,7 +18,6 @@ const src: string = "profile.jpg";
             <p class="w-1/2 text-center">In late 2019, while serving in the Canadian Navy, I automated the repetitive and mundane tasks assigned to my office using the already obsolete but powerful Excel VBA language.</p>
             <p class="w-1/2 text-center">This experience changed me by reigniting the forgotten passion of learning. This ultimately made me reconsider the course of my life upon realizing that this newfound knowledge was incompatible with the rigid and outdated thinking that was common in the military.</p>
             <p class="w-1/2 text-center">Since then, I have grown tremendously as a Software Engineer and specialized in DevOps, while maintaining interests and competencies as a full stack developer.</p>
-            <p class="w-1/2 text-center">To all my teachers, I thank you and will carry your lesson on my path, but I would do you a disservice if I did not surpass you. To all the men who served with me, I thank you and only wish the best to you and your family.</p>
         </div>
     </div>
 </div>
