@@ -10,8 +10,12 @@ on:
         type: boolean
 
 jobs:
-  docker:
-    uses: './.github/workflows/_pipeline.yml'
-    secrets: inherit
+  build-and-push:
+    uses: ./.github/actions/docker-build-push
     with:
-      deploy_image: ${{ inputs.deploy_image || true }}
+      context: './frontend'
+      dockerfile: './frontend/Dockerfile'
+      image_name: 'professional-website'
+    secrets:
+      docker_hub_username: ${{ secrets.DOCKER_HUB_USERNAME }}
+      docker_hub_access_token: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
