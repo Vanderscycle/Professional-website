@@ -10,6 +10,10 @@ A small and imperfect website about me and my abilities to be an entire IT depar
 
 ![About page](./ReadmeAssets/aboutPage.png)
 
+## Hosting
+
+Done using ArgoCd on a kubernetes cluster to pull the manifests file.
+
 
 ## Acknowledgements
 
