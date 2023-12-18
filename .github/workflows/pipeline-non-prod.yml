@@ -11,11 +11,15 @@ on:
 
 jobs:
   build-and-push:
-    uses: ./.github/actions/docker-build-push
-    with:
-      context: './frontend'
-      dockerfile: './frontend/Dockerfile'
-      image_name: 'professional-website'
-    secrets:
-      docker_hub_username: ${{ secrets.DOCKER_HUB_USERNAME }}
-      docker_hub_access_token: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and Push Docker Image
+        uses: Vanderscycle/pipelines/dockerhub@main
+        with:
+          context: './frontend'
+          dockerfile: './frontend/Dockerfile'
+          image_name: 'professional-website'
+        secrets:
+          docker_hub_username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          docker_hub_access_token: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
