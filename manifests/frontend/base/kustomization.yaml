@@ -18,7 +18,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
-  # - configmap.yaml
+  - configmap.yaml
   - namespace.yaml
   - role.yaml
   - rolebinding.yaml
