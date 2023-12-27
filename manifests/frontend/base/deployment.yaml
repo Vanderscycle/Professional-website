@@ -20,13 +20,14 @@ spec:
           ports:
             - name: http
               containerPort: 3000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+              scheme: HTTP
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
       volumes:
-        configMap: 
-          name: professional-web-frontend-cm
-              # readinessProbe: # To check if the Pod is ready to serve traffic or not
-          #   httpGet:
-          #     path: /
-          #     port: 3000
-          #     scheme: HTTP
-          #   initialDelaySeconds: 5
-          #   timeoutSeconds: 1
+        - name: config-volume
+          configMap: 
+            name: professional-web-frontend-cm
