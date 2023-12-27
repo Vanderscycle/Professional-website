@@ -1,5 +1,5 @@
 # using the non-alpine image because of datadog glibc requirement
-FROM node:18 AS builder
+FROM --platform=linux/x86_64 node:18 AS builder
 WORKDIR /app
 
 # Install pnpm
@@ -18,7 +18,7 @@ RUN pnpm install --frozen-lockfile
 # Build the app and prune dev dependencies
 RUN pnpm run build
 # Use a separate stage to minimize the final image size
-FROM node:18-alpine
+FROM --platform=linux/x86_64 node:18
 # It's a good practice to not run the application as root; use the node user instead
 USER node
 
