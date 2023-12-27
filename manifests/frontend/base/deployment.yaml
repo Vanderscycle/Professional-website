@@ -20,7 +20,10 @@ spec:
           ports:
             - name: http
               containerPort: 3000
-          # readinessProbe: # To check if the Pod is ready to serve traffic or not
+      volumes:
+        configMap: 
+          name: professional-web-frontend-cm
+              # readinessProbe: # To check if the Pod is ready to serve traffic or not
           #   httpGet:
           #     path: /
           #     port: 3000

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: professional-web-frontend-config
+  name: professional-web-frontend-cm
 data:
   DD_PROFILING_ENABLED: "true"
   DD_ENV: non-prod
