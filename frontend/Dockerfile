@@ -1,15 +1,9 @@
-# Use a specific version tag instead of lts-alpine to ensure reproducibility
-FROM node:18-alpine AS builder
+# using the non-alpine image because of datadog glibc requirement
+FROM node:18 AS builder
 WORKDIR /app
 
-
-# Install glibc (required for datadog)
-RUN apk --no-cache add ca-certificates wget && \
-    wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
-    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.34-r0/glibc-2.34-r0.apk && \
-    apk add glibc-2.34-r0.apk --force-overwrite
 # Install pnpm
-RUN apk add --no-cache curl && \
+RUN apt install curl && \
     curl -fsSL https://get.pnpm.io/v6.16.js | node - add --global pnpm
 
 # Export the PATH variable where pnpm is installed
