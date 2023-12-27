@@ -4,14 +4,14 @@ kind: Kustomization
 resources:
   - ../../base
 
-patches:
-  - target:
-      kind: Deployment
-      name: professional-web-frontend  
-    patch: |-
-      - op: add
-        path: /metadata/annotations
-        value:
-          keel.sh/policy: force
-          keel.sh/trigger: poll
-          keel.sh/pollSchedule: "@every 10m"
+# patches:
+#   - target:
+#       kind: Deployment
+#       name: professional-web-frontend  
+#     patch: |-
+#       - op: add
+#         path: /metadata/annotations
+#         value:
+#           keel.sh/policy: force
+#           keel.sh/trigger: poll
+#           keel.sh/pollSchedule: "@every 10m
