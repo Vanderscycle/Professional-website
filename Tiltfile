@@ -1,49 +1,55 @@
-print("""
------------------------------------------------------------------
-✨ Hello Tilt! This appears in the (Tiltfile) pane whenever Tilt
-   evaluates this file.
------------------------------------------------------------------
-""".strip())
-warn('ℹ️ Open {tiltfile_path} in your favorite editor to get started.'.format(
-    tiltfile_path=config.main_path))
-
-update_settings ( max_parallel_updates = 6 , k8s_upsert_timeout_secs = 60)
+# Variables
+sync_src_frontend= sync('./frontend', '/src')
+frontend_port = 5173
 
 # Build Docker image
-#   Tilt will automatically associate image builds with the resource(s)
-#   that reference them (e.g. via Kubernetes or Docker Compose YAML).
-#
-#   More info: https://docs.tilt.dev/api.html#api.docker_build
+docker_build('localhost:5000/frontend-sveltekit', context='./frontend', dockerfile='./frontend/Dockerfile', live_update=[sync_src_frontend] )
 
-sync_src_frontend= sync('./frontend', '/src')
+# Extensions
+load('ext://helm_remote', 'helm_remote')
 
-docker_build('vandercycle/professional-website', './frontend', dockerfile='./frontend/Dockerfile', live_update=[sync_src_frontend] )
-k8s_kind("kind-kind",image_json_path='{.spec.runtime.image}')
+def infrastructure():
+  print("""
+  -----------------------------------------------------------------
+  ✨ Kubernetes/Infrastructure Environment
+  -----------------------------------------------------------------
+  """.strip())
+  # Apply Kubernetes manifests
+  k8s_fullstack="./manifests/overlays/localhost"
+  k8s_yaml([kustomize(k8s_fullstack, flags=['--enable-helm'])])
 
-# Apply Kubernetes manifests
-#   Tilt will build & push any necessary images, re-deploying your
-#   resources as they change.
-#
-#   More info: https://docs.tilt.dev/api.html#api.k8s_yaml
-#
-
-#INFO: helm
-load('ext://helm_resource', 'helm_resource', 'helm_repo')
-
-k8s_fullstack="./manifests/overlays/localhost"
-k8s_yaml([kustomize(k8s_fullstack)])
-k8s_resource('frontend',labels="frontend",port_forwards=port_forward(3000,name="sveltekit"))
+  # Customize a Kubernetes resource
+  k8s_resource('sveltekit-frontend',labels="frontend",port_forwards='3000:3000')
 
 
-# TODO: goal is to forward kubectl port
+def localhost():
+    print("""
+    -----------------------------------------------------------------
+    ✨ Localhost Environment
+    -----------------------------------------------------------------
+    """.strip())
+    
+    update_settings(suppress_unused_image_warnings=["localhost:5000/frontend-sveltekit"])
 
-# Run local commands
-#   Local commands can be helpful for one-time tasks like installing
-#   project prerequisites. They can also manage long-lived processes
-#   for non-containerized services or dependencies.
-#
-#   More info: https://docs.tilt.dev/local_resource.html
-#
+    # ------------ frontend (sveltekit) ------------
+    local_resource('localhost-frontend',
+    serve_dir='./frontend',
+    serve_cmd='pnpm run dev',
+    deps='./frontend/pages',
+    links=['http://localhost:{}'.format(frontend_port)],
+    serve_env={},
+    readiness_probe=probe(
+        period_secs=60,
+        http_get=http_get_action(port=frontend_port, path="/")
+        )
+    )
 
-local_resource('frontend-pnpm', dir='./frontend',cmd='pnpm install', deps='./frontend/package-lock.yaml',labels=['packages'])
-local_resource('frontend-dev', dir='./frontend',cmd='pnpm run dev ', deps='./frontend/src',labels=['localhost'], auto_init=False, trigger_mode=TRIGGER_MODE_MANUAL)
+
+# Define the available modes and an initial selection
+modes = ['localhost', 'infrastructure']
+selection = modes[0]
+
+if selection == 'localhost':
+    localhost()
+elif selection == 'infrastructure':
+    infrastructure()
