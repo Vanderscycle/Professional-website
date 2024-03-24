@@ -16,10 +16,8 @@ update_settings ( max_parallel_updates = 6 , k8s_upsert_timeout_secs = 60)
 #   More info: https://docs.tilt.dev/api.html#api.docker_build
 
 sync_src_frontend= sync('./frontend', '/src')
-sync_src_backend= sync('./backend', '/')
 
 docker_build('vandercycle/professional-website', './frontend', dockerfile='./frontend/Dockerfile', live_update=[sync_src_frontend] )
-docker_build('vandercycle/professional-website-backend', './backend',dockerfile='./backend/Dockerfile', live_update=[sync_src_backend])
 k8s_kind("kind-kind",image_json_path='{.spec.runtime.image}')
 
 # Apply Kubernetes manifests
@@ -32,10 +30,9 @@ k8s_kind("kind-kind",image_json_path='{.spec.runtime.image}')
 #INFO: helm
 load('ext://helm_resource', 'helm_resource', 'helm_repo')
 
-k8s_fullstack="./k8s/website/overlays/localhost"
+k8s_fullstack="./manifests/overlays/localhost"
 k8s_yaml([kustomize(k8s_fullstack)])
 k8s_resource('frontend',labels="frontend",port_forwards=port_forward(3000,name="sveltekit"))
-k8s_resource('gofiber',labels="backend",port_forwards=5000)
 
 
 # TODO: goal is to forward kubectl port
@@ -50,4 +47,3 @@ k8s_resource('gofiber',labels="backend",port_forwards=5000)
 
 local_resource('frontend-pnpm', dir='./frontend',cmd='pnpm install', deps='./frontend/package-lock.yaml',labels=['packages'])
 local_resource('frontend-dev', dir='./frontend',cmd='pnpm run dev ', deps='./frontend/src',labels=['localhost'], auto_init=False, trigger_mode=TRIGGER_MODE_MANUAL)
-local_resource('backend-go', dir='./backend',cmd='go get -u ./...',labels=['packages'])
