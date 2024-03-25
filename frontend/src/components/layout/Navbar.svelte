@@ -6,7 +6,7 @@
 	import Heroicon from "$icons/Heroicons.svelte";
 	import { sun as outlineSun } from "$icons/outline";
 	import { moon as outlineMoon } from "$icons/outline";
-	// import { variables } from "$lib/variables";
+	import { variables } from "$libs/internal/variables";
 	import { fade } from "svelte/transition";
 	import { onMount } from "svelte";
 	import { sleep } from "$libs/internal/sleep";
@@ -15,14 +15,13 @@
 
 	const unwantedRoutes: string[] = ["/projects"];
 
-	let timesToggled: number = 0;
 	let toggleState: boolean = false;
 	let { darkMode } = uiState;
 	let message: string = "Today Ukraine, tomorrow Europe. Stop Putin!";
 	let visible: boolean = false;
-
 	let filteredNav = $routes.filter((i) => !unwantedRoutes.includes(i.url));
-	// $: uiState.darkMode.set(!toggleState);
+
+	$: uiState.darkMode.set(!toggleState);
 
 	onMount(async () => {
 		await sleep(1500);
@@ -31,6 +30,10 @@
 </script>
 
 <div class="inline-flex w-full">
+	  {#if variables.currentState === "dev"}
+		    dark: {$darkMode}
+		    <!-- {window.location.pathname} -->
+	  {/if}
 		<div class="mt-3 mx-2">
 			{#if toggleState}
 				<Heroicon icon={outlineSun} class={"text-Yellow"} />
@@ -39,7 +42,7 @@
 			{/if}
 		</div>	
 		<span class="mt-4 mx-2">
-			<Toggle bind:toggleState class="" bind:timesToggled/>
+			<Toggle bind:toggleState class="" />
 		</span>
 		{#each filteredNav as navBtn}
 			  <Button callbackFn={() => goto(navBtn.url)}>{navBtn.name}</Button>

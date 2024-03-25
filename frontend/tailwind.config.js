@@ -4,7 +4,7 @@ var light = require("./src/libs/themes/tokyo-night-light.json")
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
-  darkMode: 'class',
+  darkMode: 'selector',
   theme: {
     extend: {
       colors: {

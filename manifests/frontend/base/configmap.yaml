@@ -3,8 +3,6 @@ kind: ConfigMap
 metadata:
   name: professional-web-frontend-cm
 data:
-  # DD_PROFILING_ENABLED: "true"
-  DD_ENV: non-prod
+  VITE_WEBSITE_STATE: non-prod
   DD_SERVICE: professional-website
-  # DD_VERSION: 1.0.3
   # datadog profiler 
