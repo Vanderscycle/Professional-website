@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: professional-web-frontend-cm
 data:
-  VITE_WEBSITE_STATE: non-prod
+  WEBSITE_STATE: non-prod
   DD_SERVICE: professional-website
   # datadog profiler 
