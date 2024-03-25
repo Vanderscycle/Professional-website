@@ -27,7 +27,6 @@ spec:
               scheme: HTTP
             initialDelaySeconds: 5
             timeoutSeconds: 1
-      volumes:
-        - name: config-volume
-          configMap: 
-            name: professional-web-frontend-cm
+          envFrom: # This section is added to inject the ConfigMap as environment variables
+          - configMapRef:
+              name: professional-web-frontend-cm

@@ -5,4 +5,3 @@ metadata:
 data:
   WEBSITE_STATE: non-prod
   DD_SERVICE: professional-website
-  # datadog profiler 
