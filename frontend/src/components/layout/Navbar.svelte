@@ -30,10 +30,6 @@
 </script>
 
 <div class="inline-flex w-full">
-	  {#if variables.currentState === "dev"}
-		    dark: {$darkMode}
-		    <!-- {window.location.pathname} -->
-	  {/if}
 		<div class="mt-3 mx-2">
 			{#if toggleState}
 				<Heroicon icon={outlineSun} class={"text-Yellow"} />
