@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: professional-web-frontend-cm
 data:
-  WEBSITE_STATE: non-prod
+  VITE_WEBSITE_STATE: non-prod
   DD_SERVICE: professional-website
