@@ -5,7 +5,7 @@
 	<title>Projects accomplished</title>
 </svelte:head>
 
-<div class="text-center flex flex-col justify-center items-center dark:text-darkText text-Text">
+<div class="text-center flex flex-col justify-center items-center ">
     <p> Under construction </p>
 </div>
 

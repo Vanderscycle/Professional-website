@@ -14,7 +14,7 @@
 	<title>About Me</title>
 </svelte:head>
 
-<div class="text-center flex flex-col justify-center items-center dark:text-darkText text-Text">
+<div class="text-center flex flex-col justify-center items-center">
 	<a href="https://github.com/Vanderscycle" target="_blank" rel="noopener noreferrer" in:fade>
 		<img
 			{src}
@@ -24,14 +24,14 @@
 	</a>
 
 	<h1 class="relative text-4xl">Grit</h1>
-	<h1 class="underline decoration-darkYellow text-xl">When quiting isn't an option</h1>
+	<h1 class="underline decoration-yellow text-xl">When quiting isn't an option</h1>
 	<a href="https://angeladuckworth.com/grit-book/" target="_blank" rel="noopener noreferrer">
-		  <p class="dark:text-darkText text-Text py-2 text-xl w-[120]">
+		  <p class=" py-2 text-xl w-[120]">
 			"Without effort, your talent is nothing more than unmet potential.<br/>Without effort, your
 			skill is nothing more than what you could have done but didn't."
 		</p>
 	</a>
-	<p class="dark:text-darkText text-Text">
+	<p class="text-Text">
 		― Angela Duckworth, Grit: The Power of Passion and Perseverance
 	</p>
 
@@ -43,8 +43,8 @@
 		>
 			<Badge
 				msg="View Resume"
-				badgeColor="dark:bg-darkGreen bg-Green"
-				badgeTextColor=" dark:text-darkBlack text-Black"
+				badgeColor=""
+				badgeTextColor=""
 			/>
 		</Button>
 	{:else}
@@ -55,8 +55,8 @@
 		>
 			<Badge
 				msg="Close"
-				badgeColor="dark:bg-darkRed bg-Red"
-				badgeTextColor=" dark:text-darkBlack text-Black"
+				badgeColor=""
+				badgeTextColor=""
 			/>
 		</Button>
 		<QrCode data={resumeUrl} simpleModalMsg="View resume online" />

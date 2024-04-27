@@ -12,21 +12,22 @@
 	import { sleep } from "$libs/internal/sleep";
 	import { goto } from "$app/navigation";
 	import { routes } from "$stores/routes";
+  import { themeChange } from 'theme-change'
+  const unwantedRoutes: string[] = ["/projects"];
 
-	const unwantedRoutes: string[] = ["/projects"];
+  let toggleState: boolean = false;
+  let { darkMode } = uiState;
+  let message: string = "Today Ukraine, tomorrow Europe. Stop Putin!";
+  let visible: boolean = false;
+  let filteredNav = $routes.filter((i) => !unwantedRoutes.includes(i.url));
 
-	let toggleState: boolean = false;
-	let { darkMode } = uiState;
-	let message: string = "Today Ukraine, tomorrow Europe. Stop Putin!";
-	let visible: boolean = false;
-	let filteredNav = $routes.filter((i) => !unwantedRoutes.includes(i.url));
+  $: uiState.darkMode.set(!toggleState);
 
-	$: uiState.darkMode.set(!toggleState);
-
-	onMount(async () => {
-		await sleep(1500);
-		visible = true;
-	});
+  onMount(async () => {
+    themeChange(false)
+      await sleep(1500);
+      visible = true;
+    });
 </script>
 
 <div class="inline-flex w-full">
@@ -38,7 +39,10 @@
 			{/if}
 		</div>	
 		<span class="mt-4 mx-2">
-			<Toggle bind:toggleState class="" />
+      
+      <button data-toggle-theme="catppuccin-mocha,catppuccin-frappe" class="btn" on:click={() => {
+		                   toggleState = !toggleState;
+	                     }}>
 		</span>
 		{#each filteredNav as navBtn}
 			  <Button callbackFn={() => goto(navBtn.url)}>{navBtn.name}</Button>

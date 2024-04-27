@@ -32,7 +32,7 @@
 </script>
 
 <div
-	class="text-center flex flex-col justify-center items-center dark:text-darkText text-Text"
+	class="text-center flex flex-col justify-center items-center"
 >
 	<canvas
 		class="rounded-xl cursor-pointer"
@@ -53,8 +53,8 @@
 		<Button class=" hidden border-0 no-underline" hoverToggle={false} callbackFn={() => copy}>
 			<Badge
 				msg="Copy to clipboard"
-				badgeColor="dark:bg-darkBlue bg-Blue"
-				badgeTextColor=" dark:text-darkBlack text-Black"
+				badgeColor=""
+				badgeTextColor=""
 			/>
 		</Button>
 	</CopyToClipboard>

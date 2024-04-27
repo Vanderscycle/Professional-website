@@ -15,10 +15,10 @@
 </svelte:head>
 
 <div class='{$darkMode === true ? "dark h-full" : "h-full"}'>
-	<nav class="dark:bg-darkGui bg-Gui">
+	<nav class="">
 		<Navbar />
 	</nav>
-	<main class="dark:darkBg Bg">
+	<main class="">
 		<Modal>
 			<slot />
 		</Modal>

@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { uiState } from "$stores/ui";
-	let { darkMode } = uiState;
 	let extraClass: string;
 	export { extraClass as class };
 	export let msg: string = "";

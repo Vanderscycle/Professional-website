@@ -3,7 +3,7 @@
 </script>
 
 <footer>
-	<div class="dark:text-darkBlack dark:bg-darkGui text-Bg bg-Gui fixed inset-x-0 bottom-0 text-center inline-flex items-center">
+	<div class="fixed inset-x-0 bottom-0 text-center inline-flex items-center">
 		<div class="grow" />
 		<small>&copy;Copyright {new Date().getFullYear()} Henri Vandersleyen </small>
 		<div class="grow" />
