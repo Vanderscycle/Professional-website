@@ -4,8 +4,16 @@ resources:
 patches:
   - patch: |-
       - op: add
-        path: /metadata/annotations/cert-manager.io~1cluster-issuer
+        path: /metadata/annotations/cert-manager.io/cluster-issuer
         value: "letsencrypt-cluster-issuer-prod"
     target:
       kind: Ingress
       name: professional-web-frontend
+  - patch: |-
+      - op: replace
+        path: /spec/issuerRef/name
+        value:
+          letsencrypt-cluster-issuer-prod
+    target:
+      kind: Certificate
+      name: professional-website-tls
